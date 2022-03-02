@@ -1,0 +1,96 @@
+*{margin: 0; padding: 0;}
+    body{
+        width: 320px;
+        height: 628px;
+        background-image: url(./src/backgeoundWallpaper.webp);
+    }
+    .userProfile{
+        width: 210px;
+        height: 628px;
+        float: right;
+    }
+    .leftPanel{
+        width: 110px;
+        height: 628px;
+        padding: 2px;
+        background-color: #001A43;
+    }
+    .userImage{
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+        margin: 20px;
+    
+    }
+    .userProfileTable,tr, td{
+        width: 20px;
+        height: 40px;
+        margin-top: 80px;
+        margin-left: 10px;
+        color: black;
+        font-size: 12px;
+    }
+    .userProfileTable,tr,td,h3{
+        font-weight: lighter;
+    }
+    .h2,a{
+        color: white;
+        font-weight: lighter;
+        padding-left: 2px;
+        font-size: small;
+    }
+
+@media (min-width: 768px){
+    body{
+        width: 768px;
+    }
+    .userProfile{
+        width: 490px;  
+    }
+    .leftPanel{
+        width: 250px;
+    }
+    .userImage{
+        width: 200px;
+        height: 200px;
+    }
+    .userProfileTable,tr, td{
+        width: 450px;
+        height: 50px;
+        margin-top: 60px;
+        margin-left: 60px;
+        font-size: 14px;
+    }
+    .h2,a{
+        padding-left: 20px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1440px){
+    body{
+        width: 1440px;
+    }
+    .userProfile{
+        width: 1000px;  
+    }
+    .leftPanel{
+        width: 350px;
+        height: 715px;
+    }
+    .userImage{
+        width: 250px;
+        height: 250px;
+        margin: 50px;
+    }
+    .userProfileTable,tr, td{
+        width: 600px;
+        height: 50px;
+        margin-top: 60px;
+        margin-left: 60px;
+        font-size: 16px;
+    }
+    .h2,a{
+        font-size: 22px;
+    }
+}
