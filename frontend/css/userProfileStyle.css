@@ -2,7 +2,7 @@
     body{
         width: 320px;
         height: 628px;
-        background-image: url(./src/backgeoundWallpaper.webp);
+        background-image: url(../assets/background-image.webp);
     }
     .userProfile{
         width: 210px;
@@ -20,15 +20,15 @@
         height: 65px;
         border-radius: 10px;
         margin: 20px;
-    
+
     }
     .userProfileTable,tr, td{
-        width: 20px;
+        width: 18px;
         height: 40px;
         margin-top: 80px;
         margin-left: 10px;
         color: black;
-        font-size: 12px;
+        font-size: 16px;
     }
     .userProfileTable,tr,td,h3{
         font-weight: lighter;
@@ -37,7 +37,7 @@
         color: white;
         font-weight: lighter;
         padding-left: 2px;
-        font-size: small;
+        font-size: 16px;
     }
 
 @media (min-width: 768px){
@@ -45,7 +45,7 @@
         width: 768px;
     }
     .userProfile{
-        width: 490px;  
+        width: 490px;
     }
     .leftPanel{
         width: 250px;
@@ -72,7 +72,7 @@
         width: 1440px;
     }
     .userProfile{
-        width: 1000px;  
+        width: 1000px;
     }
     .leftPanel{
         width: 350px;
@@ -88,9 +88,30 @@
         height: 50px;
         margin-top: 60px;
         margin-left: 60px;
-        font-size: 16px;
+        font-size: 26px;
     }
     .h2,a{
         font-size: 22px;
     }
 }
+
+/* :root{
+    /*Colors*/
+    /* --primaty-tone:#005AC5;
+    --cover-primary: white;
+    --main-containers:#001A43;
+    --secundary-tone: #575E71;
+    --tertiary-tone:#D6E2FF;
+    --neutral-tone:#5E5E61;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+    background-image:url("/MakeItReal/workit/assets/fondo.webp");
+} */
+
