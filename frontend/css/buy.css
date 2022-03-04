@@ -175,7 +175,7 @@
     color: var(--main-containers);
   }
   .shoppingcar_container{
-    background-color: var(--tertiary-tone);
+    background-color:var(--tertiary-tone);
     margin-top: 30px;
     justify-content: center;
     padding-top: 10px;
@@ -183,6 +183,46 @@
     border-radius: 5px;
     border: #001A43;
     border-style: groove;
-    margin-left:0.4px;
-    margin-right:0.4px;
+    margin-bottom: 20px;
   }
+  .shoppingcar_tittle{
+    text-align: center;
+  }
+  .shoppingcar_tittle--item{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-containers);
+  }
+  .shoppingcar_table{
+    background-color: var(--secundary-tone);
+    border: #001A43;
+    border-style:double;
+    margin: 15px;
+    display:flex;
+    justify-content: space-around;
+    max-width: 90%;
+    border-radius: 10px;
+    min-width: 90%;
+    padding-bottom: 5px;
+    color:var(--tertiary-tone);
+    font-size: 1.5rem;
+  }
+  .shoppingcar_table--file{
+    line-height:1rem;
+  }
+  .shoppingcar_table--column{
+    padding: 10px;
+  }
+  .shoppingcar_buttons{
+    display: flex;
+    justify-content: space-around
+  }
+.shoppingcar_buttons--item{
+  background-color:var(--primaty-tone);
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-containers);
+}
