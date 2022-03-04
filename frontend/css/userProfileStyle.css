@@ -4,7 +4,7 @@
   --cover-primary: white;
   --main-containers:#001A43;
   --secundary-tone: #575E71;
-  --tertiary-tone:#D6E2FF;
+  --terciary-tone:#D6E2FF;
   --neutral-tone:#5E5E61;
 }
 *{
@@ -52,18 +52,28 @@ html{
 @media (min-width:768px){
   .container{
     display: flex;
+    width: auto;
   }
   .container_userPanel{
     width: 280px;
     height: 100vh;
   }
   .contentProfile{
-    width: 100vh;
     align-items: center;
+  }
+  .contentProfile_userProfileTable{
+    background-color:#D6E2FF;
+    border-radius: 1rem;
+    border: #005AC5 solid 0.1rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem #575E71 ;
   }
 }
 @media (min-width:1024px){
+  .container{
+    width: auto;
+  }
   .container_userPanel{
+    height: 100vh;
     width: 300px;
     font-size: 1.4rem;
   }
@@ -74,9 +84,12 @@ html{
     width: 18rem;
     height: 18rem;
   }
+  .contentProfile{
+    width: 100%;
+  }
   .contentProfile_userProfileTable{
-    width: 60rem;
+    width: 80rem;
     height: 45rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
