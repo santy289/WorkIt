@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 :root{
   /*Colors*/
   --primaty-tone:#005AC5;
@@ -7,6 +8,7 @@
   --tertiary-tone:#D6E2FF;
   --neutral-tone:#5E5E61;
 }
+
 *{
   box-sizing: border-box;
   margin:0;
@@ -23,43 +25,46 @@ header{
   text-align: center;
   padding-top: 40px;
 }
-header .logo_container{
+.logo_container{
   max-height: 300px;
   padding-bottom: 40px;
 }
-header .logo{
+.logo{
   width: 70%;
   height: 70%;
   max-height: 200px;
 }
-header .header_container{
+.header_container{
   background-color: #001A43;
   width: 100%;
   align-self: center;
   margin-bottom: 50px;
 }
-header .header_container--title{
+.header_container--title{
   align-self: center;
   margin: auto;
 }
-header .header_container--title p{
+.header_container--title p{
   font-size: 2rem;
   font-weight: bold;
   line-height: 5.8rem;
   color:var(--cover-primary);
+  margin: auto;
 }
-header .header_container--title h1{
+.WorkIt{
   font-size: 7rem;
-  margin-top: 10px;
+  margin-top: 0px;
   font-weight: bold;
   line-height: 5.8rem;
   color:#F7931A ;
+  margin: auto;
+
 }
 .finder_section{
   text-align: center;
   padding-left: 9%;
 }
-section .finder_section--container{
+.finder_section--container{
   width: 90%;
   height: 100%;
   background-color: var(--tertiary-tone);
@@ -73,16 +78,16 @@ section .finder_section--container{
   padding-right: 1%;
   padding-top: 20px;
 }
-section .finder_section--container span{
+.finder_section--container span{
   justify-content: space-around;
 }
 
-section .section_finder--span{
+.section_finder--span{
   max-width: 85px;
   text-align: center;
   border-style:dotted;
 }
-section .finder_section--container p{
+.finder_section--container p{
   font-weight: bold;
   font-size: 1.06rem;
   padding-bottom: 5px;
@@ -229,6 +234,55 @@ margin-top: 10px;
   font-weight: bold;
   color: var(--main-containers);
 }
+nav .menu-btn i{
+  display: block;
+  position: absolute;
+  top:20px;
+  right: 20px;
+  color: var(--primaty-tone);
+  font-size: 30px;
+  cursor: pointer;
+}
+.click{
+  display: none;
+}
+#click:checked ~ .menu-btn i:before{
+  content: "\f00d";
+}
+nav ul{
+  padding-top: 50px;
+  position: fixed;
+  top: 0px;
+  left: -100%;
+  background: #001A43;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: block;
+  transition: all 0.05s ease;
+}
+#click:checked ~ ul{
+  left: 0;
+}
+nav ul li{
+  width: 100%;
+  margin: 40px 0;
+}
+nav ul li a{
+  width: 100%;
+  margin-left: -100%;
+  display: block;
+  font-size: 20px;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#click:checked ~ ul li a{
+  margin-left: 0px;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  background: none;
+  color: cyan;
+}
 @media (min-width: 480px){
 .seller_container{
 margin-left: 10px;
@@ -250,6 +304,40 @@ margin-right: 10px;
   }
 }
 @media (min-width: 1025px){
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  nav ul li{
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.05s ease;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    color: #111;
+    background: #fff;
+  }
+  nav .menu-btn i{
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    top:30px;
+    right: 30px;
+
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
   header{
     display: grid;
     grid-template-columns: 1fr 5fr;
