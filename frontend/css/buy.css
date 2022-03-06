@@ -236,11 +236,11 @@ margin-top: 10px;
 }
 nav .menu-btn i{
   display: block;
-  position: absolute;
+  position:fixed;
   top:20px;
-  right: 20px;
+  left: 10px;
   color: var(--primaty-tone);
-  font-size: 30px;
+  font-size: 23px;
   cursor: pointer;
 }
 .click{
@@ -328,11 +328,13 @@ margin-right: 10px;
     background: #fff;
   }
   nav .menu-btn i{
+    position: absolute;
     color: #fff;
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
-    top:30px;
+    top:25px;
     right: 30px;
+    left: auto;
 
   }
   input[type="checkbox"]{
