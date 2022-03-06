@@ -4,7 +4,7 @@
   --cover-primary: white;
   --main-containers:#001A43;
   --secundary-tone: #575E71;
-  --tertiary-tone:#D6E2FF;
+  --terciary-tone:#D6E2FF;
   --neutral-tone:#5E5E61;
 }
 *{
@@ -18,7 +18,7 @@ html{
   background-image:url("../assets/background-image.webp");
 }
     .container{
-        display: block;
+      display: block;
     }
     .container_userPanel{
       width: 100%;
@@ -26,45 +26,55 @@ html{
       background-color: #001A43;
     }
     .container_imageContainer{
-        display: flex;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
     }
     .container_imageContainer--userImage{
-        width: 15rem;
-        height: 15rem;
-        border-radius: 10rem;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 10rem;
     }
     .contentProfile{
       display: flex;
       justify-content: center;
     }
     .contentProfile_userProfileTable{
-        width: auto;
-        height: 35rem;
-        margin-top: 1rem;
-        margin-left: 1rem;
-        font-size: 1.5rem;
-        color: #001A43;
+      width: auto;
+      height: 35rem;
+      margin-top: 1rem;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      color: #001A43;
     }
     .container.h2,a{
-        color: white;
+      color: white;
     }
 @media (min-width:768px){
   .container{
     display: flex;
   }
   .container_userPanel{
-    width: 280px;
+    width: 28rem;
     height: 100vh;
   }
+  .container_imageContainer{
+    padding: 3rem;
+  }
   .contentProfile{
-    width: 100vh;
+    width: 100%;
     align-items: center;
+  }
+  .contentProfile_userProfileTable{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color:#D6E2FF;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem #575E71 ;
   }
 }
 @media (min-width:1024px){
   .container_userPanel{
-    width: 300px;
+    width: 30rem;
     font-size: 1.4rem;
   }
   .container_imageContainer{
@@ -74,9 +84,10 @@ html{
     width: 18rem;
     height: 18rem;
   }
+
   .contentProfile_userProfileTable{
-    width: 60rem;
+    width: 65rem;
     height: 45rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
