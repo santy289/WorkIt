@@ -1,3 +1,20 @@
+:root{ /*Colors*/
+  --primaty-tone:#005AC5;
+  --cover-primary: white;
+  --main-containers:#001A43;
+  --secundary-tone: #575E71;
+  --tertiary-tone:#D6E2FF;
+--neutral-tone:#5E5E61; }
+
+*{
+  box-sizing: border-box;
+  margin:0; padding: 0;
+}
+
+html{
+  font-family: 'DM Sans', sans-serif;
+}
+
 body{
   background-image: url(../assets/background-image.webp);
 }
@@ -15,6 +32,8 @@ body{
   display: flex;
   flex-direction: column;
   margin: 2rem 0rem 2rem 0rem;
+  color: var(--main-containers);
+  font-weight: bold;
 }
 
 .login-form .text{
@@ -31,6 +50,10 @@ body{
   color: rgb(255, 255, 255);
   padding: 1rem;
   margin: 1rem 0rem 1rem 0rem
+}
+
+.login-form h2 {
+  margin-bottom: 2rem;
 }
 
 .logo{
@@ -55,8 +78,8 @@ body{
     width: 50%;
     height: 35rem;
     display: flex;
-   
-  } 
+
+  }
 
   .logo{
     width: 18rem;
