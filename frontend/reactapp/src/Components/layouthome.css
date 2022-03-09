@@ -1,0 +1,11 @@
+.body-layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    background-color: rgb(63, 58, 58);
+    align-items: center;
+}
+.body-layout--item{
+    height: 100%;
+    border: 1px solid rgb(238, 236, 236);
+}

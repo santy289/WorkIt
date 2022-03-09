@@ -1,6 +1,6 @@
 import './header.css';
 
-function head(){
+function header(){
     return(
       <header className ="Header_Container">
           <ul className ="Header_nav">
@@ -10,9 +10,8 @@ function head(){
             <a href="http://" className ="Header_nav--item">Calendario</a>
             <a href="http://" className ="Header_nav--item">Carrito</a>
             <a href="http://" className ="Header_nav--item perfil_text">Mi perfil</a>
-            
           </ul>
       </header>
     )
 }
-export default head;
+export default header;
