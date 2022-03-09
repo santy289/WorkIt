@@ -1,4 +1,4 @@
-import image from './workit.svg';
+import image from './logo.png'
 import './HomeBrand.css'
 
 function HomeBrand(){
