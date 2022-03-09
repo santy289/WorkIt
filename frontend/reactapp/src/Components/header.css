@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+ }
+html{
+    font-size: 62.5%;
+    font-family: Helvetica, sans-serif;
+}
+.Header_Container{
+    background-color: rgb(0, 0, 0);
+}
+.Header_nav{
+    display:flex;  
+    list-style:none;
+    justify-content: space-around;
+    padding-left: 50%;
+    height: 5vh;
+    align-items: center
+}
+.Header_nav--item{
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+.Header_nav--item:hover{
+    font-weight: bold;
+}
+.perfil_text{
+    text-decoration:underline;
+}
