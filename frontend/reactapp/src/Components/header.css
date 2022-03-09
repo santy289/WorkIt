@@ -24,8 +24,11 @@ html{
     text-decoration: none;
 }
 .Header_nav--item:hover{
-    font-weight: bold;
+    font-weight:500;
 }
 .perfil_text{
     text-decoration:underline;
+}
+.Header_img{
+ background-color: aliceblue;
 }
