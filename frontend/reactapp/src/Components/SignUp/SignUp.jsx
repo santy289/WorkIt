@@ -1,7 +1,9 @@
+import './SignUp.styles.scss'
+
 function SignUp(){
   return(
     <form className="form">
-      <h2>Crea tu cuenta</h2>
+      <h2 className="form__title">Crea tu cuenta</h2>
       <label htmlFor="nombre">Nombre</label>
       <input className="form__text" type="text" id="nombre" name="nombre" />
       <label htmlFor="apellido">Apellido</label>
