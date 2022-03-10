@@ -1,13 +1,11 @@
-import Login from '../Login/Login'
-import SignUp from '../SignUp/SignUp'
 import './Modal.styles.scss'
 
-function Modal(){
+function Modal(props){
   return(
     <div className="modal">
       <div className="modal__content">
         <span className="modal__close">&times;</span>
-        <Login />
+        {props.children}
       </div>
     </div>  
   )
