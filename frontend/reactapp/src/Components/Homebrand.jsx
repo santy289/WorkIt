@@ -1,4 +1,4 @@
-import image from './logo.png'
+import image from '../assets/logo.png'
 import './HomeBrand.css'
 
 function HomeBrand(){

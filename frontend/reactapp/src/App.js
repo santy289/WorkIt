@@ -1,6 +1,6 @@
 import Head from './components/Header.jsx';
 import Layouthome from './components/Layouthome.jsx';
-import HomeBrand from './components/HomeBrand/Homebrand.jsx'
+import HomeBrand from './components/Homebrand.jsx'
 
 import './App.css';
 

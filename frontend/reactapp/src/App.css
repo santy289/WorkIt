@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image: url('./mockfondo.jpg');
+  background-image: url('./assets/backgroundStyle2.jpeg');
+  background-size: contain;
 }
 
 .App-logo {
