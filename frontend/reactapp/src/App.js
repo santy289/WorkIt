@@ -1,5 +1,6 @@
-import Head from './Components/Header.jsx';
-import Layouthome from './Components/Layouthome.jsx';
+import Head from './components/Header.jsx';
+import Layouthome from './components/Layouthome.jsx';
+import HomeBrand from './components/HomeBrand/Homebrand.jsx'
 
 import './App.css';
 
@@ -7,7 +8,8 @@ function App() {
   return (
     <div className="App">
      <Head/>
-     <Layouthome/>
+     <HomeBrand/>
+     <Layouthome/>     
     </div>
   );
 }
