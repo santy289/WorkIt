@@ -3,6 +3,7 @@ import './Login.styles.scss'
 function Login(){
   return(
     <form className="form">
+      <h2 className="form__title">INICIA SESIÓN</h2>
       <label htmlFor="username">Usuario</label>
       <input className="form__text" type="text" id="username" name="username" />
       <label htmlFor="password">Contraseña</label>
