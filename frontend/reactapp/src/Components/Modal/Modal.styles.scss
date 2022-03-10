@@ -1,0 +1,39 @@
+.modal{
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.modal__content{
+  display: flex;
+  background-color: rgb(220, 220, 260);
+  border-radius: 1rem;
+  height: auto;
+  justify-content: center;
+  margin: auto;
+  padding: 3rem;
+  position: relative;
+  top: 15%;
+  width: 80%;
+}
+
+.modal__close{
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  top: 2%;
+  right: 5%;
+}
+
+@media(min-width: 576px){
+  .modal__content{
+    width: 60%;
+  }
+}
+
+@media(min-width: 768px){
+  .modal__content{
+    width: 50%;
+  }
+}
