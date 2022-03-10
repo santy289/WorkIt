@@ -1,0 +1,23 @@
+
+
+.containerCard__cardbox{
+    position: relative;
+    width: 273px;
+    height: 345px;
+}
+.containerCard__cardbox--imageBackground{
+    width: 273px;
+    height: 345px;
+    border-radius: 1rem;
+}
+.containerCard__cardbox--nameService{
+    position: absolute;
+    top: 0;
+    width: 273px;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family:Arial, Helvetica, sans-serif monospace;
+    color: white;
+    background:linear-gradient(rgba(0, 0, 0, 0.753), rgba(128, 128, 128, 0))
+    
+}
