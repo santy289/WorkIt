@@ -14,18 +14,35 @@ html{
     display:flex;  
     list-style:none;
     justify-content: space-around;
-    padding-left: 50%;
-    height: 5vh;
-    align-items: center
+    align-items: center;
 }
 .Header_nav--item{
+    display: none;
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
+    min-height: 40px;
 }
 .Header_nav--item:hover{
-    font-weight: bold;
+    font-weight:500;
 }
 .perfil_text{
     text-decoration:underline;
+}
+.Header_img{
+    max-width:16%;
+    margin:10px;
+    left: 20px;
+}
+@media(min-width: 1025px){
+    .Header_nav--item{
+        display: block;
+        text-align: right;
+        min-height: auto;
+    }
+    .Header_img{
+    max-width:4%;
+    margin:0px;
+    margin-right:50%;
+    }
 }
