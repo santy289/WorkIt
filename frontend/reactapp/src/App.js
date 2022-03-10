@@ -1,7 +1,7 @@
 import Head from './components/Header.jsx';
 import Layouthome from './components/Layouthome.jsx';
-import HomeBrand from './components/Homebrand.jsx'
-import Categoriescard from './components/Categoriescard.jsx'
+import HomeBrand from './components/HomeBrand/Homebrand.jsx'
+import Categoriescard from './components/CategoriesCard/Categoriescard.jsx'
 import servicesList from './assets/categoriesinfo.json'
 import './App.css';
 
