@@ -1,5 +1,5 @@
 .body-layout{
-    display: none;
+    display: flex;
     flex-direction: column;
     height: 100%;
     background-color: rgb(63, 58, 58);
@@ -18,6 +18,6 @@
     }
     .body-layout--item{
         height: 95.8vh;
-        display: flex;
     }
 }
+
