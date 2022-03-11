@@ -21,8 +21,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-around;
-  padding: 5rem;
+  padding: 4rem;
   width: auto;
 }
 @media (min-width:1025px){
@@ -35,5 +34,6 @@
   }
   .containerCard{
     flex-direction: row;
+    justify-content: space-around;
   }
 }
