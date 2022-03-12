@@ -1,5 +1,6 @@
 import './categoriesCard.scss'
 
+
 function Categoriescard(props){
     const {imageService, nameService}= props.service;
     return(

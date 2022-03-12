@@ -3,7 +3,7 @@
 
 
 #wrap {
-  margin: 50px 100px;
+  margin: 50px 10px;
   display: inline-block;
   position: relative;
   height: 60px;
@@ -39,7 +39,7 @@ input[type="text"]:focus:hover {
 }
 
 input[type="text"]:focus {
-  width: 700px;
+  width: 600px;
   z-index: 1;
   border-bottom: 1px solid blue;
   cursor: text;

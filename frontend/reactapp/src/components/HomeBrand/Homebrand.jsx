@@ -1,5 +1,6 @@
 import './HomeBrand.scss'
 
+
 function HomeBrand(){
     return(
         <section className='brand'>
