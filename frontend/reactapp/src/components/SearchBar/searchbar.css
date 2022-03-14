@@ -42,13 +42,8 @@ input[type="text"]:focus:hover {
 }
 
 input[type="text"]:focus {
-<<<<<<< HEAD
-  width: 350px;
-=======
   background-color: rgb(180, 241, 241);
-  
   width: 600px;
->>>>>>> 86554a52a106c82d08b6775b4055c4e122712e54
   z-index: 1;
   border-bottom: 1px solid blue;
   cursor: text;
