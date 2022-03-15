@@ -1,4 +1,4 @@
-import './HomeBrand.scss'
+import './HomeBrand.styles.scss'
 
 
 function HomeBrand(){

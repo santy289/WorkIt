@@ -1,6 +1,6 @@
-import './header.css';
+import './Header.styles.scss';
 
-function header(){
+function Header(){
     return(
       <header className ="Header_Container">
           <ul className ="Header_nav">
@@ -15,4 +15,4 @@ function header(){
       </header>
     )
 }
-export default header;
+export default Header;
