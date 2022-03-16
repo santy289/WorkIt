@@ -1,7 +1,7 @@
-import './header.css';
-import Sidebar from '../HamburguerMenu/Sidebar';
+import './Header.styles.scss';
+import Sidebar from '../SideBar/Sidebar';
 
-function header(){
+function Header(){
     return(
       <header className ="Header_Container">
         <Sidebar/>
@@ -17,4 +17,4 @@ function header(){
       </header>
     )
 }
-export default header;
+export default Header;

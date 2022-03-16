@@ -1,7 +1,7 @@
-import './categoriesCard.scss'
+import './CategoriesCard.styles.scss'
 
 
-function Categoriescard(props){
+function CategoriesCard(props){
     const {imageService, nameService}= props.service;
     return(
     <section className='containerCard__cardbox'>
@@ -13,4 +13,4 @@ function Categoriescard(props){
     )
 }
 
-export default Categoriescard;
+export default CategoriesCard;

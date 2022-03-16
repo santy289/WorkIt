@@ -1,6 +1,6 @@
-import './layouthome.css'
+import './LayoutHome.styles.scss'
 
-function layouthome(){
+function LayoutHome(){
     return(
         <section className="body-layout">
             <div className="body-layout--item">1</div>
@@ -8,4 +8,4 @@ function layouthome(){
         </section>
     )
 }
-export default layouthome;
+export default LayoutHome;
