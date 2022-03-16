@@ -6,7 +6,7 @@
   opacity: 0.7;
   margin: 30px 10px;
   display: inline-block;
-  position: relative;
+  position:unset;
   height: 60px;
   float: right;
   padding: 0;
@@ -43,7 +43,6 @@ input[type="text"]:focus:hover {
 
 input[type="text"]:focus {
   background-color: rgb(180, 241, 241);
-  
   width: 600px;
   z-index: 1;
   border-bottom: 1px solid blue;
