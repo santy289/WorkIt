@@ -1,5 +1,5 @@
 import './Header.styles.scss';
-import Sidebar from '../HamburguerMenu/Sidebar';
+import Sidebar from '../SideBar/Sidebar';
 
 function Header(){
     return(
