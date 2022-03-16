@@ -1,7 +1,9 @@
-import './Login.styles.scss'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* este comment se arrergla asignando url a los hash en las etiquetas a */
+import './Login.styles.scss';
 
-function Login(){
-  return(
+function Login() {
+  return (
     <form className="form">
       <h2 className="form__title">INICIA SESIÓN</h2>
       <label htmlFor="username">Usuario</label>
@@ -12,7 +14,7 @@ function Login(){
       <input className="form__submit" type="submit" value="INICIAR SESIÓN" />
       <a className="form__link" href="#">Regístrate</a>
     </form>
-  )
+  );
 }
 
-export default Login
+export default Login;

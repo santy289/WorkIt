@@ -1,13 +1,17 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* este comment se arrergla asignando url a los hash en las etiquetas a */
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import './Sidebar.styles.scss';
 
-export default props => {
+function SideBar() {
   return (
     <Menu>
-      <img className ="Header_imgs" 
-      src="https://raw.githubusercontent.com/santy289/WorkIt/develop/frontend/reactapp/src/assets/smalllogowithe.jpg" 
-      alt="" />
+      <img
+        className="Header_imgs"
+        src="https://raw.githubusercontent.com/santy289/WorkIt/develop/frontend/reactapp/src/assets/smalllogowithe.jpg"
+        alt=""
+      />
       <a className="menu-item" to="#">
         Home
       </a>
@@ -28,4 +32,6 @@ export default props => {
       </a>
     </Menu>
   );
-};
+}
+
+export default SideBar;

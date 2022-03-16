@@ -1,7 +1,7 @@
-import './SignUp.styles.scss'
+import './SignUp.styles.scss';
 
-function SignUp(){
-  return(
+function SignUp() {
+  return (
     <form className="form">
       <h2 className="form__title">CREA TU CUENTA</h2>
       <label htmlFor="nombre">Nombre</label>
@@ -17,7 +17,7 @@ function SignUp(){
       <input className="form__submit" type="submit" value="REGÍSTRATE" />
       <a className="form__link" href="login.html">¿Ya tienes una cuenta? Ingresa</a>
     </form>
-  )
+  );
 }
 
-export default SignUp
+export default SignUp;
