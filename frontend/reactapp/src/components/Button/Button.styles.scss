@@ -1,10 +1,19 @@
 .button{
-  background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(220, 220, 255));
+  background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(180, 180, 255));
   border-color: rgb(0, 0, 0);
   border-style: solid;
   border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
   margin: 0.5rem;
   padding: 0.5rem 1rem;
-  font-weight: 500;
   width: auto;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+
+  &:active{
+    transform: scale(.95);
+  }
 }
