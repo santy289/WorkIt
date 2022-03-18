@@ -3,23 +3,24 @@
     {
       "id":1,
       "user": "userTest1",
-      "name": "John",
+      "name": "Andrew",
       "last": "Doe",
       "email": "usertest1@workit.com",
       "country": "United States",
       "city": "San Francisco",
-      "address": "greenvile Street 846"
+      "address": "greenvile Street 846",
+      "picprofile":"https://fakeavatar.net/wp-content/uploads/image.php?image=male-4853eBB9tY0MxmSxVnpa.jpg&gnd=h"
     }
   ],
-  "servicesList": [
+  "userserviceslist": [
     {
       "id": 1,
       "type": "Hogar",
       "service": "Remodelación",
       "image": "https://telemedellin.tv/wp-content/uploads/2020/06/remodelacion-vivienda.jpg",
-      "description": "Remodelación de todo tipo de estructuras hogareñas, con 20 años de experiencia en el servicio.",
+      "description": "Remodelación de estructuras hogareñas. ",
       "price": 4800,
-      "priceType": "total"
+      "priceType": "total del servicio"
     },
     {
       "id": 2,
@@ -28,7 +29,16 @@
       "image": "https://sekade.com/wp-content/uploads/2021/08/tutorias.jpg",
       "description": "English classes with native professor.",
       "price": 20,
-      "priceType": "Per hour"
+      "priceType": "Por hora"
+    },
+    {
+      "id": 3,
+      "type": "Educación",
+      "service": "Tutorías",
+      "image": "https://prod-discovery.edx-cdn.org/media/course/image/d64fa565-a848-4f82-8c07-f2a2d98c3e4e-1cf577279324.small.jpeg",
+      "description": "Clases de Programación.",
+      "price": 30,
+      "priceType": "Por hora"
     }
   ]
 }

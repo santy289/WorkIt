@@ -4,7 +4,9 @@ import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import './Sidebar.styles.scss';
 import smallLogo from '../../assets/smalllogowithe.jpg';
-import { ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE } from '../Constants/Routes';
+import {
+  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
+} from '../Constants/Routes';
 
 function SideBar() {
   return (

@@ -1,13 +1,23 @@
+import React, { useState, useEffect } from 'react';
+import viewUser from '../../services/ViewProfile';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
+  const [user, setUser] = useState({});
+  const showUser = async () => {
+    const data = await viewUser(1);
+    setUser(data);
+  };
+  useEffect(() => {
+    showUser();
+  }, []);
   return (
     <div className="userProfile">
       <div className="containerUser">
         <div className="containerUser_imageContainer">
           <img
             className="containerUser_imageContainer--userImage"
-            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            src={user.picprofile}
             alt="profile"
           />
         </div>
@@ -21,31 +31,31 @@ function UserProfile() {
         <table className="contentProfile_userProfileTable">
           <tr>
             <td>Nombre de Usuario:</td>
-            <td>userTest1</td>
+            <td>{user.user}</td>
           </tr>
           <tr>
             <td>Nombres:</td>
-            <td>Darwin</td>
+            <td>{user.name}</td>
           </tr>
           <tr>
             <td>Apellidos:</td>
-            <td>Pedraza Carvajal</td>
+            <td>{user.last}</td>
           </tr>
           <tr>
             <td>Correo:</td>
-            <td>usertest1@workit.com</td>
+            <td>{user.email}</td>
           </tr>
           <tr>
             <td>País:</td>
-            <td>España</td>
+            <td>{user.country}</td>
           </tr>
           <tr>
             <td>Ciudad:</td>
-            <td>Málaga</td>
+            <td>{user.city}</td>
           </tr>
           <tr>
             <td>Dirección:</td>
-            <td>Avenida siempre viva # 123</td>
+            <td>{user.address}</td>
           </tr>
         </table>
       </div>

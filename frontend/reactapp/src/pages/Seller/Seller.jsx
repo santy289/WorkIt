@@ -1,17 +1,30 @@
-import React from 'react';
-import './Seller.styles.scss';
+import React, { useState, useEffect } from 'react';
+import viewUserService from '../../services/ViewService';
 import CardService from '../../components/CardService/CardService';
-import ToolService from '../../components/ToolService/ToolService';
+import './Seller.styles.scss';
 
 function Seller() {
+  const [services, setServices] = useState([]);
+  const showUserServices = async () => {
+    const data = await viewUserService();
+    setServices(data);
+  };
+  useEffect(() => {
+    showUserServices();
+  }, []);
   return (
     <div className="seller">
       <div className="seller_Title">Mis servicios</div>
       <div className="bodySeller">
         <section className="servicesList">
-          <h1>Panel servicios</h1>
-          <ToolService />
-          <CardService />
+          <h1>Servicios Publicados</h1>
+          <div className="servicesList_cardViewer">
+            {
+              services.map((service) => (
+                <CardService key={service.id} eachService={service} />
+              ))
+            }
+          </div>
         </section>
         <section className="activeClientsList">
           <h1>Panel clientes activos</h1>
