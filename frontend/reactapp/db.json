@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id":1,
+      "user": "userTest1",
+      "name": "John",
+      "last": "Doe",
+      "email": "usertest1@workit.com",
+      "country": "United States",
+      "city": "San Francisco",
+      "address": "greenvile Street 846"
+    }
+  ],
+  "servicesList": [
+    {
+      "id": 1,
+      "type": "Hogar",
+      "service": "Remodelación",
+      "image": "https://telemedellin.tv/wp-content/uploads/2020/06/remodelacion-vivienda.jpg",
+      "description": "Remodelación de todo tipo de estructuras hogareñas, con 20 años de experiencia en el servicio.",
+      "price": 4800,
+      "priceType": "total"
+    },
+    {
+      "id": 2,
+      "type": "Educación",
+      "service": "Tutorías",
+      "image": "https://sekade.com/wp-content/uploads/2021/08/tutorias.jpg",
+      "description": "English classes with native professor.",
+      "price": 20,
+      "priceType": "Per hour"
+    }
+  ]
+}
