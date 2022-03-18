@@ -14,7 +14,7 @@ function Header() {
         <a to="#" className="Header_nav--item">Vender</a>
         <a to="#" className="Header_nav--item">Calendario</a>
         <a to="#" className="Header_nav--item">Carrito</a>
-        <a to="#" className="Header_nav--item perfil_text">Mi perfil</a>
+        <a to="#" className="Header_nav--item perfil_text">Iniciar Sesión</a>
       </ul>
     </header>
   );
