@@ -2,7 +2,9 @@ import './Header.styles.scss';
 import { NavLink } from 'react-router-dom';
 import Sidebar from '../SideBar/Sidebar';
 import smallLogo from '../../assets/smalllogowithe.jpg';
-import { ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE } from '../Constants/Routes';
+import {
+  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
+} from '../Constants/Routes';
 
 function Header() {
   return (
