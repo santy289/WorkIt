@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Sidebar from '../SideBar/Sidebar';
 import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
-  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
+  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_LOGIN,
 } from '../Constants/Routes';
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
         <NavLink to="#" className="Header_nav--item">Calendario</NavLink>
         <NavLink to="#" className="Header_nav--item">Carrito</NavLink>
-        <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item perfil_text">iniciar Sesión</NavLink>
+        <NavLink to={ROUTE_LOGIN} className="Header_nav--item perfil_text">iniciar Sesión</NavLink>
       </ul>
     </header>
   );
