@@ -5,3 +5,5 @@ export const ROUTE_SELLER = '/seller';
 export const ROUTE_USERPROFILE = '/auth/userprofile';
 export const ROUTE_CALENDAR = '/calendar';
 export const ROUTE_SHOPPINGCAR = '/shoppingcar';
+export const ROUTE_LOGIN = '/login';
+export const ROUTE_REGISTER = '/register';

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* este comment se arrergla asignando url a los hash en las etiquetas a */
 import './Login.styles.scss';
