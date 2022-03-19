@@ -1,0 +1,60 @@
+.seller{
+  font-size: 3rem;
+  display: block;
+  &_Title{
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+}
+.bodySeller{
+  width: auto;
+  display: block;
+}
+.servicesList{
+
+  &_cardViewer{
+    display: block;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.438);
+
+    padding: 1rem;
+  }
+}
+.activeClientsList{
+  width: 50%;
+  height: 100vh;
+}
+@media (min-width: 1025px){
+  .seller{
+    font-size: 7rem;
+    &_Title{
+      display: flex;
+      justify-content: center;
+      width: auto;
+    }
+  }
+  .bodySeller{
+    width: auto;
+    height: 100vh;
+    display: flex;
+  }
+  .servicesList{
+    width: 50%;
+    height: 100vh;
+    &_cardViewer{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-color: rgba(255, 255, 255, 0.438);
+      width: 80%;
+      height: 100vh;
+      padding: 2rem;
+    }
+  }
+  .activeClientsList{
+    width: 50%;
+    height: 100vh;
+  }
+}
