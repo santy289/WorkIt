@@ -5,7 +5,7 @@ import './CardService.styles.scss';
 
 function CardService(props) {
   const {
-    service, image, type, description, price, priceType,
+    service, image, price, priceType,
   } = props.eachService;
   return (
     <div className="cardService">
@@ -17,14 +17,6 @@ function CardService(props) {
           <h1>Servicio:</h1>
           {service}
         </div>
-        <div className="cardService_infoServiceList--typeService">
-          <h2>Tipo:</h2>
-          {type}
-        </div>
-        <div className="cardService_infoServiceList--description">
-          <h1>Descripción:</h1>
-          <p>{description}</p>
-        </div>
         <div className="cardService_infoServiceList--pricing">
           <h2>Costo:</h2>
           {price}
@@ -35,5 +27,4 @@ function CardService(props) {
     </div>
   );
 }
-
 export default CardService;

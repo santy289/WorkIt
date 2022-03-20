@@ -40,5 +40,37 @@
       "price": 30,
       "priceType": "Por hora"
     }
+  ],
+  "clientrequest": [
+    {
+      "id": 1,
+      "name": "Andrea",
+      "last": "Sabogal Villalobos",
+      "servicerequested":"Remodelación"
+    },
+    {
+      "id": 2,
+      "name": "Mario",
+      "last": "Gomez",
+      "servicerequested":"Remodelación"
+    },
+    {
+      "id": 3,
+      "name": "Patricia",
+      "last": "Leon Barrios",
+      "servicerequested":"Remodelación"
+    },
+    {
+      "id": 4,
+      "name": "Katherine",
+      "last": "Ramirez Acero",
+      "servicerequested":"Remodelación"
+    },
+    {
+      "id": 5,
+      "name": "Paola",
+      "last": "Lozada",
+      "servicerequested":"Remodelación"
+    }
   ]
 }
