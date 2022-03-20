@@ -17,7 +17,7 @@ function Header() {
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
         <NavLink to="#" className="Header_nav--item">Calendario</NavLink>
         <NavLink to="#" className="Header_nav--item">Carrito</NavLink>
-        <NavLink to={ROUTE_LOGIN} className="Header_nav--item perfil_text">iniciar Sesión</NavLink>
+        <NavLink to={ROUTE_LOGIN} className="Header_nav--item perfil_text">Iniciar Sesión</NavLink>
       </ul>
     </header>
   );
