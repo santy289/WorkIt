@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import viewUserService from '../../services/ViewService';
+import { viewUserService, viewClientRequest } from '../../services/ViewService';
+import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
 import CardService from '../../components/CardService/CardService';
 import './Seller.styles.scss';
 
 function Seller() {
   const [services, setServices] = useState([]);
+  const [requests, setRequests] = useState([]);
   const showUserServices = async () => {
     const data = await viewUserService();
     setServices(data);
   };
+  const ClientRequest = async () => {
+    const data = await viewClientRequest();
+    setRequests(data);
+  };
   useEffect(() => {
     showUserServices();
+    ClientRequest();
   }, []);
   return (
     <div className="seller">
@@ -27,7 +34,14 @@ function Seller() {
           </div>
         </section>
         <section className="activeClientsList">
-          <h1>Panel clientes activos</h1>
+          <h1>Clientes interesados en los servicios</h1>
+          <div className="activeClientsList_cardViewer">
+            {
+              requests.map((request) => (
+                <CardClientRequest key={request.id} eachClient={request} />
+              ))
+            }
+          </div>
         </section>
       </div>
 

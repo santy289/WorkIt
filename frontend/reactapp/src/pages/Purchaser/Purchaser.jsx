@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import viewUserService from '../../services/ViewService';
+import { viewUserService } from '../../services/ViewService';
 import CardService from '../../components/CardService/CardService';
-import './Seller.styles.scss';
+import './Purchaser.styles.scss';
 
 function Purchaser() {
   const [services, setServices] = useState([]);
