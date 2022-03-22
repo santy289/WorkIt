@@ -1,0 +1,48 @@
+$soft-blue: rgb(220, 220, 255);
+$dark-blue: rgb(0, 25, 65);
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.shoppingcart__card {
+  background-color: $soft-blue;
+  border-color: $dark-blue;
+  border-radius: 1rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  height: auto;
+  width: 20rem;
+}
+
+.shoppingcart__content {
+  margin: auto;
+  padding: 1rem 0rem;
+  width: 80%;
+}
+
+.shoppingcart__title {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+
+.shoppingcart__items {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.shoppingcart__total {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppingcart__purchase {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
