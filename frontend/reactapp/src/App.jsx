@@ -1,12 +1,9 @@
 import React from 'react';
-import Modal from './components/Modal/Modal';
-import SignUp from './components/SignUp/SignUp';
+import MainRouter from './routes/MainRouter';
 
 function App() {
   return (
-    <Modal>
-      <SignUp />
-    </Modal>
+    <MainRouter />
   );
 }
 
