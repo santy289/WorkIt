@@ -1,0 +1,232 @@
+.containerFilter{
+display: inline;
+align-items: center;
+justify-content: center;  
+
+
+.types{
+  display: flex;
+  align-content: space-between;
+  
+}
+
+}
+
+.box {
+  display: block;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 150px;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: gray;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  
+  font-family: FontAwesome;
+  position: absolute;
+  
+  
+  
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+.checkbox {
+    margin-left: 50px;
+    --border-default: #bbbbc1;
+    --border-hover: #9898a3;
+    --active: #6E7BF2;
+    --active-tick: #ffffff;
+    display: inline;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    
+    -webkit-tap-highlight-color: transparent;
+    svg {
+        display: block;
+        position: absolute;
+    }
+    input {
+        
+        outline: none;
+        border: none;
+        padding: 0;
+        
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 36% / 36%;
+        box-shadow: inset 0 0 0 1.5px var(--border, var(--border-default));
+        background: var(--background, transparent);
+        transition: box-shadow .25s linear;
+        & + svg {
+            width: 21px;
+            height: 18px;
+            left: 0;
+            top: 0;
+            color: var(--active);
+            .tick {
+                stroke-dasharray: 20;
+                stroke-dashoffset: var(--stroke-dashoffset, 20);
+                transition: stroke-dashoffset .2s;
+                &.mask { 
+                    stroke: var(--active-tick);
+                }
+            }
+            & + svg {
+                width: 11px;
+                height: 11px;
+                fill: none;
+                stroke: var(--active);
+                stroke-width: 1.25;
+                stroke-linecap: round;
+                top: -6px;
+                right: -10px;
+                stroke-dasharray: 4.5px;
+                stroke-dashoffset: 13.5px;
+                pointer-events: none;
+                animation: var(--animation, none) .2s ease .175s;
+            }
+        }
+        &:checked {
+            --background: var(--active);
+            --border: var(--active);
+            & + svg {
+                --stroke-dashoffset: 0;
+                & + svg {
+                    --animation: check;
+                }
+            }
+        }
+    }
+    &:hover {
+        input {
+            &:not(:checked) {
+                --border: var(--border-hover);
+            }
+        }
+    }
+}
+.checkbox {
+  --border-default: #bbbbc1;
+  --border-hover: #9898a3;
+  --active: gray;
+  --active-tick: #ffffff;
+  
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+  svg {
+      
+      position: absolute;
+  }
+  input {
+      
+      outline: none;
+      border: none;
+      padding: 0;
+     
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 36% / 36%;
+      box-shadow: inset 0 0 0 1.5px var(--border, var(--border-default));
+      background: var(--background, transparent);
+      transition: background .25s linear, box-shadow .25s linear;
+      & + svg {
+          width: 21px;
+          height: 18px;
+          left: 0;
+          top: 0;
+          color: var(--active);
+          .tick {
+              stroke-dasharray: 20;
+              stroke-dashoffset: var(--stroke-dashoffset, 20);
+              transition: stroke-dashoffset .2s;
+              &.mask { 
+                  stroke: var(--active-tick);
+              }
+          }
+          & + svg {
+              width: 11px;
+              height: 11px;
+              fill: none;
+              stroke: var(--active);
+              stroke-width: 1.25;
+              stroke-linecap: round;
+              top: -6px;
+              right: -10px;
+              stroke-dasharray: 4.5px;
+              stroke-dashoffset: 13.5px;
+              pointer-events: none;
+              animation: var(--animation, none) .2s ease .175s;
+          }
+      }
+      &:checked {
+          --background: var(--active);
+          --border: var(--active);
+          & + svg {
+              --stroke-dashoffset: 0;
+              & + svg {
+                  --animation: check;
+              }
+          }
+      }
+  }
+  &:hover {
+      input {
+          &:not(:checked) {
+              --border: var(--border-hover);
+          }
+      }
+  }
+}
+
+
+@keyframes check {
+    100% {
+        stroke-dashoffset: 4.5px;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
