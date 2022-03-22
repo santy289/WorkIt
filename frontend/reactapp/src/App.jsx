@@ -1,5 +1,5 @@
 import React from 'react';
-import Mainrouter from './components/Mainrouter/Mainrouter';
+import Mainrouter from './routes/MainRouter';
 
 function App() {
   return (
