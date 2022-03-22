@@ -1,5 +1,4 @@
 export const ROUTE_HOME = '/';
-export const ROUTE_LANDING = '/landing-page';
 export const ROUTE_PURCHASER = '/purchases';
 export const ROUTE_SELLER = '/sales';
 export const ROUTE_USERPROFILE = '/auth/profile';
