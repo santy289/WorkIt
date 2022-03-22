@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* este comment se arrergla asignando url a los hash en las etiquetas a */
+import Button from '../Button/Button';
 import './Login.styles.scss';
 
 function Login() {
@@ -12,7 +13,7 @@ function Login() {
       <label htmlFor="password">Contraseña</label>
       <input className="form__text" type="password" id="password" name="password" />
       <a className="form__link" href="#">¿Olvidaste tu contraseña?</a>
-      <input className="form__submit" type="submit" value="INICIAR SESIÓN" />
+      <Button className="form__submit" type="submit" text="INICIAR SESIÓN" />
       <a className="form__link" href="#">Regístrate</a>
     </form>
   );
