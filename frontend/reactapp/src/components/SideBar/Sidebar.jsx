@@ -6,7 +6,7 @@ import './Sidebar.styles.scss';
 import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_LOGIN,
-} from '../Constants/Routes';
+} from '../../routes/routes';
 
 function SideBar() {
   return (

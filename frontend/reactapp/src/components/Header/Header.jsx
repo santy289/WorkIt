@@ -5,7 +5,7 @@ import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_LOGIN,
   ROUTE_SIGNUP, ROUTE_USERPROFILE,
-} from '../Constants/Routes';
+} from '../../routes/routes';
 
 function Header() {
   return (
