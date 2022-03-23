@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import Button from '../Button/Button';
 import './SignUp.styles.scss';
 
 function SignUp() {
@@ -15,7 +16,7 @@ function SignUp() {
       <input className="form__text" type="mail" id="mail" name="mail" />
       <label htmlFor="password">Contraseña</label>
       <input className="form__text" type="password" id="password" name="password" />
-      <input className="form__submit" type="submit" value="REGÍSTRATE" />
+      <Button className="form__submit" text="REGÍSTRATE" type="submit" />
       <a className="form__link" href="login.html">¿Ya tienes una cuenta? Ingresa</a>
     </form>
   );

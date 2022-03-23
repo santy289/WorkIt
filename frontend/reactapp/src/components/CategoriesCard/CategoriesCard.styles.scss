@@ -1,5 +1,3 @@
-*{margin: 0; padding: 0; font-size: 62.5%}
-
 .containerCard__cardbox{
     height: 35%;
     padding-top: 1rem;
@@ -17,7 +15,7 @@
     color: white;
     font-family:Helvetica, sans-serif;
     font-size: 2.3rem;
-    padding: 2rem;
+    padding: 2rem 0rem;
     position: absolute;
     text-align: center;
     top: 1rem;
@@ -31,7 +29,7 @@
         width: 19%;
     }
     .containerCard__cardbox--nameService{
-        padding: 1rem;
+        padding: 1rem 0rem;
         top: 0;
     }
 }

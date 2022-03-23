@@ -5,7 +5,7 @@ import { slide as Menu } from 'react-burger-menu';
 import './Sidebar.styles.scss';
 import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
-  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_LOGIN,
+  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER,
 } from '../../routes/routes';
 
 function SideBar() {
@@ -17,7 +17,6 @@ function SideBar() {
       <a className="menu-item" to={ROUTE_SELLER}> Vender </a>
       <a className="menu-item" to="#"> Calendario </a>
       <a className="menu-item" to="#"> Carrito </a>
-      <a className="menu-item" to={ROUTE_LOGIN}> Mi perfil </a>
     </Menu>
   );
 }
