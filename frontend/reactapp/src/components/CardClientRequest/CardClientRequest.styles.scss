@@ -10,20 +10,28 @@
     font-size: 1rem;
   }
   &_servicerequested{
+
     width: 35%;
     padding: 0rem 1rem 0rem 1rem;
     font-size: 1rem;
   }
   &_buttonsBar{
-    width: 25%;
+    width: 50%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     &--button{
-      width:3rem;
-      height: 1.5rem;
-      font-size: 72%;
+      background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(180, 180, 255));
+      border-color: rgb(0, 0, 0);
+      border-style: solid;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 500;
+      margin: 0.5rem;
+      padding: 0rem 1rem;
+      width: auto;
     }
   }
 }
@@ -48,11 +56,20 @@
       height: auto;
       display: flex;
       justify-content: center;
+      gap:15px;
       align-items: center;
+      margin-right: 10px;
       &--button{
-        width:3rem;
-        height: 1.5rem;
-        font-size: 72%;
+        background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(180, 180, 255));
+        border-color: rgb(0, 0, 0);
+        border-style: solid;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        margin: 0.5rem;
+        padding: 0rem 1rem;
+        width: auto;
       }
     }
   }

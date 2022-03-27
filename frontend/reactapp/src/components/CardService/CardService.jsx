@@ -14,14 +14,14 @@ function CardService(props) {
       </div>
       <div className="cardService_infoServiceList">
         <div className="cardService_serviceTitle">
-          <h1>Servicio:</h1>
-          {service}
+          <h2 className="card_tittle">Servicio:</h2>
+          <p className="card_info">{service}</p>
         </div>
         <div className="cardService_infoServiceList--pricing">
-          <h2>Costo:</h2>
-          {price}
-          <h2>Tipo de costo:</h2>
-          {priceType}
+          <h2 className="card_tittle">Precio:</h2>
+          <p className="card_info">{price}</p>
+          <h2 className="card_tittle">Tipo de cobro:</h2>
+          <p className="card_info">{priceType}</p>
         </div>
       </div>
     </div>

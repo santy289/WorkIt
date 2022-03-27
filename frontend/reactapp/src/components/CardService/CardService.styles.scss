@@ -1,7 +1,9 @@
 .cardService{
   display: flex;
+  margin: 20px;
   background-color: rgba(2, 2, 2, 0.377);
   border-radius: 0.5rem;
+  text-align: center;
   &_serviceTitle{
     width: auto;
   }
@@ -18,11 +20,21 @@
   &_infoServiceList{
     padding: 0rem 1rem 0rem 1rem;
     font-size: 2rem;
+    margin: auto;
   }
+}
+.card_tittle{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.card_info{
+  font-size: 1rem;
 }
 
 @media (min-width: 1025px){
   .cardService{
+    margin: 0;
     &_serviceTitle{
       width: 60%;
     }
@@ -32,6 +44,7 @@
     }
     &_infoServiceList{
       font-size: 2.3rem;
+      text-align: left;
     }
   }
 }

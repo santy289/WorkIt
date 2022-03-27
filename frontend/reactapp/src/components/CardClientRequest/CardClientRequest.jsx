@@ -10,7 +10,7 @@ function CardClientRequest(props) {
   return (
     <div className="cardClientRequest">
       <div className="cardClientRequest_userData">
-        <h1>Nombre:</h1>
+        <h2>Nombre:</h2>
         {name}
         {' '}
         {last}
