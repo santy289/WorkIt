@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { viewUserService } from '../../services/ViewService';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
-import './Purchaser.styles.scss';
+import './Purchaserstyles.scss';
 
 function Purchaser() {
   const [services, setServices] = useState([]);
@@ -16,12 +16,12 @@ function Purchaser() {
   return (
     <>
       <Header />
-      <div className="seller">
-        <div className="seller_Title">Mis servicios</div>
-        <div className="bodySeller">
-          <section className="servicesList">
+      <div className="purcasher">
+        <div className="purcasher_Title">BUSQUEDA DE SERVICIOS</div>
+        <div className="bodypurcasher">
+          <section className="purcasher_servicesList">
             <h1>Servicios disponibles</h1>
-            <div className="servicesList_cardViewer">
+            <div className="purcasher_servicesList--cardViewer">
               {
                 services.map((service) => (
                   <CardService key={service.id} eachService={service} />
@@ -29,8 +29,8 @@ function Purchaser() {
               }
             </div>
           </section>
-          <section className="activeClientsList">
-            <h1>Panel clientes activos</h1>
+          <section className="purcasher_servicesList">
+            <h1>Carrito de compra</h1>
           </section>
         </div>
       </div>
