@@ -13,7 +13,7 @@ $dark-blue: rgb(0, 25, 65);
   border-width: 0.2rem;
   border-style: solid;
   height: auto;
-  width: 20rem;
+  width: 80%;
 }
 
 .shoppingcart__content {
@@ -24,14 +24,21 @@ $dark-blue: rgb(0, 25, 65);
 
 .shoppingcart__title {
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   display: flex;
+  font-size: 3rem;
+  gap: 1rem;
+  padding: 2rem 0rem;
 }
 
 
-.shoppingcart__items {
+.shoppingcart__list {
   display: flex;
   flex-direction: column;
+}
+
+.shoppingcart__item {
+  padding: 1rem 0rem;
 }
 
 
@@ -39,10 +46,12 @@ $dark-blue: rgb(0, 25, 65);
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding: 2rem 0rem;
 }
 
 .shoppingcart__purchase {
   align-items: center;
   display: flex;
   justify-content: center;
+  padding: 2rem 0rem;
 }
