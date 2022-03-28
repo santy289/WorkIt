@@ -10,10 +10,10 @@ function ShoppingCart() {
           <h2>Carrito de compras</h2>
           <span><img src={cart} alt="cart" className="icon" /></span>
         </div>
-        <div className="shoppingcart__items">
-          <p>Item 1</p>
-          <p>Item 2</p>
-          <p>Item 3</p>
+        <div className="shoppingcart__list">
+          <p className="shoppingcart__item">Item 1</p>
+          <p className="shoppingcart__item">Item 2</p>
+          <p className="shoppingcart__item">Item 3</p>
         </div>
         <div className="shoppingcart__total">
           <h4>Total: </h4>
