@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { viewUserService } from '../../services/ViewService';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
+import Filter from '../../components/FIlter/Filter';
 import './Purchaserstyles.scss';
 
 function Purchaser() {
@@ -16,6 +17,7 @@ function Purchaser() {
   return (
     <>
       <Header />
+      <Filter />
       <div className="purcasher">
         <div className="purcasher_Title">BUSQUEDA DE SERVICIOS</div>
         <div className="bodypurcasher">

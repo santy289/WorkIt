@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "core-js-compat": "^3.4.7",
+    "node": "^17.7.1",
+    "nodemon": "^2.0.15",
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-burger-menu": "3.0.6",
