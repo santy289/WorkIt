@@ -6,14 +6,14 @@ const {
     updateTask,
   } = require('./task.service')
   
-  function handlerAllTask(req, res) {
-    const tasks = getAllTask();
+  async function handlerAllTask(req, res) {
+    const tasks = await getAllTask();
     res.json(tasks);
   }
   
-  function handlerOneTask(req, res) {
+  async function handlerOneTask(req, res) {
     const id = req.params.id;
-    const task = getOneTask(id);
+    const task = await getOneTask(id);
   
     if (!task) {
       res.status(404).json({ message: `Task not found with id: ${id}` });
@@ -22,9 +22,9 @@ const {
     }
   }
   
-  function handlerDeleteTask(req, res) {
+  async function handlerDeleteTask(req, res) {
     const id = req.params.id;
-    const task = deleteTask(id);
+    const task = await deleteTask(id);
   
     if (!task) {
       res.status(404).json({ message: `Task not found with id: ${id}` });
@@ -33,27 +33,27 @@ const {
     }
   }
   
-  function handlerCreateTask(req, res) {
+  async function handlerCreateTask(req, res) {
     const newTask = req.body;
   
     if (!newTask.title) {
-      res.status(400).json({ message: 'Title is required' });
+     await res.status(400).json({ message: 'Title is required' });
     }
   
     if (!newTask.description) {
-      res.status(400).json({ message: 'Description is required' });
+     await res.status(400).json({ message: 'Description is required' });
     }
   
-    const task = createTask(newTask);
+    const task = await createTask(newTask);
   
     return res.status(201).json(task);
   }
   
-  function handlerUpdateTask(req, res) {
+  async function handlerUpdateTask(req, res) {
     const id = req.params.id;
     const { body } = req;
   
-    const task = updateTask(id, body);
+    const task = await updateTask(id, body);
   
     if (!task) {
       res.status(404).json({ message: `Task not found with id: ${id}` });
