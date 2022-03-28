@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { viewUserService } from '../../services/ViewService';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
+import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import './Purchaserstyles.scss';
 
 function Purchaser() {
@@ -31,6 +32,9 @@ function Purchaser() {
           </section>
           <section className="purcasher_servicesList">
             <h1>Carrito de compra</h1>
+            <div className="purcasher__shoppingcart">
+              <ShoppingCart />
+            </div>
           </section>
         </div>
       </div>
