@@ -6,7 +6,7 @@ const getAllUsers = async () => {
 const getUserById = async (id) => {
     const user = await UserModel.findById(id);
     if (!user) {
-        throw new Error(`User with id ${id} not found`);
+        return null;
     }
     return user;
 }
