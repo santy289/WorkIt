@@ -1,7 +1,7 @@
 import { React } from 'react';
 import './Filter.styles.scss';
 
-function filter() {
+function Filter() {
   return (
     <div className="containerFilter">
       <div className="box">
@@ -45,4 +45,4 @@ function filter() {
   );
 }
 
-export default filter;
+export default Filter;
