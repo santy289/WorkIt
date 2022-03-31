@@ -20,7 +20,7 @@ function Purchaser() {
       <div className="purcasher">
         <div className="purcasher_Title">BUSQUEDA DE SERVICIOS</div>
         <div className="bodypurcasher">
-          <section className="purcasher_servicesList">
+          <section className="purcasher_servicesList--left">
             <h1>Servicios disponibles</h1>
             <div className="purcasher_servicesList--cardViewer">
               {
@@ -30,7 +30,7 @@ function Purchaser() {
               }
             </div>
           </section>
-          <section className="purcasher_servicesList">
+          <section className="purcasher_servicesList--right">
             <h1>Carrito de compra</h1>
             <div className="purcasher__shoppingcart">
               <ShoppingCart />
