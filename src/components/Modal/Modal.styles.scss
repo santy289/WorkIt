@@ -13,13 +13,16 @@
   height: auto;
   justify-content: center;
   margin: auto;
-  padding: 3rem;
+  padding: 2rem;
   position: relative;
   top: 15%;
   width: 80%;
 }
 
 .modal__close{
+  cursor: pointer;
+  background-color: transparent;
+  border-width: 0rem;
   font-size: 5rem;
   font-weight: bold;
   position: absolute;

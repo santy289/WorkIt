@@ -6,15 +6,14 @@ import './Login.styles.scss';
 
 function Login() {
   return (
-    <form className="form">
-      <h2 className="form__title">INICIA SESIÓN</h2>
-      <label htmlFor="username">Usuario</label>
-      <input className="form__text" type="text" id="username" name="username" />
-      <label htmlFor="password">Contraseña</label>
-      <input className="form__text" type="password" id="password" name="password" />
-      <a className="form__link" href="#">¿Olvidaste tu contraseña?</a>
-      <Button className="form__submit" type="submit" text="INICIAR SESIÓN" />
-      <a className="form__link" href="#">Regístrate</a>
+    <form className="login">
+      <h2 className="login__title">INICIA SESIÓN</h2>
+      <label className="login__text" htmlFor="username">Usuario</label>
+      <input type="text" id="username" name="username" />
+      <label className="login__text" htmlFor="password">Contraseña</label>
+      <input type="password" id="password" name="password" />
+      <a className="login__link" href="#">¿Olvidaste tu contraseña?</a>
+      <Button className="login__submit" type="submit" text="INICIAR SESIÓN" />
     </form>
   );
 }
