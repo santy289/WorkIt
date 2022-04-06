@@ -1,6 +1,11 @@
+$white: rgb(255, 255, 255);
+$soft-grey: rgb(200, 200, 200);
+$dark-grey: rgb(150, 150, 150);
+$black: rgb(0, 0, 0);
+
 .button{
-  background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(180, 180, 255));
-  border-color: rgb(0, 0, 0);
+  background-image: linear-gradient(to bottom right, $white, $soft-grey);
+  border-color: black;
   border-style: solid;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -9,7 +14,7 @@
   width: auto;
 
   &:hover{
-    background-image: linear-gradient(to bottom right, rgb(255, 255, 255),rgb(120, 120, 255));
+    background-image: linear-gradient(to bottom right, $white, $dark-grey);
     transform: scale(1.05);
   }
 
