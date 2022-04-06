@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
-  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
+  ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE, ROUTE_LOGIN, ROUTE_SIGNUP,
 } from './routes';
 import Home from '../pages/Home/Home';
 import Page404 from '../pages/Page404/Page404';
 import Purchaser from '../pages/Purchaser/Purchaser';
 import Seller from '../pages/Seller/Seller';
 import UserProfile from '../pages/UserProfile/UserProfile';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import SignUpPage from '../pages/SignUpPage/SignUpPage';
 
 function Mainrouter() {
   return (
@@ -18,6 +20,8 @@ function Mainrouter() {
         <Route path={ROUTE_PURCHASER} element={<Purchaser />} />
         <Route path={ROUTE_SELLER} element={<Seller />} />
         <Route path={ROUTE_USERPROFILE} element={<UserProfile />} />
+        <Route path={ROUTE_LOGIN} element={<LoginPage />} />
+        <Route path={ROUTE_SIGNUP} element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   );

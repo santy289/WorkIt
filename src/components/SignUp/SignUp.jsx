@@ -4,20 +4,19 @@ import './SignUp.styles.scss';
 
 function SignUp() {
   return (
-    <form className="form">
-      <h2 className="form__title">CREA TU CUENTA</h2>
-      <label htmlFor="nombre">Nombre</label>
-      <input className="form__text" type="text" id="nombre" name="nombre" />
-      <label htmlFor="apellido">Apellido</label>
-      <input className="form__text" type="text" id="apellido" name="apellido" />
-      <label htmlFor="username">Usuario</label>
-      <input className="form__text" type="text" id="username" name="username" />
-      <label htmlFor="mail">Correo electrónico</label>
-      <input className="form__text" type="mail" id="mail" name="mail" />
-      <label htmlFor="password">Contraseña</label>
-      <input className="form__text" type="password" id="password" name="password" />
-      <Button className="form__submit" text="REGÍSTRATE" type="submit" />
-      <a className="form__link" href="login.html">¿Ya tienes una cuenta? Ingresa</a>
+    <form className="signup">
+      <h2 className="signup__title">CREA TU CUENTA</h2>
+      <label className="signup__text" htmlFor="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" />
+      <label className="signup__text" htmlFor="apellido">Apellido</label>
+      <input type="text" id="apellido" name="apellido" />
+      <label className="signup__text" htmlFor="username">Usuario</label>
+      <input type="text" id="username" name="username" />
+      <label className="signup__text" htmlFor="mail">Correo electrónico</label>
+      <input type="mail" id="mail" name="mail" />
+      <label className="signup__text" htmlFor="password">Contraseña</label>
+      <input type="password" id="password" name="password" />
+      <Button className="signup__text" text="REGÍSTRATE" type="submit" />
     </form>
   );
 }
