@@ -9,31 +9,32 @@ $black: rgb(0, 0, 0);
   position: fixed;
   width: 100%;
   z-index: 10;
+
+  &__content{
+    display: flex;
+    background-color: $soft-grey;
+    border-radius: 1rem;
+    height: auto;
+    justify-content: center;
+    margin: auto;
+    padding: 2rem;
+    position: relative;
+    top: 5%;
+    width: 80%;
+  }
+
+  &__close{
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 0rem;
+    font-size: 5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+  }
 }
 
-.modal__content{
-  display: flex;
-  background-color: $soft-grey;
-  border-radius: 1rem;
-  height: auto;
-  justify-content: center;
-  margin: auto;
-  padding: 2rem;
-  position: relative;
-  top: 5%;
-  width: 80%;
-}
-
-.modal__close{
-  cursor: pointer;
-  background-color: transparent;
-  border-width: 0rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: absolute;
-  top: 2%;
-  right: 5%;
-}
 
 @media(min-width: 576px){
   .modal__content{
