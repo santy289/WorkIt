@@ -18,6 +18,7 @@ $black: rgb(0, 0, 0);
   }
 
   &:active{
+    background-image: linear-gradient(to bottom right, $white, $dark-grey);
     transform: scale(0.98);
   }
 }
