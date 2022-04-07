@@ -1,6 +1,6 @@
-$white: rgb(255, 255, 255);
-$soft-grey: rgb(200, 200, 200);
-$dark-grey: rgb(150, 150, 150);
+$white: rgb(242, 242, 242);
+$soft-grey: rgb(191, 191, 191);
+$dark-grey: rgb(130, 130, 130);
 $black: rgb(0, 0, 0);
 
 .button{
@@ -9,16 +9,15 @@ $black: rgb(0, 0, 0);
   border-style: solid;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-weight: 500;
   padding: 0.5rem 1rem;
   width: auto;
 
   &:hover{
     background-image: linear-gradient(to bottom right, $white, $dark-grey);
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   &:active{
-    transform: scale(.95);
+    transform: scale(0.98);
   }
 }

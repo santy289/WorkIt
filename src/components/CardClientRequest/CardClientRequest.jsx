@@ -1,6 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Button from '../Button/Button';
 import './CardClientRequest.styles.scss';
 
 function CardClientRequest(props) {
@@ -20,8 +21,8 @@ function CardClientRequest(props) {
         {servicerequested}
       </div>
       <div className="cardClientRequest_buttonsBar">
-        <button className="cardClientRequest_buttonsBar--button" type="button">Agendar</button>
-        <button className="cardClientRequest_buttonsBar--button" type="button">Chat</button>
+        <Button text="Agendar" />
+        <Button text="Chat" />
       </div>
     </div>
   );
