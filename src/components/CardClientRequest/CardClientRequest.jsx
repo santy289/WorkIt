@@ -11,13 +11,13 @@ function CardClientRequest(props) {
   return (
     <div className="cardClientRequest">
       <div className="cardClientRequest_userData">
-        <h2>Nombre:</h2>
+        <h3>Nombre:</h3>
         {name}
         {' '}
         {last}
       </div>
       <div className="cardClientRequest_servicerequested">
-        <h2>Servicio Requerido:</h2>
+        <h3>Servicio Requerido:</h3>
         {servicerequested}
       </div>
       <div className="cardClientRequest_buttonsBar">

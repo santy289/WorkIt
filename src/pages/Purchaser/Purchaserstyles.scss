@@ -39,10 +39,14 @@
   height: 100%;
 }
 
+.purcasher__shoppingcart{
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 1025px){
   .purcasher{
     max-height: 95.3vh;
-    font-size: 7rem;
     &_Title{
       display: flex;
       justify-content: center;
