@@ -7,4 +7,3 @@ export const ROUTE_SHOPPINGCAR = '/shoppingcart';
 export const ROUTE_404 = '/404-not-found';
 export const ROUTE_LOGIN = '/login';
 export const ROUTE_SIGNUP = '/sign-up';
-export const ROUTE_CHECKOUT = '/checkout';

@@ -1,7 +1,7 @@
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://workit-api.herokuapp.com/';
 export const viewUserService = async () => {
   try {
-    const response = await fetch(`${API_URL}/userserviceslist/`);
+    const response = await fetch(`${API_URL}api/service`);
     const data = await response.json();
     return data;
   } catch (error) {
