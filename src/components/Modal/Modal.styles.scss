@@ -1,43 +1,36 @@
+$white: rgb(242, 242, 242);
+$soft-grey: rgb(191, 191, 191);
+$dark-grey: rgb(130, 130, 130);
+$black: rgb(0, 0, 0);
+
 .modal{
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   position: fixed;
   width: 100%;
   z-index: 10;
-}
 
-.modal__content{
-  display: flex;
-  background-color: rgb(220, 220, 255);
-  border-radius: 1rem;
-  height: auto;
-  justify-content: center;
-  margin: auto;
-  padding: 2rem;
-  position: relative;
-  top: 5%;
-  width: 80%;
-}
-
-.modal__close{
-  cursor: pointer;
-  background-color: transparent;
-  border-width: 0rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: absolute;
-  top: 2%;
-  right: 5%;
-}
-
-@media(min-width: 576px){
-  .modal__content{
-    width: 60%;
+  &__content{
+    display: flex;
+    background-color: $soft-grey;
+    border-radius: 1rem;
+    height: auto;
+    justify-content: center;
+    margin: auto;
+    padding: 4rem;
+    position: relative;
+    top: 3%;
+    width: 30%;
   }
-}
 
-@media(min-width: 768px){
-  .modal__content{
-    width: 50%;
+  &__close{
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 0rem;
+    font-size: 5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    right: 5%;
   }
 }
