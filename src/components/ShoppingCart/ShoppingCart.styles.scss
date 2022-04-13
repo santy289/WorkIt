@@ -1,16 +1,18 @@
-$soft-blue: rgb(220, 220, 255);
-$dark-blue: rgb(0, 25, 65);
+$white: rgb(255, 255, 255);
+$soft-grey: rgb(200, 200, 200);
+$dark-grey: rgb(150, 150, 150);
+$black: rgb(0, 0, 0);
 
 .icon {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .shoppingcart__card {
-  background-color: $soft-blue;
-  border-color: $dark-blue;
+  background-color: $soft-grey;
+  border-color: $black;
   border-radius: 1rem;
-  border-width: 0.2rem;
+  border-width: 0.3rem;
   border-style: solid;
   height: auto;
   width: 80%;
@@ -26,9 +28,9 @@ $dark-blue: rgb(0, 25, 65);
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 3rem;
+  font-size: 2rem;
   gap: 1rem;
-  padding: 2rem 0rem;
+  margin: 2rem 0rem;
 }
 
 
@@ -38,6 +40,7 @@ $dark-blue: rgb(0, 25, 65);
 }
 
 .shoppingcart__item {
+  font-size: 1.7rem;
   padding: 1rem 0rem;
 }
 
@@ -45,6 +48,7 @@ $dark-blue: rgb(0, 25, 65);
 .shoppingcart__total {
   align-items: center;
   display: flex;
+  font-size: 1.7rem;
   justify-content: space-between;
   padding: 2rem 0rem;
 }

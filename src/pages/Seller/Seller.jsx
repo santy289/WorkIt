@@ -24,7 +24,7 @@ function Seller() {
     <>
       <Header />
       <div className="seller">
-        <div className="seller_Title">Mis servicios</div>
+        <div className="seller_Title">MIS SERVICIOS</div>
         <div className="bodySeller">
           <section className="servicesList">
             <h1>Servicios Publicados</h1>
