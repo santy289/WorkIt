@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Header from '../../components/Header/Header';
 import HomeBrand from '../../components/HomeBrand/HomeBrand';
 import CategoriesCard from '../../components/CategoriesCard/CategoriesCard';
@@ -7,32 +6,23 @@ import Modal from '../../components/Modal/Modal';
 import Login from '../../components/Login/Login';
 import SignUp from '../../components/SignUp/SignUp';
 import servicesList from '../../assets/categoriesinfo.json';
+import useModal from '../../hooks/useModal';
 import './Home.styles.scss';
 
 function Home() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
-
-  const toggleLogin = (e) => {
-    e.preventDefault();
-    setShowLogin(!showLogin);
-  };
-
-  const toggleSignUp = (e) => {
-    e.preventDefault();
-    setShowSignUp(!showSignUp);
-  };
+  const { toggle: toggleLogin, show: showLogin } = useModal();
+  const { toggle: toggleSignup, show: showSignup } = useModal();
 
   return (
     <>
-      <Header toggleLogin={toggleLogin} toggleSignUp={toggleSignUp} />
+      <Modal handleClick={toggleLogin} show={showLogin}>
+        <Login />
+      </Modal>
+      <Modal handleClick={toggleSignup} show={showSignup}>
+        <SignUp />
+      </Modal>
+      <Header toggleLogin={toggleLogin} toggleSignUp={toggleSignup} />
       <div className="Home">
-        <Modal handleClick={toggleLogin} show={showLogin}>
-          <Login />
-        </Modal>
-        <Modal handleClick={toggleSignUp} show={showSignUp}>
-          <SignUp />
-        </Modal>
         <SearchBar />
         <HomeBrand />
         <h1 className="containerTitle">Servicios destacados</h1>
