@@ -16,7 +16,7 @@ function SignUp() {
       <input type="mail" id="mail" name="mail" />
       <label className="signup__text" htmlFor="password">Contraseña</label>
       <input type="password" id="password" name="password" />
-      <Button text="REGÍSTRATE" type="submit" />
+      <Button className="signup__text" text="REGÍSTRATE" type="submit" />
     </form>
   );
 }

@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-size:cover;
   height: 100vh;
+  font-size: 3rem;
   display: block;
   text-align: center;
   &_Title{
@@ -21,8 +22,8 @@
 .purcasher_servicesList{
   margin-top: 20px;
 }
-.purcasher_subtitle{
-  font-size: 2rem;
+.purcasher_servicesList h1{
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -39,14 +40,17 @@
   height: 100%;
 }
 
-.purcasher__shoppingcart{
+.purcasher__shoppingcart {
+  align-items: center;
   display: flex;
   justify-content: center;
+  font-size: 10rem;
 }
 
 @media (min-width: 1025px){
   .purcasher{
     max-height: 95.3vh;
+    font-size: 7rem;
     &_Title{
       display: flex;
       justify-content: center;
