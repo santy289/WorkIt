@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { viewUserService, viewClientRequest } from '../../services/ViewService';
 import Header from '../../components/Header/Header';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
@@ -25,9 +26,11 @@ function Seller() {
       <Header />
       <div className="seller">
         <div className="seller_Title">MIS SERVICIOS</div>
-        <div className="seller__create">
-          <p>+</p>
-        </div>
+        <Link to="/service">
+          <span className="seller__create">
+            <p type="button">+</p>
+          </span>
+        </Link>
         <div className="bodySeller">
           <section className="servicesList">
             <h1>Servicios Publicados</h1>

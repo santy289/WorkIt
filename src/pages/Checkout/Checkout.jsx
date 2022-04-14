@@ -4,7 +4,6 @@ function Checkout() {
   return (
     <>
       <Header />
-      <p>Hola, mundo</p>
     </>
   );
 }
