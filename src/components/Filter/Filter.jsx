@@ -13,16 +13,16 @@ function Filter() {
       <p>
         por :
       </p>
-      <form>
-        <label htmlFor="producto">
+      <form className="formcheck">
+        <label className="labelcheck" htmlFor="producto">
           <input id="producto" type="checkbox" name="producto" />
           <span>Producto/servicio</span>
         </label>
-        <label htmlFor="vendedor">
+        <label className="labelcheck" htmlFor="vendedor">
           <input id="vendedor" type="checkbox" name="vendedor" />
           <span>Vendedor</span>
         </label>
-        <label htmlFor="tag">
+        <label className="labelcheck" htmlFor="tag">
           <input id="tag" type="checkbox" name="tag" />
           <span>Tag</span>
         </label>
