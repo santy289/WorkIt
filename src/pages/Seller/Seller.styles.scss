@@ -1,3 +1,8 @@
+$white: rgb(242, 242, 242);
+$soft-grey: rgb(191, 191, 191);
+$dark-grey: rgb(130, 130, 130);
+$black: rgb(0, 0, 0);
+
 .seller{
   background-image: url('../../assets/backgroundStyle2.jpeg');
   background-repeat: no-repeat;
@@ -22,6 +27,23 @@
 .bodySeller{
   width: auto;
   display: block;
+}
+
+.seller__create {
+  align-items: center;
+  background-color: $black;
+  border-radius: 3rem;
+  bottom: 5%;
+  box-shadow: 0.2rem 0.2rem 0.5rem;
+  color: $soft-grey;
+  display: flex;
+  font-weight: 700;
+  font-size: 5rem;
+  height: 6rem;
+  justify-content: center;
+  position: fixed;
+  right: 5%;
+  width: 6rem;
 }
 
 .servicesList{
@@ -85,6 +107,7 @@
       background-color: rgba(255, 255, 255, 0.438);
     }
   }
+
   .activeClientsList{
     margin-left: 5%;
     margin-right: 1%;

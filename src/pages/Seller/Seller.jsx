@@ -25,6 +25,9 @@ function Seller() {
       <Header />
       <div className="seller">
         <div className="seller_Title">MIS SERVICIOS</div>
+        <div className="seller__create">
+          <p>+</p>
+        </div>
         <div className="bodySeller">
           <section className="servicesList">
             <h1>Servicios Publicados</h1>

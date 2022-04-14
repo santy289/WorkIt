@@ -1,0 +1,35 @@
+$white: rgb(242, 242, 242);
+$soft-grey: rgb(191, 191, 191);
+$dark-grey: rgb(130, 130, 130);
+$black: rgb(0, 0, 0);
+
+.signup{
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  &__title{
+    font-size: 2.5rem;
+    margin: 2rem 0rem;
+    text-align: center;
+  }
+
+  &__text{
+    margin: 2rem 0rem 0.5rem 0rem;
+  }
+
+  #password{
+    margin-bottom: 4rem;
+  }
+
+  .signup__input{
+    background-color: $white;
+    border-color: $black;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 0.2rem;
+    font-size: 1.7rem;
+  }
+}

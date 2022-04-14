@@ -9,8 +9,7 @@ $black: rgb(0, 0, 0);
   border-style: solid;
   border-radius: 0.5rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  width: auto;
+  padding: 1rem 1rem;
 
   &:hover{
     background-image: linear-gradient(to bottom right, $white, $dark-grey);
