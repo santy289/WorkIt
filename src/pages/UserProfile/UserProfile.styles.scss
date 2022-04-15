@@ -24,14 +24,14 @@
     }
   }
   .contentProfile{
-    padding: 2rem;
+    padding: 2rem 0rem;
     display: flex;
     justify-content: center;
     width: 100%;
     &_userProfileTable{
       height: 50vh;
       width: 90%;
-      font-size: 5rem;
+      font-size: 1.7rem;
       background-color:rgba(0, 0, 0, 0.13);
       border-radius: 1.5rem;
     }
@@ -56,7 +56,7 @@
     display: flex;
 
     .containerUser{
-      padding: 1rem;
+      padding: 0rem;
       width: 25%;
       border-radius:0;
       &_imageContainer--userImage{
@@ -70,17 +70,18 @@
     .contentProfile{
       align-items: center;
       height: 100vh;
+      padding: 0rem;
       width: 75%;
       &_userProfileTable{
         height: 60vh;
-        font-size: 7rem;
+        font-size: 1.7rem;
         background-color: rgba(255, 255, 255, 0.384);
       }
     }
     .userProfileButton{
       background-color: rgba(22, 22, 219, 0);
       color: white;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 }
