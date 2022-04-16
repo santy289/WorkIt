@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE, ROUTE_LOGIN, ROUTE_SIGNUP,
   ROUTE_CHECKOUT,
+  ROUTE_SERVICECRUD,
 } from './routes';
 import Home from '../pages/Home/Home';
 import Page404 from '../pages/Page404/Page404';
@@ -12,6 +13,7 @@ import UserProfile from '../pages/UserProfile/UserProfile';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import Checkout from '../pages/Checkout/Checkout';
+import ServiceCrud from '../components/ServiceCrud/ServiceCrud';
 
 function Mainrouter() {
   return (
@@ -25,6 +27,7 @@ function Mainrouter() {
         <Route path={ROUTE_LOGIN} element={<LoginPage />} />
         <Route path={ROUTE_SIGNUP} element={<SignUpPage />} />
         <Route path={ROUTE_CHECKOUT} element={<Checkout />} />
+        <Route path={ROUTE_SERVICECRUD} element={<ServiceCrud />} />
       </Routes>
     </BrowserRouter>
   );
