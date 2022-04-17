@@ -21,6 +21,11 @@ $black: rgb(0, 0, 0);
     margin: 2rem 0rem 0.5rem 0rem;
   }
 
+  &__error{
+    color: red;
+    font-size: 1rem;
+  }
+
   &__link{
     margin: 2rem 0rem;
     text-align: center;
