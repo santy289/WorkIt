@@ -7,7 +7,7 @@ function Activate() {
   const navigate = useNavigate();
   useEffect(() => {
     const activate = async () => {
-      const response = await fetch(`http://localhost:8080/auth/local/verify-account/${hash}`);
+      const response = await fetch(`https://workit-api.herokuapp.com/auth/local/verify-account/${hash}`);
       const data = await response.json();
       if (data.token) {
         navigate('/');
