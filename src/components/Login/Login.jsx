@@ -1,15 +1,19 @@
+/* eslint-disable no-alert */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* este comment se arrergla asignando url a los hash en las etiquetas a */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import Button from '../Button/Button';
 import './Login.styles.scss';
+import { loginService } from '../../services';
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{
@@ -27,7 +31,17 @@ function Login() {
         return errors;
       }}
       onSubmit={(values) => {
-        console.log(values);
+        const login = async () => {
+          const response = await loginService(values);
+          const data = await response.json();
+          if (!data.token) {
+            alert('Usuario o contraseña incorrectos');
+          } else if (data.token) {
+            localStorage.setItem('token', data.token);
+            navigate('/');
+          }
+        };
+        login();
       }}
     >
       {({ errors }) => (
