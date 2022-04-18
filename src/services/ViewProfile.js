@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://workit-api.herokuapp.com';
 const viewUser = async (id) => {
   try {
     const response = await fetch(`${API_URL}/users/${id}`);

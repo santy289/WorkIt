@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { viewUserService } from '../../services/ViewService';
+import { allService } from '../../services/index';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
@@ -8,12 +8,13 @@ import './Purchaserstyles.scss';
 function Purchaser() {
   const [services, setServices] = useState([]);
   const showUserServices = async () => {
-    const data = await viewUserService();
+    const data = await allService();
     setServices(data);
   };
   useEffect(() => {
     showUserServices();
   }, []);
+
   return (
     <>
       <Header />
@@ -25,7 +26,8 @@ function Purchaser() {
             <div className="purcasher_servicesList--cardViewer">
               {
                 services.map((service) => (
-                  <CardService key={service.id} eachService={service} />
+                  // eslint-disable-next-line no-underscore-dangle
+                  <CardService key={service._id} eachService={service} />
                 ))
               }
             </div>

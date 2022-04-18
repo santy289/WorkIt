@@ -15,7 +15,7 @@ const API_URL = 'https://workit-api.herokuapp.com';
   }
 } */
 
-export async function allUsers() {
+export async function allService() {
   try {
     const response = await fetch(`${API_URL}/api/service`);
     return response.json();
