@@ -1,44 +1,137 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import {
+  Formik, Form, Field, ErrorMessage,
+} from 'formik';
+import React from 'react';
 import Button from '../Button/Button';
 import './SignUp.styles.scss';
 
 function SignUp() {
-  const [form, setForm] = useState({
-    name: '',
-    last: '',
-    username: '',
-    mail: '',
-    password: '',
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(form);
-  };
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
-    <form className="signup" onSubmit={handleSubmit}>
-      <h2 className="signup__title">CREA TU CUENTA</h2>
-      <label className="signup__text" htmlFor="name">Nombre</label>
-      <input type="text" id="name" name="name" onChange={handleChange} />
-      <label className="signup__text" htmlFor="last">Apellido</label>
-      <input type="text" id="last" name="last" onChange={handleChange} />
-      <label className="signup__text" htmlFor="username">Usuario</label>
-      <input type="text" id="username" name="username" onChange={handleChange} />
-      <label className="signup__text" htmlFor="mail">Correo electrónico</label>
-      <input type="mail" id="mail" name="mail" onChange={handleChange} />
-      <label className="signup__text" htmlFor="password">Contraseña</label>
-      <input type="password" id="password" name="password" onChange={handleChange} />
-      <Button text="REGÍSTRATE" type="submit" />
-    </form>
+    <Formik
+      initialValues={{
+        name: '',
+        last: '',
+        username: '',
+        email: '',
+        password: '',
+      }}
+      validate={(values) => {
+        const errors = {};
+        if (!values.name) {
+          errors.name = 'Campo requerido';
+        } else if (/^[a-zA-Z]+$/.test(values.name) === false) {
+          errors.name = 'Este campo solo acepta letras';
+        }
+        if (!values.last) {
+          errors.last = 'Campo requerido';
+        } else if (/^[a-zA-Z]+$/.test(values.last) === false) {
+          errors.last = 'Este campo solo acepta letras';
+        }
+        if (!values.username) {
+          errors.username = 'Campo requerido';
+        } else if (values.username.length > 10) {
+          errors.username = 'Este campo no puede tener mas de 10 caracteres';
+        }
+        if (!values.email) {
+          errors.email = 'Campo requerido';
+        } else if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email) === false) {
+          errors.email = 'Correo no valido';
+        }
+        if (!values.password) {
+          errors.password = 'Campo requerido';
+        } else if (values.password.length < 6) {
+          errors.password = 'La contraseña debe tener al menos 6 caracteres';
+        }
+        return errors;
+      }}
+      onSubmit={(values, { resetForm }) => {
+        resetForm();
+      }}
+    >
+      {({ errors }) => (
+        <Form className="signup">
+          <h2 className="signup__title">CREA TU CUENTA</h2>
+          <label className="signup__text" htmlFor="name">Nombre</label>
+          <ErrorMessage
+            name="name"
+            component={() => (
+              <div className="signup__error">
+                {errors.name}
+              </div>
+            )}
+          />
+          <Field
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Escriba su nombre"
+          />
+          <label className="signup__text" htmlFor="last">Apellido</label>
+          <ErrorMessage
+            name="last"
+            component={() => (
+              <div className="signup__error">
+                {errors.last}
+              </div>
+            )}
+          />
+          <Field
+            type="text"
+            id="last"
+            name="last"
+            placeholder="Escriba su apellido"
+          />
+          <label className="signup__text" htmlFor="username">Usuario</label>
+          <ErrorMessage
+            name="username"
+            component={() => (
+              <div className="signup__error">
+                {errors.username}
+              </div>
+            )}
+          />
+          <Field
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Escriba su usuario"
+          />
+          <label className="signup__text" htmlFor="email">Correo electrónico</label>
+          <ErrorMessage
+            name="email"
+            component={() => (
+              <div className="signup__error">
+                {errors.email}
+              </div>
+            )}
+          />
+          <Field
+            type="email"
+            id="mail"
+            name="email"
+            placeholder="Correo@electronico.com"
+          />
+          <label className="signup__text" htmlFor="password">Contraseña</label>
+          <ErrorMessage
+            name="password"
+            component={() => (
+              <div className="signup__error">
+                {errors.password}
+              </div>
+            )}
+          />
+          <Field
+            type="password"
+            id="password"
+            name="password"
+            placeholder="escriba su contraseña"
+          />
+          <Button text="REGÍSTRATE" type="submit" />
+        </Form>
+      )}
+    </Formik>
   );
 }
 

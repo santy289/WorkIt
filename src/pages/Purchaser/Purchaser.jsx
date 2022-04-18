@@ -3,6 +3,7 @@ import { allService } from '../../services/index';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
+import Filter from '../../components/Filter/Filter';
 import './Purchaserstyles.scss';
 
 function Purchaser() {
@@ -19,7 +20,10 @@ function Purchaser() {
     <>
       <Header />
       <div className="purcasher">
-        <div className="purcasher_Title">BUSQUEDA DE SERVICIOS</div>
+        <Filter />
+        <div className="purcasher_Title">
+          BUSQUEDA DE SERVICIOS
+        </div>
         <div className="bodypurcasher">
           <section className="purcasher_servicesList--left">
             <h1 className="purcasher_subtitle">Servicios disponibles</h1>
