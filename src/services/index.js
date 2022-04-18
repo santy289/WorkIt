@@ -1,6 +1,6 @@
 const API_URL = 'https://workit-api.herokuapp.com';
 
-/* export async function loginService(loggininfo) {
+export async function loginService(loggininfo) {
   try {
     const response = await fetch(`${API_URL}/auth/local/login`, {
       method: 'POST',
@@ -13,7 +13,7 @@ const API_URL = 'https://workit-api.herokuapp.com';
   } catch (error) {
     throw new Error(error);
   }
-} */
+}
 
 export async function allService() {
   try {
@@ -89,6 +89,15 @@ export async function deleteService(id) {
         'Content-Type': 'application/json',
       },
     });
+    return response.json();
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function getUserById(id) {
+  try {
+    const response = await fetch(`${API_URL}/api/user/${id}`);
     return response.json();
   } catch (error) {
     throw new Error(error);
