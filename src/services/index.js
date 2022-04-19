@@ -1,15 +1,17 @@
 const API_URL = 'https://workit-api.herokuapp.com';
 
 export async function loginService(loggininfo) {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(loggininfo),
+  };
   try {
-    const response = await fetch(`${API_URL}/auth/local/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(loggininfo),
-    });
-    return response.json();
+    const response = await fetch(`${API_URL}/auth/local/login`, payload);
+    const data = await response.json();
+    return data;
   } catch (error) {
     throw new Error(error);
   }
