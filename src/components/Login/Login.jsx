@@ -33,12 +33,11 @@ function Login() {
       onSubmit={(values) => {
         const login = async () => {
           const response = await loginService(values);
-          const data = await response.json();
-          if (!data.token) {
-            alert('Usuario o contraseña incorrectos');
-          } else if (data.token) {
-            localStorage.setItem('token', data.token);
+          const data = await response;
+          if (data.status === 200) {
             navigate('/');
+          } else {
+            alert('Usuario o contraseña incorrectos');
           }
         };
         login();
