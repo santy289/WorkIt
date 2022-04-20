@@ -1,6 +1,6 @@
 import './Header.styles.scss';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Sidebar from '../SideBar/Sidebar';
 import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
@@ -9,6 +9,13 @@ import {
 } from '../../routes/routes';
 
 function Header({ toggleLogin, toggleSignUp }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   if (localStorage.getItem('token') === null) {
     return (
       <header className="Header_Container">
@@ -32,6 +39,15 @@ function Header({ toggleLogin, toggleSignUp }) {
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
         <NavLink to={ROUTE_CHECKOUT} className="Header_nav--item">Carrito</NavLink>
         <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item">Perfil</NavLink>
+        <span
+          tabIndex={0}
+          role="button"
+          onClick={handleLogout}
+          className="Header_nav--item"
+          onKeyDown={handleLogout}
+        >
+          Cerrar sesión
+        </span>
       </ul>
     </header>
   );
