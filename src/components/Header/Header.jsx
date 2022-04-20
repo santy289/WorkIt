@@ -9,6 +9,19 @@ import {
 } from '../../routes/routes';
 
 function Header({ toggleLogin, toggleSignUp }) {
+  if (localStorage.getItem('token') === null) {
+    return (
+      <header className="Header_Container">
+        <Sidebar />
+        <ul className="Header_nav">
+          <img className="Header_img" src={smallLogo} alt="" />
+          <a onClick={toggleLogin} href="/" className="Header_nav--item">Iniciar Sesión</a>
+          <a onClick={toggleSignUp} href="/" className="Header_nav--item">Registrarse</a>
+        </ul>
+      </header>
+    );
+  }
+
   return (
     <header className="Header_Container">
       <Sidebar />
@@ -18,10 +31,7 @@ function Header({ toggleLogin, toggleSignUp }) {
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Comprar</NavLink>
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
         <NavLink to={ROUTE_CHECKOUT} className="Header_nav--item">Carrito</NavLink>
-        <a onClick={toggleLogin} href="/" className="Header_nav--item perfil_text">Iniciar Sesión</a>
-        <a onClick={toggleSignUp} href="/" className="Header_nav--item">Registrarse</a>
         <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item">Perfil</NavLink>
-
       </ul>
     </header>
   );
