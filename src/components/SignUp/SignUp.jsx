@@ -16,14 +16,21 @@ function SignUp() {
   return (
     <Formik
       initialValues={{
+        imageprofile: '',
         name: '',
         last: '',
         username: '',
         email: '',
+        country: '',
+        city: '',
+        address: '',
         password: '',
       }}
       validate={(values) => {
         const errors = {};
+        if (!values.imageProfile) {
+          errors.imageProfile = 'Campo requerido';
+        }
         if (!values.name) {
           errors.name = 'Campo requerido';
         } else if (/^[a-zA-Z]+$/.test(values.name) === false) {
@@ -73,6 +80,21 @@ function SignUp() {
       {({ errors }) => (
         <Form className="signup">
           <h2 className="signup__title">CREA TU CUENTA</h2>
+          <label className="signup__imageProfile" htmlFor="imageProfile">Imagen de perfil</label>
+          <ErrorMessage
+            name="imageProfile"
+            component={() => (
+              <div className="signup__error">
+                {errors.imageProfile}
+              </div>
+            )}
+          />
+          <Field
+            type="file"
+            name="imageProfile"
+            id="imageProfile"
+            placeholder="Imagen de perfil"
+          />
           <label className="signup__text" htmlFor="name">Nombre</label>
           <ErrorMessage
             name="name"
@@ -133,6 +155,51 @@ function SignUp() {
             name="email"
             placeholder="Correo@electronico.com"
           />
+          <label className="signup__text" htmlFor="country">País</label>
+          <ErrorMessage
+            name="country"
+            component={() => (
+              <div className="signup__error">
+                {errors.country}
+              </div>
+            )}
+          />
+          <Field
+            type="country"
+            id="country"
+            name="country"
+            placeholder="Escriba su país"
+          />
+          <label className="signup__text" htmlFor="city">Ciudad</label>
+          <ErrorMessage
+            name="city"
+            component={() => (
+              <div className="signup__error">
+                {errors.city}
+              </div>
+            )}
+          />
+          <Field
+            type="city"
+            id="city"
+            name="city"
+            placeholder="Escriba su ciudad"
+          />
+          <label className="signup__text" htmlFor="address">Dirección</label>
+          <ErrorMessage
+            name="address"
+            component={() => (
+              <div className="signup__error">
+                {errors.address}
+              </div>
+            )}
+          />
+          <Field
+            type="address"
+            id="address"
+            name="address"
+            placeholder="Escriba su dirección"
+          />
           <label className="signup__text" htmlFor="password">Contraseña</label>
           <ErrorMessage
             name="password"
@@ -163,7 +230,9 @@ function SignUp() {
             name="confirmPassword"
             placeholder="Repita su contraseña"
           />
-          <Button text="REGÍSTRATE" type="submit" />
+          <div className="signup__button">
+            <Button text="REGÍSTRATE" type="submit" />
+          </div>
         </Form>
       )}
     </Formik>
