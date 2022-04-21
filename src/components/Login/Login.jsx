@@ -65,7 +65,9 @@ function Login() {
           />
           <Field type="password" id="password" name="password" />
           <a className="login__link" href="#">¿Olvidaste tu contraseña?</a>
-          <Button className="login__submit" type="submit" text="INICIAR SESIÓN" />
+          <div className="login__button">
+            <Button type="submit" text="INICIAR SESIÓN" />
+          </div>
         </Form>
       )}
 
