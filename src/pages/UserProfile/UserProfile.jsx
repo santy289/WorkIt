@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
-import getUserById from '../../services/index';
+import { getUserById } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {

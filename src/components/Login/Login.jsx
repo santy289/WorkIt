@@ -31,12 +31,13 @@ function Login() {
       onSubmit={(values) => {
         const login = async () => {
           const response = await loginService(values);
-          const { token } = response;
+          const { token, userId } = response;
           if (typeof token !== 'string') {
             alert('Usuario o contraseña incorrectos');
           } else {
             navigate('/purchases');
-            localStorage.setItem('token', response);
+            localStorage.setItem('token', token);
+            localStorage.setItem('id', userId);
           }
         };
         login();

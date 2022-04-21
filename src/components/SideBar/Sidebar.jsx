@@ -13,6 +13,7 @@ function SideBar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.removeItem('id');
     localStorage.removeItem('token');
     navigate('/');
   };
