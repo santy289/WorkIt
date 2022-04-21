@@ -1,0 +1,14 @@
+.create-service {
+  margin-bottom: 2rem;
+}
+
+@media(min-width: 1025px){
+  .create-service {
+    background-image: url('../../assets/backgroundStyle2.jpeg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}

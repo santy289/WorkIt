@@ -8,5 +8,5 @@ export const ROUTE_404 = '/404-not-found';
 export const ROUTE_LOGIN = '/login';
 export const ROUTE_SIGNUP = '/sign-up';
 export const ROUTE_CHECKOUT = '/checkout';
-export const ROUTE_SERVICECRUD = '/service';
+export const ROUTE_CREATESERVICE = '/create-service';
 export const ROUTE_ACTIVATE = '/activate/:hash';
