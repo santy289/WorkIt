@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
-import viewUser from '../../services/ViewProfile';
+import getUserById from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
   const [user, setUser] = useState({});
   const showUser = async () => {
-    const data = await viewUser(1);
+    const data = await getUserById(1);
     setUser(data);
   };
   useEffect(() => {

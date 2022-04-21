@@ -31,7 +31,8 @@ function Login() {
       onSubmit={(values) => {
         const login = async () => {
           const response = await loginService(values);
-          if (typeof response !== 'string') {
+          const { token } = response;
+          if (typeof token !== 'string') {
             alert('Usuario o contraseña incorrectos');
           } else {
             navigate('/purchases');
