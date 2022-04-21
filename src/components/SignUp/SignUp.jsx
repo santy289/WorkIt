@@ -1,13 +1,18 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createUser } from '../../services';
 import Button from '../Button/Button';
 import './SignUp.styles.scss';
 
 function SignUp() {
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{
@@ -44,10 +49,25 @@ function SignUp() {
         } else if (values.password.length < 6) {
           errors.password = 'La contraseña debe tener al menos 6 caracteres';
         }
+        if (!values.confirmPassword) {
+          errors.confirmPassword = 'Campo requerido';
+        } else if (values.confirmPassword !== values.password) {
+          errors.confirmPassword = 'Las contraseñas no coinciden';
+        }
         return errors;
       }}
       onSubmit={(values, { resetForm }) => {
-        resetForm();
+        const newUser = async () => {
+          const response = await createUser(values);
+          console.log(response);
+          if (!response) {
+            alert('fail');
+          } else {
+            resetForm();
+            navigate('/purchases');
+          }
+        };
+        newUser();
       }}
     >
       {({ errors }) => (
@@ -126,7 +146,22 @@ function SignUp() {
             type="password"
             id="password"
             name="password"
-            placeholder="escriba su contraseña"
+            placeholder="Contraseña"
+          />
+          <label className="signup__text" htmlFor="confirmPassword">Confirmar contraseña</label>
+          <ErrorMessage
+            name="confirmPassword"
+            component={() => (
+              <div className="signup__error">
+                {errors.confirmPassword}
+              </div>
+            )}
+          />
+          <Field
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Repita su contraseña"
           />
           <Button text="REGÍSTRATE" type="submit" />
         </Form>

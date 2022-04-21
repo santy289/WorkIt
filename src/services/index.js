@@ -105,3 +105,18 @@ export async function getUserById(id) {
     throw new Error(error);
   }
 }
+
+export async function createUser(data) {
+  try {
+    const response = await fetch(`${API_URL}/api/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  } catch (error) {
+    throw new Error(error);
+  }
+}
