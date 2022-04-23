@@ -13,7 +13,9 @@ $black: rgb(0, 0, 0);
   &__content{
     display: flex;
     background-color: $soft-grey;
-    border-radius: 1rem;
+    border-color: $black;
+    border-style: solid;
+    border-width: 0.4rem;
     height: auto;
     justify-content: center;
     margin: auto;
