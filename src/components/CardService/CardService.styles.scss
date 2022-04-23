@@ -14,7 +14,7 @@ $black: rgb(0, 0, 0);
     box-shadow: 1rem 1rem 1rem $soft-grey;
 
     .cardservice__title {
-      color: rgb(0, 0, 255);
+      color: rgb(0, 0, 180);
     }
   }
 
@@ -24,6 +24,10 @@ $black: rgb(0, 0, 0);
     gap: 1rem;
     height: 100%;
     margin: auto;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &__figure {
@@ -45,8 +49,9 @@ $black: rgb(0, 0, 0);
   }
 
   &__title {
+    color: $black;
     cursor: pointer;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 800;
     text-align: center;
   }
