@@ -28,8 +28,8 @@ function SignUp() {
       }}
       validate={(values) => {
         const errors = {};
-        if (!values.imageProfile) {
-          errors.imageProfile = 'Campo requerido';
+        if (!values.imageprofile) {
+          errors.imageprofile = 'Campo requerido';
         }
         if (!values.name) {
           errors.name = 'Campo requerido';
@@ -63,14 +63,25 @@ function SignUp() {
         }
         return errors;
       }}
-      onSubmit={(values, { resetForm }) => {
+      onSubmit={(values) => {
+        console.log(values.imageprofile);
+        const data = new FormData();
+        data.append('file', values.imageprofile);
+        data.set('name', values.name);
+        data.set('last', values.last);
+        data.set('username', values.username);
+        data.set('email', values.email);
+        data.set('country', values.country);
+        data.set('city', values.city);
+        data.set('address', values.address);
+        data.set('password', values.password);
         const newUser = async () => {
-          const response = await createUser(values);
+          console.log(data);
+          const response = await createUser(data);
           console.log(response);
           if (!response) {
             alert('fail');
           } else {
-            resetForm();
             navigate('/purchases');
           }
         };
@@ -80,19 +91,19 @@ function SignUp() {
       {({ errors }) => (
         <Form className="signup">
           <h2 className="signup__title">CREA TU CUENTA</h2>
-          <label className="signup__imageProfile" htmlFor="imageProfile">Imagen de perfil</label>
+          <label className="signup__imageprofile" htmlFor="imageprofile">Imagen de perfil</label>
           <ErrorMessage
-            name="imageProfile"
+            name="imageprofile"
             component={() => (
               <div className="signup__error">
-                {errors.imageProfile}
+                {errors.imageprofile}
               </div>
             )}
           />
-          <Field
+          <input
             type="file"
-            name="imageProfile"
-            id="imageProfile"
+            name="imageprofile"
+            id="imageprofile"
             placeholder="Imagen de perfil"
           />
           <label className="signup__text" htmlFor="name">Nombre</label>

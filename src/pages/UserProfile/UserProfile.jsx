@@ -8,6 +8,7 @@ function UserProfile() {
   const [user, setUser] = useState({});
   const showUser = async () => {
     const data = await getUserById(id);
+    console.log(user.country);
     setUser(data);
   };
   useEffect(() => {
