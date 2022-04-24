@@ -7,7 +7,6 @@ import SignUp from '../SignUp/SignUp';
 import useModal from '../../hooks/useModal';
 import smallLogo from '../../assets/smalllogowithe.jpg';
 import {
-  ROUTE_CHECKOUT,
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
 } from '../../routes/routes';
 
@@ -53,7 +52,6 @@ function Header() {
         <NavLink to={ROUTE_HOME} className="Header_nav--item">Home</NavLink>
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
-        <NavLink to={ROUTE_CHECKOUT} className="Header_nav--item">Carrito</NavLink>
         <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item">Perfil</NavLink>
         <span
           tabIndex={0}
