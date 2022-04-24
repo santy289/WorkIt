@@ -26,7 +26,7 @@ function Seller() {
       <Header />
       <div className="seller">
         <div className="seller_Title">MIS SERVICIOS</div>
-        <Link to="/service">
+        <Link to="/create-service">
           <span className="seller__create">
             <p type="button">+</p>
           </span>

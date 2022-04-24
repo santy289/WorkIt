@@ -12,12 +12,12 @@ $black: rgb(0, 0, 0);
 
   &__title{
     font-size: 2.5rem;
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 1rem;
     text-align: center;
   }
 
   &__text{
-    margin: 2rem 0rem 0.5rem 0rem;
+    margin: 1rem 0rem 0.5rem 0rem;
   }
   &__error{
     color: red;
@@ -25,8 +25,10 @@ $black: rgb(0, 0, 0);
     font-weight: lighter;
   }
 
-  #password{
-    margin-bottom: 4rem;
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
   }
 
   input{

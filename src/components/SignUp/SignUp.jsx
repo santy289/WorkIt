@@ -212,7 +212,9 @@ function SignUp() {
             name="confirmPassword"
             placeholder="Repita su contraseña"
           />
-          <Button text="REGÍSTRATE" type="submit" />
+          <div className="signup__button">
+            <Button text="REGÍSTRATE" type="submit" />
+          </div>
         </Form>
       )}
     </Formik>
