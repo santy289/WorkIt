@@ -1,0 +1,21 @@
+//.purcasher {
+//  background-image: url('../../assets/backgroundStyle2.jpeg');
+//  background-repeat: no-repeat;
+//  background-size:cover;
+//  height: 100vh;
+//  display: block;
+//  text-align: center;
+//}
+
+.purcasher_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  margin: 2rem auto;
+  width: 95%;
+}
+
+@media (min-width: 1025px) {
+
+}
