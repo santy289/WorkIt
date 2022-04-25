@@ -1,4 +1,4 @@
-const API_URL = 'https://workit-api.herokuapp.com';
+const API_URL = 'http://localhost:8080';
 
 export async function loginService(loggininfo) {
   const payload = {
@@ -58,7 +58,8 @@ export async function createService(service) {
     const response = await fetch(`${API_URL}/api/service`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify(service),
     });
