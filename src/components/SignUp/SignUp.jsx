@@ -63,8 +63,7 @@ function SignUp() {
       }}
       onSubmit={(values) => {
         const newUser = async () => {
-          const response = await createUser(values);
-          console.log(response);
+          const response = await createUser(data);
           if (!response) {
             alert('fail');
           } else {

@@ -4,9 +4,11 @@ import { getUserById } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
+  const id = localStorage.getItem('id');
   const [user, setUser] = useState({});
   const showUser = async () => {
-    const data = await getUserById(1);
+    const data = await getUserById(id);
+    console.log(user.country);
     setUser(data);
   };
   useEffect(() => {
@@ -20,7 +22,7 @@ function UserProfile() {
           <div className="containerUser_imageContainer">
             <img
               className="containerUser_imageContainer--userImage"
-              src={user.picprofile}
+              src={user.imageprofile}
               alt="profile"
             />
           </div>
@@ -34,7 +36,7 @@ function UserProfile() {
           <table className="contentProfile_userProfileTable">
             <tr>
               <td>Nombre de Usuario:</td>
-              <td>{user.user}</td>
+              <td>{user.username}</td>
             </tr>
             <tr>
               <td>Nombres:</td>
