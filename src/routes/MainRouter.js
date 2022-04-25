@@ -29,6 +29,13 @@ function Mainrouter() {
         <Route path={ROUTE_CREATESERVICE} element={<CreateService />} />
         <Route path={ROUTE_ACTIVATE} element={<Activate />} />
         <Route path={ROUTE_SERVICEDETAIL} element={<ServiceDetail />} />
+        <Route
+          path="/privacy-policy"
+          component={() => {
+            window.location.replace('https://google.com');
+            return null;
+          }}
+        />
       </Routes>
     </BrowserRouter>
   );
