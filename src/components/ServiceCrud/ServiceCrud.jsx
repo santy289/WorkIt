@@ -1,50 +1,138 @@
+/* eslint-disable no-alert */
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import {
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+} from 'formik';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import './ServiceCrud.styles.scss';
+import { createService } from '../../services';
 
 function ServiceCrud() {
-  const [form, setForm] = useState({
-    service: '',
-    price: 0,
-    costtype: 'done',
-    desc: '',
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(form);
-  };
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+  const navigate = useNavigate();
   return (
-    <div className="servicecrud__card">
-      <form className="servicecrud__form" onSubmit={handleSubmit}>
-        <label className="" htmlFor="service">Nombre del servicio</label>
-        <input type="text" id="service" name="service" onChange={handleChange} />
-        <label className="" htmlFor="price">Precio</label>
-        <input type="number" id="price" name="price" onChange={handleChange} />
-        <label className="" htmlFor="costtype">Forma de cobro</label>
-        <select id="costtype" name="costtype" onChange={handleChange}>
-          <option value="done">Completado el servicio</option>
-          <option value="hours">Por horas</option>
-        </select>
-        <label className="" htmlFor="desc">Descripción</label>
-        <textarea
-          placeholder="Descripción de tu servicio..."
-          id="desc"
-          name="desc"
-          onChange={handleChange}
-        />
-        <Button text="Crear servicio" type="submit" />
-      </form>
-    </div>
+    <Formik
+      initialValues={{
+        userId: localStorage.getItem('id'),
+        title: '',
+        tags: '',
+        cost: 0,
+        costType: '',
+        description: '',
+      }}
+      validate={(values) => {
+        const errors = {};
+        if (!values.title) {
+          errors.title = 'Campo requerido';
+        }
+        if (!values.tags) {
+          errors.tags = 'Se requiere almenos un tag';
+        }
+        if (values.cost <= 0) {
+          errors.cost = 'Costo debe ser mayor a 0';
+        }
+        if (!values.description) {
+          errors.description = 'Campo requerido';
+        }
+        if (values.description.length > 500) {
+          errors.description = 'Este campo no puede tener mas de 500 caracteres';
+        }
+        return errors;
+      }}
+      onSubmit={(values) => {
+        const newService = async () => {
+          const response = await createService(values);
+          if (!response) {
+            alert('Error al crear el servicio');
+          } else {
+            navigate('/sales');
+          }
+        };
+        newService();
+      }}
+    >
+      {({ errors }) => (
+        <div className="servicecrud__card">
+          <Form className="servicecrud__form">
+            <label className="" htmlFor="title">Nombre del servicio</label>
+            <ErrorMessage
+              name="title"
+              component={() => (
+                <div className="servicecrud__error">
+                  {errors.title}
+                </div>
+              )}
+            />
+            <Field
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Indique el nombre del servicio"
+            />
+            <label className="" htmlFor="tags">Tags</label>
+            <ErrorMessage
+              name="tags"
+              component={() => (
+                <div className="servicecrud__error">
+                  {errors.tags}
+                </div>
+              )}
+            />
+            <Field
+              type="text"
+              id="tags"
+              name="tags"
+              placeholder="Escriba los tags separados por comas"
+            />
+            <label className="" htmlFor="cost">Costo (USD)</label>
+            <ErrorMessage
+              name="cost"
+              component={() => (
+                <div className="servicecrud__error">
+                  {errors.cost}
+                </div>
+              )}
+            />
+            <Field
+              type="number"
+              id="cost"
+              name="cost"
+              placeholder="Escriba el costo del servicio"
+            />
+            <label className="" htmlFor="costType">Forma de cobro</label>
+            <select
+              id="costType"
+              name="costType"
+            >
+              <option value="done">Completado el servicio</option>
+              <option value="hours">Por horas</option>
+            </select>
+            <label className="" htmlFor="description">Descripción</label>
+            <ErrorMessage
+              name="description"
+              component={() => (
+                <div className="servicecrud__error">
+                  {errors.description}
+                </div>
+              )}
+            />
+            <Field
+              placeholder="Descripción de tu servicio..."
+              id="description"
+              name="description"
+            />
+            <div className="signup__button">
+              <Button text="REGÍSTRATE" type="submit" />
+            </div>
+          </Form>
+        </div>
+      )}
+    </Formik>
   );
 }
 
