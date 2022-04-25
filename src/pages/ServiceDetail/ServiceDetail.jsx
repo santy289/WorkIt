@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import { getServiceById } from '../../services';
+import { postPayment } from './ServiceDetail.services';
 import './ServiceDetail.styles.scss';
 
 function ServiceDetail() {
@@ -19,6 +20,16 @@ function ServiceDetail() {
     fetchService();
   }, []);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(service);
+    try {
+      postPayment(id, service.title, service.cost);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -33,7 +44,12 @@ function ServiceDetail() {
           <img className="servicedetail__image" src={service.image} alt="service" />
         </div>
         <div className="servicedetail__cart">
-          <ShoppingCart cost={service.cost} costType={service.costType} />
+          <ShoppingCart
+            title={service.title}
+            cost={service.cost}
+            costType={service.costType}
+            handleClick={handleClick}
+          />
         </div>
         <div className="servicedetail__desc">
           <h2 className="servicedetail__subtitle">Descripción</h2>
