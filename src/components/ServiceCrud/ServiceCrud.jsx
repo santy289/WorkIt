@@ -22,7 +22,6 @@ function ServiceCrud() {
         title: '',
         tags: '',
         cost: 0,
-        costType: '',
         description: '',
       }}
       validate={(values) => {
@@ -45,6 +44,7 @@ function ServiceCrud() {
         return errors;
       }}
       onSubmit={(values) => {
+        console.log(values);
         const newService = async () => {
           const response = await createService(values);
           if (!response) {
@@ -104,14 +104,6 @@ function ServiceCrud() {
               name="cost"
               placeholder="Escriba el costo del servicio"
             />
-            <label className="" htmlFor="costType">Forma de cobro</label>
-            <select
-              id="costType"
-              name="costType"
-            >
-              <option value="done">Completado el servicio</option>
-              <option value="hours">Por horas</option>
-            </select>
             <label className="" htmlFor="description">Descripción</label>
             <ErrorMessage
               name="description"
