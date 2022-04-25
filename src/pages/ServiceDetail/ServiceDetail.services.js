@@ -1,4 +1,4 @@
-export const URL = 'http://localhost:8080';
+export const URL = 'https://workit-api.herokuapp.com';
 
 export const postPayment = async (_id, title, price) => {
   try {
