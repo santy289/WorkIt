@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://workit-api.herokuapp.com';
 
 export async function loginService(loggininfo) {
   const payload = {
@@ -121,3 +121,23 @@ export async function createUser(data) {
     throw new Error(error);
   }
 }
+
+export const postPayment = async (_id, title, price) => {
+  try {
+    const response = await fetch(`${API_URL}/payments`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        _id,
+        title,
+        price,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
