@@ -57,6 +57,10 @@ export async function createService(service) {
   try {
     const response = await fetch(`${API_URL}/api/service`, {
       method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
       body: JSON.stringify(service),
     });
     return response.json();
