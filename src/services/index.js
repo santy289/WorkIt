@@ -57,10 +57,7 @@ export async function createService(service) {
   try {
     const response = await fetch(`${API_URL}/api/service`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(service),
+      body: service,
     });
     return response.json();
   } catch (error) {

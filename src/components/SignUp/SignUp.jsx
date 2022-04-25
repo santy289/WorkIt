@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-undef */
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
 /* eslint-disable react/no-unstable-nested-components */
@@ -16,7 +18,6 @@ function SignUp() {
   return (
     <Formik
       initialValues={{
-        imageprofile: '',
         name: '',
         last: '',
         username: '',
@@ -28,23 +29,20 @@ function SignUp() {
       }}
       validate={(values) => {
         const errors = {};
-        if (!values.imageprofile) {
-          errors.imageprofile = 'Campo requerido';
-        }
         if (!values.name) {
           errors.name = 'Campo requerido';
-        } else if (/^[a-zA-Z]+$/.test(values.name) === false) {
+        } else if (/^[a-zA-Z' ']*$/.test(values.name) === false) {
           errors.name = 'Este campo solo acepta letras';
         }
         if (!values.last) {
           errors.last = 'Campo requerido';
-        } else if (/^[a-zA-Z]+$/.test(values.last) === false) {
+        } else if (/^[a-zA-Z' ']+$/.test(values.last) === false) {
           errors.last = 'Este campo solo acepta letras';
         }
         if (!values.username) {
           errors.username = 'Campo requerido';
-        } else if (values.username.length > 10) {
-          errors.username = 'Este campo no puede tener mas de 10 caracteres';
+        } else if (values.username.length > 15) {
+          errors.username = 'Este campo no puede tener mas de 15 caracteres';
         }
         if (!values.email) {
           errors.email = 'Campo requerido';
@@ -64,21 +62,8 @@ function SignUp() {
         return errors;
       }}
       onSubmit={(values) => {
-        console.log(values.imageprofile);
-        const data = new FormData();
-        data.append('file', values.imageprofile);
-        data.set('name', values.name);
-        data.set('last', values.last);
-        data.set('username', values.username);
-        data.set('email', values.email);
-        data.set('country', values.country);
-        data.set('city', values.city);
-        data.set('address', values.address);
-        data.set('password', values.password);
         const newUser = async () => {
-          console.log(data);
           const response = await createUser(data);
-          console.log(response);
           if (!response) {
             alert('fail');
           } else {
@@ -91,21 +76,6 @@ function SignUp() {
       {({ errors }) => (
         <Form className="signup">
           <h2 className="signup__title">CREA TU CUENTA</h2>
-          <label className="signup__imageprofile" htmlFor="imageprofile">Imagen de perfil</label>
-          <ErrorMessage
-            name="imageprofile"
-            component={() => (
-              <div className="signup__error">
-                {errors.imageprofile}
-              </div>
-            )}
-          />
-          <input
-            type="file"
-            name="imageprofile"
-            id="imageprofile"
-            placeholder="Imagen de perfil"
-          />
           <label className="signup__text" htmlFor="name">Nombre</label>
           <ErrorMessage
             name="name"
