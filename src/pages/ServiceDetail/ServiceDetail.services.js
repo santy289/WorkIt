@@ -1,8 +1,8 @@
-export const URL = 'https://workit-api.herokuapp.com';
+export const URL = 'http://localhost:8080';
 
 export const postPayment = async (_id, title, price) => {
   try {
-    fetch(`${URL}/payments`, {
+    const response = await fetch(`${URL}/payments`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -13,7 +13,9 @@ export const postPayment = async (_id, title, price) => {
         price,
       }),
     });
+    const data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    return err;
   }
 };

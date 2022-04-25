@@ -1,34 +1,41 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import { getServiceById } from '../../services';
 import { postPayment } from './ServiceDetail.services';
 import './ServiceDetail.styles.scss';
+import mercadopago from '../../assets/mercadopago.png';
 
 function ServiceDetail() {
   const { id } = useParams();
 
   const [service, setService] = useState({});
 
+  const [url, setUrl] = useState('/');
+
   const fetchService = async () => {
-    const data = await getServiceById(id);
-    setService(data);
+    try {
+      const data = await getServiceById(id);
+      setService(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getURL = async () => {
+    try {
+      const response = await postPayment(id, service.title, service.cost);
+      setUrl(response);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
     fetchService();
   }, []);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log(service);
-    try {
-      postPayment(id, service.title, service.cost);
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   return (
     <>
@@ -48,12 +55,17 @@ function ServiceDetail() {
             title={service.title}
             cost={service.cost}
             costType={service.costType}
-            handleClick={handleClick}
-          />
+          >
+            {url !== '/'
+              ? (<a href={url}><img src={mercadopago} alt="mercadopago" width="200" height="70" /></a>)
+              : (<Button text="Confirmar compra" handleClick={getURL} />)}
+          </ShoppingCart>
         </div>
         <div className="servicedetail__desc">
           <h2 className="servicedetail__subtitle">Descripción</h2>
-          <p className="servicedetail__text">Descripción</p>
+          <p className="servicedetail__text">
+            Descripción
+          </p>
         </div>
         <div className="servicedetail__pyr">
           <h2 className="servicedetail__subtitle">Preguntas y Respuestas</h2>
