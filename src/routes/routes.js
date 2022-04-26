@@ -10,3 +10,4 @@ export const ROUTE_SIGNUP = '/sign-up';
 export const ROUTE_CREATESERVICE = '/create-service';
 export const ROUTE_ACTIVATE = '/activate/:hash';
 export const ROUTE_SERVICEDETAIL = '/detail/:id';
+export const ROUTE_CHECKOUT = '/checkout';

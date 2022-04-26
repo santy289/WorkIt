@@ -1,4 +1,10 @@
 .servicedetail {
+  background-image: url('../../assets/backgroundStyle2.jpeg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+  display: block;
+  text-align: center;
   display: grid;
   grid-template-rows: 30rem 10rem 25rem 20rem 30rem 30rem;
 
