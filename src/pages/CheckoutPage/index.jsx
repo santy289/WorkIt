@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import queryString from 'query-string';
 import Header from '../../components/Header/Header';
@@ -5,16 +6,21 @@ import CheckoutCard from '../../components/CheckoutCard';
 
 // eslint-disable-next-line no-restricted-globals
 const value = queryString.parse(location.search);
-const { status, paymentId, paymentType } = value;
+const { collection_status, payment_id, payment_type } = value;
+const sellerId = localStorage.getItem('id_seller');
+const buyerId = localStorage.getItem('id');
 
 function CheckoutPage() {
-  if (status === 'success') {
+  if (collection_status === 'approved') {
     return (
       <div>
+        <Header />
         <CheckoutCard
-          paymentId={paymentId}
-          status={status}
-          paymentType={paymentType}
+          paymentId={payment_id}
+          status={collection_status}
+          paymentType={payment_type}
+          sellerId={sellerId}
+          buyerId={buyerId}
         />
       </div>
     );

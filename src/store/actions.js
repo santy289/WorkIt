@@ -10,8 +10,6 @@ import {
 } from './types';
 
 import {
-  /* loginService, */
-  allUsers,
   getServiceById,
   getServiceByName,
   getServiceByUser,
@@ -28,15 +26,6 @@ export const serviceByUser = (user) => ({ type: SERVICE_BY_USER, payload: user }
 export const newService = (service) => ({ type: NEW_SERVICE, payload: service });
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });
 export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
-
-/* export const login = () => async (dispatch) => {
-  try {
-    const user = await loginService();
-    dispatch(loginUser(user));
-  } catch (error) {
-    throw new Error(error);
-  }
-}; */
 
 export const allusers = () => async (dispatch) => {
   try {
