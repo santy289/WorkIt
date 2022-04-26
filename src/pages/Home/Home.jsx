@@ -7,7 +7,7 @@ import './Home.styles.scss';
 
 function Home() {
   return (
-    <>
+    <div>
       <Header />
       <div className="Home">
         <SearchBar />
@@ -17,7 +17,7 @@ function Home() {
           {servicesList.map((service) => <CategoriesCard key={service.id} service={service} />)}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Home;
