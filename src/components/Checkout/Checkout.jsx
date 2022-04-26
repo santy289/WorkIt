@@ -18,7 +18,7 @@ function Checkout(props) {
       <h2 className="items">Id de transaccion:</h2>
       <h2 className="itemsdata">{paymentId}</h2>
       <br />
-      <Button text="FINALIZAR Y VOLVER" />
+      <Button text="AGENDAR SERVICIO" />
     </div>
   );
 }

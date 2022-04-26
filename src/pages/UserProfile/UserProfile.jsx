@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { getUserById } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    navigate('/');
+  };
   const id = localStorage.getItem('id');
   const [user, setUser] = useState({});
   const showUser = async () => {
     const data = await getUserById(id);
-    console.log(user.country);
     setUser(data);
   };
   useEffect(() => {
@@ -29,7 +35,7 @@ function UserProfile() {
           <div className="containerUser_buttonsProfile">
             <button type="button" className="userProfileButton">Historial de ventas</button>
             <button type="button" className="userProfileButton">Historial de compras</button>
-            <button type="button" className="userProfileButton">Cerrar sesión</button>
+            <button type="button" className="userProfileButton" onClick={handleLogout}>Cerrar sesión</button>
           </div>
         </div>
         <div className="contentProfile">

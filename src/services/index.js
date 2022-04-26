@@ -141,3 +141,23 @@ export const postPayment = async (_id, title, price) => {
     return err;
   }
 };
+
+export const creatPurchasedService = async () => {
+  try {
+    const response = await fetch(`${API_URL}/purchased`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        user: localStorage.getItem('user'),
+        service: localStorage.getItem('service'),
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
