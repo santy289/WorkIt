@@ -1,0 +1,21 @@
+.containercheck{
+    background-color: rgba(66, 80, 86, 0.4);
+    background-blend-mode: darken;
+    display: flex;
+    border-radius: 11px;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-left: 14%;
+  padding: 12px;
+}
+.items{
+    margin: 13px;
+    font-weight: 1200;
+}
+.itemsdata{
+    font-weight: 400;
+}
+
+

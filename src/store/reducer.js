@@ -5,6 +5,7 @@ import {
   SERVICE_BY_USER,
   NEW_SERVICE,
   PATCH_SERVICE,
+  CREATE_ACTIVE_SERVICE,
 } from './types';
 
 const initialState = [];
@@ -37,6 +38,11 @@ function reducer(state = initialState, action) {
         state,
       };
     case PATCH_SERVICE:
+      return {
+        ...state,
+        state,
+      };
+    case CREATE_ACTIVE_SERVICE:
       return {
         ...state,
         state,

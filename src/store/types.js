@@ -6,3 +6,4 @@ export const NEW_SERVICE = 'NEW_SERVICE';
 export const PATCH_SERVICE = 'PATCH_SERVICE';
 export const REMOVE_SERVICE = 'REMOVE_SERVICE';
 export const GET_ALL = 'GET_ALL';
+export const CREATE_ACTIVE_SERVICE = 'CREATE_ACTIVE_SERVICE';

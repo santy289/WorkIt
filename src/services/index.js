@@ -1,5 +1,11 @@
 const API_URL = 'https://workit-api.herokuapp.com';
 
+export const allUsers = async () => {
+  const response = await fetch(`${API_URL}/users`);
+  const data = await response.json();
+  return data;
+};
+
 export async function loginService(loggininfo) {
   const payload = {
     method: 'POST',

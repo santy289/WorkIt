@@ -7,15 +7,18 @@ import {
   PATCH_SERVICE,
   REMOVE_SERVICE,
   GET_ALL,
+  CREATE_ACTIVE_SERVICE,
 } from './types';
 
 import {
+  allUsers,
   getServiceById,
   getServiceByName,
   getServiceByUser,
   createService,
   updateService,
   deleteService,
+  createPurchasedServices,
 } from '../services';
 
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
@@ -26,6 +29,7 @@ export const serviceByUser = (user) => ({ type: SERVICE_BY_USER, payload: user }
 export const newService = (service) => ({ type: NEW_SERVICE, payload: service });
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });
 export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
+export const createActiveService = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
 
 export const allusers = () => async (dispatch) => {
   try {
@@ -85,6 +89,15 @@ export const remove = (id) => async (dispatch) => {
   try {
     await deleteService(id);
     dispatch(removeService(id));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const createActiveServices = (data) => async (dispatch) => {
+  try {
+    const service = await createPurchasedServices(data);
+    dispatch(createActiveService(service));
   } catch (error) {
     throw new Error(error);
   }
