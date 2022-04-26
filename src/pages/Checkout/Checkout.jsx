@@ -1,12 +1,12 @@
 import { useSearchParams } from 'react-router-dom';
-import UseDispatch from 'redux';
+import { useDispatch } from 'react-redux';
 import CheckoutComp from '../../components/Checkout/Checkout';
 import { createActiveServices } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import './checkout.scss';
 
 function Checkout() {
-  const dispatch = UseDispatch();
+  const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const status = searchParams.get('status');
   const paymentId = searchParams.get('payment_id');
