@@ -17,6 +17,7 @@ function Checkout() {
   const data = {
     status, paymentId, paymentType, sellerId, buyerId, serviceId,
   };
+  console.log(data);
   if (status === 'approved') {
     dispatch(createActiveServices(data));
     localStorage.removeItem('id_service');
