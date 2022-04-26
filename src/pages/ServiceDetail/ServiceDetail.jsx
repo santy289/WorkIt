@@ -19,6 +19,7 @@ function ServiceDetail() {
       const data = await getServiceById(id);
       setService(data);
     } catch (err) {
+      console.log(err);
     }
   };
 
