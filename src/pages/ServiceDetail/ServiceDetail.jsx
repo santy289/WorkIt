@@ -19,7 +19,6 @@ function ServiceDetail() {
       const data = await getServiceById(id);
       setService(data);
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -56,7 +55,10 @@ function ServiceDetail() {
             cost={service.cost}
           >
             {url !== '/'
-              ? (<a href={url}><img src={mercadopago} alt="mercadopago" width="200" height="70" /></a>)
+              ? (
+                localStorage.setItem('id_service', id),
+                (<a href={url}><img src={mercadopago} alt="mercadopago" width="200" height="70" /></a>)
+              )
               : (<Button text="Confirmar compra" handleClick={getURL} />)}
           </ShoppingCart>
         </div>
