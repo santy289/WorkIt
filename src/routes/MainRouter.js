@@ -11,10 +11,10 @@ import Seller from '../pages/Seller/Seller';
 import UserProfile from '../pages/UserProfile/UserProfile';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
-import CheckoutPage from '../pages/CheckoutPage';
 import Activate from '../pages/Activate/Activate';
 import CreateService from '../pages/CreateService/CreateService';
 import ServiceDetail from '../pages/ServiceDetail/ServiceDetail';
+import Checkout from '../pages/Checkout/Checkout';
 
 function Mainrouter() {
   return (
@@ -30,7 +30,7 @@ function Mainrouter() {
         <Route path={ROUTE_CREATESERVICE} element={<CreateService />} />
         <Route path={ROUTE_ACTIVATE} element={<Activate />} />
         <Route path={ROUTE_SERVICEDETAIL} element={<ServiceDetail />} />
-        <Route path={ROUTE_CHECKOUT} element={<CheckoutPage />} />
+        <Route path={ROUTE_CHECKOUT} element={<Checkout />} />
         <Route
           path="/privacy-policy"
           component={() => {
