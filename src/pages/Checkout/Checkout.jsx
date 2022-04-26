@@ -17,7 +17,7 @@ function Checkout() {
   const data = {
     status, paymentId, paymentType, sellerId, buyerId, serviceId,
   };
-  if (status === 'success') {
+  if (status === 'approved') {
     dispatch(createActiveServices(data));
     localStorage.removeItem('id_service');
     localStorage.removeItem('id_seller');
@@ -35,11 +35,14 @@ function Checkout() {
     );
   }
   return (
-    <h1>
-      {' '}
-      Status payment
-      {status}
-    </h1>
+    <div>
+      <Header />
+      <h1>
+        Status payment
+        {' '}
+        {status}
+      </h1>
+    </div>
   );
 }
 
