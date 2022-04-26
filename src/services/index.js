@@ -1,5 +1,11 @@
 const API_URL = 'https://workit-api.herokuapp.com';
 
+export const allUsers = async () => {
+  const response = await fetch(`${API_URL}/users`);
+  const data = await response.json();
+  return data;
+};
+
 export async function loginService(loggininfo) {
   const payload = {
     method: 'POST',
@@ -63,7 +69,8 @@ export async function createService(service) {
       },
       body: JSON.stringify(service),
     });
-    return response.json();
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     throw new Error(error);
   }
@@ -78,7 +85,8 @@ export async function updateService(service) {
       },
       body: JSON.stringify(service),
     });
-    return response.json();
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     throw new Error(error);
   }
@@ -92,7 +100,8 @@ export async function deleteService(id) {
         'Content-Type': 'application/json',
       },
     });
-    return response.json();
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     throw new Error(error);
   }
@@ -101,7 +110,8 @@ export async function deleteService(id) {
 export async function getUserById(id) {
   try {
     const response = await fetch(`${API_URL}/api/user/${id}`);
-    return response.json();
+    const user = await response.json();
+    return user;
   } catch (error) {
     throw new Error(error);
   }
@@ -116,7 +126,8 @@ export async function createUser(data) {
       },
       body: JSON.stringify(data),
     });
-    return response.json();
+    const user = await response.json();
+    return user;
   } catch (error) {
     throw new Error(error);
   }
@@ -134,6 +145,23 @@ export const postPayment = async (_id, title, price) => {
         title,
         price,
       }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const createPurchasedServices = async (info) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify(info),
     });
     const data = await response.json();
     return data;
