@@ -29,7 +29,7 @@ export const serviceByUser = (user) => ({ type: SERVICE_BY_USER, payload: user }
 export const newService = (service) => ({ type: NEW_SERVICE, payload: service });
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });
 export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
-export const createActiveService = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
+export const createsrs = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
 
 export const allusers = () => async (dispatch) => {
   try {
@@ -97,7 +97,7 @@ export const remove = (id) => async (dispatch) => {
 export const createActiveServices = (data) => async (dispatch) => {
   try {
     const service = await createPurchasedServices(data);
-    dispatch(createActiveService(service));
+    dispatch(createsrs(service));
   } catch (error) {
     throw new Error(error);
   }

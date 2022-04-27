@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import CheckoutComp from '../../components/Checkout/Checkout';
@@ -20,8 +21,6 @@ function Checkout() {
   console.log(data);
   if (status === 'approved') {
     dispatch(createActiveServices(data));
-    localStorage.removeItem('id_service');
-    localStorage.removeItem('id_seller');
     return (
       <div>
         <Header />
