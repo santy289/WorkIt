@@ -19,6 +19,8 @@ function Checkout() {
   };
   if (status === 'approved') {
     dispatch(createActiveServices(data));
+    localStorage.removeItem('id_service');
+    localStorage.removeItem('id_seller');
     return (
       <div>
         <Header />
