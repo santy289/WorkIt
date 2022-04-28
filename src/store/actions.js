@@ -1,7 +1,7 @@
 import {
   LOGIN_USER,
   SERVICE_BY_ID,
-  SERVICE_BY_NAME,
+  SERVICE_BY_QUERY,
   SERVICE_BY_USER,
   NEW_SERVICE,
   PATCH_SERVICE,
@@ -24,7 +24,7 @@ import {
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
 export const getall = (all) => ({ type: GET_ALL, payload: all });
 export const serviceById = (id) => ({ type: SERVICE_BY_ID, payload: id });
-export const queryFinder = (name) => ({ type: SERVICE_BY_NAME, payload: name });
+export const queryFinder = (query) => ({ type: SERVICE_BY_QUERY, payload: query });
 export const serviceByUser = (user) => ({ type: SERVICE_BY_USER, payload: user });
 export const newService = (service) => ({ type: NEW_SERVICE, payload: service });
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });

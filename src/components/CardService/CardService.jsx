@@ -1,13 +1,16 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './CardService.styles.scss';
 
-function CardService(props) {
+function CardService() {
+  const ofertservice = useSelector((state) => state.ofertservice);
+  console.log(ofertservice);
   const {
-    _id, title, image, cost, username,
-  } = props.eachService;
+    _id, title, username, cost, image,
+  } = ofertservice;
   return (
     <div className="cardservice">
       <Link to={`/detail/${_id}`}>

@@ -1,7 +1,7 @@
 import {
   LOGIN_USER,
   SERVICE_BY_ID,
-  SERVICE_BY_NAME,
+  SERVICE_BY_QUERY,
   SERVICE_BY_USER,
   NEW_SERVICE,
   PATCH_SERVICE,
@@ -17,6 +17,16 @@ const initialState = {
     buyerId: '',
     serviceId: '',
   },
+  ofertservice: [{
+    title: '',
+    tags: [],
+    username: '',
+    userId: '',
+    cost: '',
+    description: '',
+    image: '',
+    _id: '',
+  }],
 
 };
 
@@ -32,10 +42,10 @@ function reducer(state = initialState, action) {
         ...state,
         state,
       };
-    case SERVICE_BY_NAME:
+    case SERVICE_BY_QUERY:
       return {
         ...state,
-        state,
+        ofertservice: action.payload,
       };
     case SERVICE_BY_USER:
       return {

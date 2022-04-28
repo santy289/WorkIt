@@ -1,6 +1,6 @@
 export const LOGIN_USER = 'LOGIN_USER';
 export const SERVICE_BY_ID = 'SERVICE_BY_ID';
-export const SERVICE_BY_NAME = 'SERVICE_BY_NAME';
+export const SERVICE_BY_QUERY = 'SERVICE_BY_QUERY';
 export const SERVICE_BY_USER = 'SERVICE_BY_USER';
 export const NEW_SERVICE = 'NEW_SERVICE';
 export const PATCH_SERVICE = 'PATCH_SERVICE';

@@ -7,7 +7,6 @@ import './Checkout.styles.scss';
 
 function Checkout() {
   const activeproducts = useSelector((state) => state.activeproducts);
-  console.log(activeproducts);
   const { status, paymentId, paymentType } = activeproducts;
   return (
     <div className="containercheck">
