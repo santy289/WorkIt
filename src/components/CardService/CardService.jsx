@@ -7,7 +7,6 @@ import './CardService.styles.scss';
 
 function CardService() {
   const ofertservice = useSelector((state) => state.ofertservice);
-  console.log(ofertservice);
   const {
     _id, title, username, cost, image,
   } = ofertservice;

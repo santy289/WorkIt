@@ -27,7 +27,16 @@ const initialState = {
     image: '',
     _id: '',
   }],
-
+  userprofile: {
+    username: '',
+    name: '',
+    last: '',
+    email: '',
+    country: '',
+    city: '',
+    address: '',
+    imageprofile: '',
+  },
 };
 
 // eslint-disable-next-line default-param-last
@@ -36,6 +45,7 @@ function reducer(state = initialState, action) {
     case LOGIN_USER:
       return {
         ...state,
+        userprofile: action.payload,
       };
     case SERVICE_BY_ID:
       return {
