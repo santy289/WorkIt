@@ -55,7 +55,7 @@ function reducer(state = initialState, action) {
     case CREATE_ACTIVE_SERVICE:
       return {
         ...state,
-        state,
+        activeproducts: action.payload,
       };
     default:
       return state;
