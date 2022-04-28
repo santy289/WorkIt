@@ -52,7 +52,7 @@ function Header() {
         <img className="Header_img" src={smallLogo} alt="" />
         <NavLink to={ROUTE_HOME} className="Header_nav--item">Home</NavLink>
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
-        <NavLink to={ROUTE_SELLER} className="Header_nav--item">Vender</NavLink>
+        <NavLink to={ROUTE_SELLER} className="Header_nav--item">Administrar Servicios</NavLink>
         <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item">Perfil</NavLink>
         <span
           tabIndex={0}

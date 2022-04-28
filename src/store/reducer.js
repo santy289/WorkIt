@@ -8,7 +8,17 @@ import {
   CREATE_ACTIVE_SERVICE,
 } from './types';
 
-const initialState = [];
+const initialState = {
+  activeproducts: {
+    status: '',
+    paymentId: '',
+    paymentType: '',
+    sellerId: '',
+    buyerId: '',
+    serviceId: '',
+  },
+
+};
 
 // eslint-disable-next-line default-param-last
 function reducer(state = initialState, action) {

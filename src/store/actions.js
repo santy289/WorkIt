@@ -13,7 +13,7 @@ import {
 import {
   allUsers,
   getServiceById,
-  getServiceByName,
+  getServiceByQuery,
   getServiceByUser,
   createService,
   updateService,
@@ -24,7 +24,7 @@ import {
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
 export const getall = (all) => ({ type: GET_ALL, payload: all });
 export const serviceById = (id) => ({ type: SERVICE_BY_ID, payload: id });
-export const serviceByName = (name) => ({ type: SERVICE_BY_NAME, payload: name });
+export const queryFinder = (name) => ({ type: SERVICE_BY_NAME, payload: name });
 export const serviceByUser = (user) => ({ type: SERVICE_BY_USER, payload: user });
 export const newService = (service) => ({ type: NEW_SERVICE, payload: service });
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });
@@ -49,10 +49,10 @@ export const findById = (id) => async (dispatch) => {
   }
 };
 
-export const findByName = (name) => async (dispatch) => {
+export const findByQuery = (query) => async (dispatch) => {
   try {
-    const service = await getServiceByName(name);
-    dispatch(serviceByName(service));
+    const service = await getServiceByQuery(query);
+    dispatch(queryFinder(service));
   } catch (error) {
     throw new Error(error);
   }

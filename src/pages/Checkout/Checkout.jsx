@@ -25,11 +25,7 @@ function Checkout() {
       <div>
         <Header />
         <div className="checkout-container">
-          <CheckoutComp
-            status={status}
-            paymentMethod={paymentType}
-            paymentId={paymentId}
-          />
+          <CheckoutComp />
         </div>
       </div>
     );

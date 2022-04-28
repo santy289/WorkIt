@@ -41,9 +41,9 @@ export async function getServiceById(id) {
   }
 }
 
-export async function getServiceByName(name) {
+export async function getServiceByQuery(query) {
   try {
-    const response = await fetch(`${API_URL}/api/service/${name}`);
+    const response = await fetch(`${API_URL}api/service/${query}`);
     return response.json();
   } catch (error) {
     throw new Error(error);

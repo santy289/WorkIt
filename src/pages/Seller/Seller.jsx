@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { viewUserService, viewClientRequest } from '../../services/ViewService';
+import { useDispatch } from 'react-redux';
+import { findByQuery } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
 import CardService from '../../components/CardService/CardService';
 import './Seller.styles.scss';
 
 function Seller() {
+  const dispatch = useDispatch();
   const [services, setServices] = useState([]);
   const [requests, setRequests] = useState([]);
   const showUserServices = async () => {
-    const data = await viewUserService();
+    const data = localStorage.getItem('id');
+    dispatch(findByQuery(data));
     setServices(data);
   };
   const ClientRequest = async () => {
-    const data = await viewClientRequest();
-    setRequests(data);
+    dispatch(setRequests());
   };
   useEffect(() => {
     showUserServices();
