@@ -10,6 +10,7 @@ function Seller() {
   const dispatch = useDispatch();
   const showUserServices = async () => {
     const data = localStorage.getItem('id');
+    console.log(data);
     dispatch(findByQuery(data));
   };
   const ClientRequest = async () => {
