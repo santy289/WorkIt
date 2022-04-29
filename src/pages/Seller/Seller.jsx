@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-underscore-dangle */
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { findByQuery } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import CardService from '../../components/CardService/CardService';
@@ -8,18 +8,11 @@ import './Seller.styles.scss';
 
 function Seller() {
   const dispatch = useDispatch();
-  const showUserServices = async () => {
-    const data = localStorage.getItem('id');
-    console.log(data);
-    dispatch(findByQuery(data));
-  };
-  const ClientRequest = async () => {
-    dispatch();
-  };
-  useEffect(() => {
-    showUserServices();
-    ClientRequest();
-  }, []);
+  const data = localStorage.getItem('id');
+  dispatch(findByQuery(data));
+  const ofertservice = useSelector((state) => state.ofertservice);
+  console.log(ofertservice);
+
   return (
     <>
       <Header />
@@ -34,7 +27,16 @@ function Seller() {
           <section className="servicesList">
             <h1>Servicios Publicados</h1>
             <div className="servicesList_cardViewer">
-              <CardService />
+              {ofertservice.map((service) => (
+                <CardService
+                  key={service._id}
+                  _id={service._id}
+                  title={service.title}
+                  username={service.username}
+                  cost={service.cost}
+                  image={service.image}
+                />
+              ))}
             </div>
           </section>
           <section className="activeClientsList">

@@ -26,11 +26,7 @@ const initialState = {
     description: '',
     image: '',
     _id: '',
-<<<<<<< HEAD
   },
-
-=======
-  }],
   userprofile: {
     username: '',
     name: '',
@@ -41,7 +37,6 @@ const initialState = {
     address: '',
     imageprofile: '',
   },
->>>>>>> e3cfa896bfb69b3181ab21ea550cacfa16e0843c
 };
 
 // eslint-disable-next-line default-param-last
