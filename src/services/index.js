@@ -1,4 +1,4 @@
-const API_URL = 'https://workit-api.herokuapp.com';
+const API_URL = 'http://localhost:8080';
 
 export const allUsers = async () => {
   const response = await fetch(`${API_URL}/users`);
@@ -75,7 +75,6 @@ export async function createService(service) {
     throw new Error(error);
   }
 }
-
 export async function updateService(service) {
   try {
     const response = await fetch(`${API_URL}/api/service/${service.id}`, {
@@ -128,6 +127,21 @@ export async function createUser(data) {
     });
     const user = await response.json();
     return user;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+export async function updateUser(id, user) {
+  try {
+    const response = await fetch(`${API_URL}/api/user/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     throw new Error(error);
   }

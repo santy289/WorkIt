@@ -1,17 +1,20 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import { getUserById } from '../../services/index';
+import { getUserById, updateUser } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
+  const id = localStorage.getItem('id');
+
+ 
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     navigate('/');
   };
-  const id = localStorage.getItem('id');
   const [user, setUser] = useState({});
   const showUser = async () => {
     const data = await getUserById(id);
@@ -32,6 +35,19 @@ function UserProfile() {
               alt="profile"
             />
           </div>
+          <div>
+      <input
+        type="file"
+        name="file"
+        id="file"
+        accept="image/*"
+        onChange={ handleChange }
+      />
+
+      <button type="button" onClick={handleUploaImage}>
+        Upload Image
+      </button>
+    </div>
           <div className="containerUser_buttonsProfile">
             <button type="button" className="userProfileButton">Historial de ventas</button>
             <button type="button" className="userProfileButton">Historial de compras</button>
