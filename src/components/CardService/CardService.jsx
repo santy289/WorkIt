@@ -6,8 +6,8 @@ import './CardService.styles.scss';
 
 function CardService(props) {
   const {
-    _id, title, image, cost, username,
-  } = props;
+    _id, title, username, cost, image,
+  } = props.eachService;
   return (
     <div className="cardservice">
       <Link to={`/detail/${_id}`}>

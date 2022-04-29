@@ -6,6 +6,8 @@ import {
   NEW_SERVICE,
   PATCH_SERVICE,
   CREATE_ACTIVE_SERVICE,
+  GET_INFO_BUYER,
+  GET_ALL_SERVICES,
 } from './types';
 
 const initialState = {
@@ -37,6 +39,23 @@ const initialState = {
     address: '',
     imageprofile: '',
   },
+  infoBuyer: [{
+    _id: '',
+    username: '',
+    name: '',
+    last: '',
+    imageprofile: '',
+  }],
+  services: [{
+    title: '',
+    tags: [],
+    username: '',
+    userId: '',
+    cost: '',
+    description: '',
+    image: '',
+    _id: '',
+  }],
 };
 
 // eslint-disable-next-line default-param-last
@@ -77,6 +96,18 @@ function reducer(state = initialState, action) {
         ...state,
         activeproducts: action.payload,
       };
+    case GET_INFO_BUYER:
+      return {
+        ...state,
+        infoBuyer: action.payload,
+      };
+
+    case GET_ALL_SERVICES:
+      return {
+        ...state,
+        services: action.payload,
+      };
+
     default:
       return state;
   }
