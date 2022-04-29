@@ -169,3 +169,13 @@ export const createPurchasedServices = async (info) => {
     return err;
   }
 };
+
+export const getInfoBuyer = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};

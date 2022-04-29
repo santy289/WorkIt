@@ -8,6 +8,8 @@ import {
   REMOVE_SERVICE,
   GET_ALL,
   CREATE_ACTIVE_SERVICE,
+  GET_INFO_BUYER,
+  GET_ALL_SERVICES,
 } from './types';
 
 import {
@@ -19,6 +21,8 @@ import {
   updateService,
   deleteService,
   createPurchasedServices,
+  getInfoBuyer,
+  allService,
 } from '../services';
 
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
@@ -30,6 +34,8 @@ export const newService = (service) => ({ type: NEW_SERVICE, payload: service })
 export const patchService = (service) => ({ type: PATCH_SERVICE, payload: service });
 export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
 export const createActiveService = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
+export const getInfoBuyerAction = (query) => ({ type: GET_INFO_BUYER, payload: query });
+export const getAllServices = (services) => ({ type: GET_ALL_SERVICES, payload: services });
 
 export const allusers = () => async (dispatch) => {
   try {
@@ -98,6 +104,24 @@ export const createActiveServices = (data) => async (dispatch) => {
   try {
     const service = await createPurchasedServices(data);
     dispatch(createActiveService(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const getInfoBuyerThunk = (query) => async (dispatch) => {
+  try {
+    const service = await getInfoBuyer(query);
+    dispatch(getInfoBuyerAction(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const getAllServicesThunk = () => async (dispatch) => {
+  try {
+    const service = await allService();
+    dispatch(getAllServices(service));
   } catch (error) {
     throw new Error(error);
   }
