@@ -19,7 +19,7 @@ const initialState = {
     buyerId: '',
     serviceId: '',
   },
-  ofertservice: {
+  ofertservice: [{
     title: '',
     tags: [],
     username: '',
@@ -28,7 +28,7 @@ const initialState = {
     description: '',
     image: '',
     _id: '',
-  },
+  }],
   userprofile: {
     username: '',
     name: '',
