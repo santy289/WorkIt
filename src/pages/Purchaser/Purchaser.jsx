@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { allService } from '../../services/index';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllServicesThunk } from '../../store/actions';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
 import Filter from '../../components/Filter/Filter';
 import './Purchaser.styles.scss';
 
 function Purchaser() {
-  const [services, setServices] = useState([]);
-  const showUserServices = async () => {
-    const data = await allService();
-    setServices(data);
-  };
+  const dispatch = useDispatch();
+  const services = useSelector((state) => state.services);
+  console.log(services, 'services');
   useEffect(() => {
-    showUserServices();
+    dispatch(getAllServicesThunk());
   }, []);
 
   return (
