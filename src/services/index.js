@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const API_URL = 'https://workit-api.herokuapp.com';
 
 export const allUsers = async () => {
@@ -128,6 +130,15 @@ export async function createUser(data) {
     });
     const user = await response.json();
     return user;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function updateUser(id, formData) {
+  try {
+    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData);
+    return response;
   } catch (error) {
     throw new Error(error);
   }
