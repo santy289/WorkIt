@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findByQuery } from '../../store/actions';
 import Header from '../../components/Header/Header';
-import CardService from '../../components/CardService/CardService';
+import CardAdminServices from '../../components/CardAdminServices/CardService';
 import './Seller.styles.scss';
 
 function Seller() {
@@ -28,7 +28,7 @@ function Seller() {
             <h1>Servicios Publicados</h1>
             <div className="servicesList_cardViewer">
               {reduxServices.map((service) => (
-                <CardService key={service._id} eachService={service} />
+                <CardAdminServices key={service._id} eachService={service} />
               ))}
             </div>
           </section>
