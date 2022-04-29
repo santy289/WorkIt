@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findByQuery } from '../../store/actions';
 import Header from '../../components/Header/Header';
-import CardAdminServices from '../../components/CardAdminServices/CardService';
+import CardService from '../../components/CardService/CardService';
 import './Seller.styles.scss';
 
 function Seller() {
   const dispatch = useDispatch();
+  const id = localStorage.getItem('id');
   const reduxServices = useSelector((state) => state.ofertservice);
   useEffect(() => {
-    dispatch(findByQuery(localStorage.getItem('id')));
+    dispatch(findByQuery(id));
   }, []);
+
   return (
-    <>
+    <div>
       <Header />
       <div className="seller">
         <div className="seller_Title">MIS SERVICIOS</div>
@@ -28,7 +30,7 @@ function Seller() {
             <h1>Servicios Publicados</h1>
             <div className="servicesList_cardViewer">
               {reduxServices.map((service) => (
-                <CardAdminServices key={service._id} eachService={service} />
+                <CardService key={service._id} eachService={service} />
               ))}
             </div>
           </section>
@@ -41,7 +43,7 @@ function Seller() {
         </div>
 
       </div>
-    </>
+    </div>
   );
 }
 
