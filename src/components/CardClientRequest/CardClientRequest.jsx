@@ -7,28 +7,23 @@ import './CardClientRequest.styles.scss';
 function CardClientRequest(props) {
   const {
     name, last, imageprofile, username,
-  } = props;
+  } = props.eachBuyer;
   return (
-    <div className="cardClientRequest">
-      <div className="cardClientRequest_userData">
-        <div className="cardClientRequest_userData_image">
-          <img src={imageprofile} alt="profile" />
-        </div>
-        <div className="cardClientRequest_userData_name">
-          <h3>Nombre:</h3>
-          {' '}
-          {name}
-          {' '}
-          {last}
-        </div>
-        <div className="cardClientRequest_servicerequested">
-          <h3>Nombre de Usuario:</h3>
-          {username}
-        </div>
-        <div className="cardClientRequest_buttonsBar">
-          <Button text="Agendar" />
-          <Button text="Chat" />
-        </div>
+    <div className="clientRequest">
+      <div className="clientRequest__imagebuyer">
+        <img className="clientRequest__imagebuyer--userprofile" src={imageprofile} alt="profile" />
+      </div>
+      <div className="clientRequest__infobuyer">
+        <h3>Nombre:</h3>
+        {' '}
+        {name}
+        {' '}
+        {last}
+        <h3>Nombre de Usuario:</h3>
+        {username}
+      </div>
+      <div className="clientRequest__buttonsBar">
+        <Button text="Chat" />
       </div>
     </div>
   );
