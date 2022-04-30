@@ -6,7 +6,7 @@ import './CardClientRequest.styles.scss';
 
 function CardClientRequest(props) {
   const {
-    name, last, imageprofile, username,
+    name, last, imageprofile, username, title,
   } = props.eachBuyer;
   return (
     <div className="clientRequest">
@@ -21,6 +21,8 @@ function CardClientRequest(props) {
         {last}
         <h3>Nombre de Usuario:</h3>
         {username}
+        <h3>Servicio adquirido:</h3>
+        {title}
       </div>
       <div className="clientRequest__buttonsBar">
         <Button text="Chat" />
