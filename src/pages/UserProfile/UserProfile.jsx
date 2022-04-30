@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import { getUserById } from '../../services/index';
+import { getUserById, updateUser } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
@@ -12,6 +12,22 @@ function UserProfile() {
     navigate('/');
   };
   const id = localStorage.getItem('id');
+  const [image, setImage] = useState(null);
+  const handleChange = (evt) => {
+    setImage(evt.target.files[0]);
+  };
+
+  const handleUploaImage = async () => {
+    const formData = new FormData();
+
+    formData.append('file', image);
+    try {
+      await updateUser(id, formData);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const [user, setUser] = useState({});
   const showUser = async () => {
     const data = await getUserById(id);
@@ -31,6 +47,19 @@ function UserProfile() {
               src={user.imageprofile}
               alt="profile"
             />
+          </div>
+          <div className="updateimage">
+            <input
+              className="choose"
+              type="file"
+              name="file"
+              id="file"
+              accept="image/*"
+              onChange={handleChange}
+            />
+            <button type="button" onClick={handleUploaImage}>
+              Actualizar Imagen
+            </button>
           </div>
           <div className="containerUser_buttonsProfile">
             <button type="button" className="userProfileButton">Historial de ventas</button>
