@@ -1,0 +1,90 @@
+$white: rgb(242, 242, 242);
+$soft-grey: rgb(191, 191, 191);
+$dark-grey: rgb(130, 130, 130);
+$black: rgb(0, 0, 0);
+
+.card-detail {
+  background-color: $white;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    margin: auto;
+  }
+
+  &__figure {
+    width: 100%;
+    height: 15rem;
+  }
+
+  &__image{
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: auto;
+    width: 80%;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  &__text{
+    color: $dark-grey;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    &:hover {
+      color: rgb(11, 47, 226);
+    }
+  }
+
+  &__user {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: end;
+  }
+
+  &__footer {
+    background-color: $soft-grey;
+    padding: 1rem;
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: end;
+  }
+}
+
+@media (min-width: 576px){
+  .cardservice {
+    width: 48%;
+  }
+}
+
+@media (min-width: 992px){
+  .cardservice {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1200px){
+  .cardservice {
+    width: 23%;
+  }
+}
