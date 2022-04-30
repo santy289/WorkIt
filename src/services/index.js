@@ -84,6 +84,7 @@ export async function updateService(service) {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify(service),
     });
