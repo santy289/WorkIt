@@ -109,9 +109,9 @@ export const createActiveServices = (data) => async (dispatch) => {
   }
 };
 
-export const getInfoBuyerThunk = (query) => async (dispatch) => {
+export const getInfoBuyerThunk = (id) => async (dispatch) => {
   try {
-    const service = await getInfoBuyer(query);
+    const service = await getInfoBuyer(id);
     dispatch(getInfoBuyerAction(service));
   } catch (error) {
     throw new Error(error);

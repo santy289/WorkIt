@@ -183,7 +183,7 @@ export const createPurchasedServices = async (info) => {
 
 export const getInfoBuyer = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/api/purchased/${id}`);
+    const response = await fetch(`${API_URL}/api/purchased/search/${id}`);
     const data = await response.json();
     return data;
   } catch (err) {
