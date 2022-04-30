@@ -2,11 +2,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './cardDetail.scss';
+import { Link } from 'react-router-dom';
 
 function CardService(props) {
   const {
-    title, username, cost, image,
+    _id, title, username, cost, image,
   } = props.eachService;
+  console.log(_id, 'El id');
   return (
     <div className="card-detail">
       <div>
@@ -18,9 +20,9 @@ function CardService(props) {
             <p className="card-detail__title">
               {title}
             </p>
-            <p className="card-detail__text">
+            <Link to={`/edit-service/${_id}`} className="card-detail__text">
               Editar Servicio
-            </p>
+            </Link>
 
             <p className="card-detail__user">
               {`Por: ${username}`}
