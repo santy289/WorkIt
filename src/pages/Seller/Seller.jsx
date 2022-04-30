@@ -2,16 +2,19 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { findByQuery } from '../../store/actions';
+import { findByQuery, getInfoBuyerThunk } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import CardDetail from '../../components/CardDetail';
 import './Seller.styles.scss';
 
 function Seller() {
   const dispatch = useDispatch();
+  const id = localStorage.getItem('id');
   const reduxServices = useSelector((state) => state.ofertservice);
+  const reduxBuyer = useSelector((state) => state.infoBuyer);
   useEffect(() => {
-    dispatch(findByQuery(localStorage.getItem('id')));
+    dispatch(findByQuery(id));
+    dispatch(getInfoBuyerThunk(id));
   }, []);
   return (
     <>
@@ -35,7 +38,10 @@ function Seller() {
           <section className="activeClientsList">
             <h1>Clientes interesados en los servicios</h1>
             <div className="activeClientsList_cardViewer">
-              <h1>holaaa</h1>
+              {
+                reduxBuyer.map((buyer) => (
+                  <CardDetail key={buyer._id} eachBuyer={buyer} />
+              }
             </div>
           </section>
         </div>

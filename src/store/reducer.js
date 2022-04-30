@@ -40,9 +40,11 @@ const initialState = {
     imageprofile: '',
   },
   infoBuyer: [{
-    _id: '',
+    purchasedId: '',
+    buyerId: '',
     username: '',
     name: '',
+    title: '',
     last: '',
     imageprofile: '',
   }],
