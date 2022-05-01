@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://workitapi.herokuapp.com';
+const API_URL = 'https://workit-api.herokuapp.com';
 
 export const allUsers = async () => {
   const response = await fetch(`${API_URL}/users`);
