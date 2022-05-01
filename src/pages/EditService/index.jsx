@@ -11,6 +11,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import Editphoto from '../../components/Editphoto';
 import './editService.scss';
 import { updateService } from '../../services';
 
@@ -20,6 +21,7 @@ function EditService() {
   return (
     <div>
       <Header />
+      <Editphoto />
       <Formik
         initialValues={{
           id,
