@@ -142,7 +142,7 @@ const config = {
 };
 export async function updateService(id, formData) {
   try {
-    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData, config);
+    const response = axios.patchForm(`${API_URL}/api/service/${id}`, formData, config);
     return response;
   } catch (error) {
     throw new Error(error);
