@@ -112,7 +112,7 @@ export async function deleteService(id) {
 
 export async function getUserById(id) {
   try {
-    const response = await fetch(`${API_URL}/api/user/${id}`);
+    const response = await fetch(`${API_URL}/api/service/${id}`);
     const user = await response.json();
     return user;
   } catch (error) {
