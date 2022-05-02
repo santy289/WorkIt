@@ -1,4 +1,4 @@
-/* eslint-disable no-alert */
+/* eslint-disable */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import {
@@ -12,14 +12,59 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 import './editService.scss';
-import { updateService } from '../../services';
+import { updateService, getServiceById } from '../../services';
+import { useEffect, useState } from 'react';
 
 function EditService() {
   const { id } = useParams();
+  const [image, setImage] = useState(null);
+  const handleChange = (evt) => {
+    setImage(evt.target.files[0]);
+  };
+
+  const handleUploaImage = async () => {
+    const formData = new FormData();
+
+    formData.append('file', image);
+    try {
+      await updateService(id, formData);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const [service, setService] = useState({});
+  const showService = async () => {
+    const data = await getServiceById(id);
+    setService(data);
+  };
+  useEffect(() => {
+    showService();
+  }, []);
   const navigate = useNavigate();
   return (
     <div>
       <Header />
+      <div className="containerUser">
+            <img
+              className="containerUser_imageContainer--userImage"
+              src={service.image}
+              alt="profile"
+            />
+          </div>
+          <div className="updateimage">
+            <input
+              className="choose"
+              type="file"
+              name="file"
+              id="file"
+              accept="image/*"
+              onChange={handleChange}
+            />
+            <button type="button" onClick={handleUploaImage}>
+              Actualizar Imagen
+            </button>
+          </div>
       <Formik
         initialValues={{
           id,
