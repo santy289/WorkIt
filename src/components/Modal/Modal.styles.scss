@@ -1,27 +1,28 @@
-$white: rgb(242, 242, 242);
-$soft-grey: rgb(191, 191, 191);
-$dark-grey: rgb(130, 130, 130);
-$black: rgb(0, 0, 0);
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$cream: rgb(232, 232, 193);
+$white: rgb(255, 255, 255);
 
 .modal{
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 5;
 
   &__content{
     display: flex;
-    background-color: $soft-grey;
-    border-color: $black;
-    border-style: solid;
-    border-width: 0.4rem;
+    background-color: $white;
+    border: $gray 0.4rem solid;
+    border-radius: 0.5rem;
     height: auto;
     justify-content: center;
     margin: auto;
     padding: 2rem;
     position: relative;
-    top: 10%;
+    top: 15%;
     width: 30%;
   }
 

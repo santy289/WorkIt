@@ -7,21 +7,14 @@ $white: rgb(232, 232, 193);
 #page-wrap {
   padding-bottom: 10px;
   padding-top: 10px;
-  }
-
-.Home {
-  background-image: url('../../assets/background.jpeg');
-  background-repeat: no-repeat;
-  background-size:cover;
-  height: 100vh;
-  width: 100%;
 }
+
 .containerTitle{
   color: $gray;
   display: flex;
-  font-size: 5rem;
+  font-size: 4rem;
   justify-content: center;
-  padding-top: 5em;
+  padding: 15rem 3rem 0rem;
 }
 .containerCard{
   align-items: center;
@@ -33,8 +26,15 @@ $white: rgb(232, 232, 193);
   width: auto;
 }
 @media (min-width:1025px){
+  .Home {
+    background-image: url('../../assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+  }
   .containerTitle{
-    font-size: 6rem;
+    font-size: 5rem;
     justify-content: flex-end;
     padding-top: 2rem;
     position: absolute;

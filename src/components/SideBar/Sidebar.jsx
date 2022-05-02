@@ -20,9 +20,9 @@ function SideBar() {
   if (localStorage.getItem('token') === null) {
     return (
       <Menu>
-        <NavLink to={ROUTE_HOME} className="Header_nav--item">Home</NavLink>
+        <NavLink to={ROUTE_HOME} className="Header_nav--item">Inicio</NavLink>
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
-        <NavLink to={ROUTE_LOGIN} className="Header_nav--item">Iniciar Sesión</NavLink>
+        <NavLink to={ROUTE_LOGIN} className="Header_nav--item">Iniciar sesión</NavLink>
         <NavLink to={ROUTE_SIGNUP} className="Header_nav--item">Registrarse</NavLink>
       </Menu>
     );
