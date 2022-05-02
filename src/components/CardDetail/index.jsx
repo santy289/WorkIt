@@ -8,7 +8,6 @@ function CardService(props) {
   const {
     _id, title, username, cost, image,
   } = props.eachService;
-  console.log(_id, 'El id');
   return (
     <div className="card-detail">
       <div>
