@@ -112,7 +112,7 @@ export async function deleteService(id) {
 
 export async function getUserById(id) {
   try {
-    const response = await fetch(`${API_URL}/api/service/${id}`);
+    const response = await fetch(`${API_URL}/api/user/${id}`);
     const user = await response.json();
     return user;
   } catch (error) {
@@ -142,7 +142,7 @@ const config = {
 };
 export async function updateService(id, formData) {
   try {
-    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData, config);
+    const response = axios.patchForm(`${API_URL}/api/service/${id}`, formData, config);
     return response;
   } catch (error) {
     throw new Error(error);
