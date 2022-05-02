@@ -1,18 +1,23 @@
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
 #page-wrap {
   padding-bottom: 10px;
   padding-top: 10px;
   }
 
 .Home {
-  background-image: url('../../assets/backgroundStyle2.jpeg');
+  background-image: url('../../assets/background.jpeg');
   background-repeat: no-repeat;
   background-size:cover;
   height: 100vh;
   width: 100%;
 }
 .containerTitle{
-  background-color: rgba(255, 255, 255, 0);
-  color: #404145;
+  color: $gray;
   display: flex;
   font-size: 5rem;
   justify-content: center;

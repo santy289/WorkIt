@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import useModal from '../../hooks/useModal';
-import smallLogo from '../../assets/smalllogowithe.jpg';
+import smallLogo from '../../assets/smalllogo.png';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE,
 } from '../../routes/routes';
@@ -31,8 +31,8 @@ function Header() {
         <Modal handleClick={toggleSignup} show={showSignup}>
           <SignUp />
         </Modal>
+        <Sidebar />
         <header className="Header_Container">
-          <Sidebar />
           <ul className="Header_nav">
             <img className="Header_img" src={smallLogo} alt="" />
             <NavLink to={ROUTE_HOME} className="Header_nav--item">Home</NavLink>
