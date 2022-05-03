@@ -10,7 +10,7 @@ $white: rgb(232, 232, 193);
   width: 100%;
 
   &:hover {
-    box-shadow: 1rem 1rem 1.5rem $blue;
+    box-shadow: 0.5rem 0.5rem 1.5rem $blue;
 
     .cardservice__title {
       color: $gray;
@@ -53,6 +53,7 @@ $white: rgb(232, 232, 193);
   }
 
   &__user {
+    color: $blue;
     font-size: 1.2rem;
     font-weight: 600;
     text-align: end;
@@ -60,6 +61,7 @@ $white: rgb(232, 232, 193);
   }
 
   &__footer {
+    color: $gray;
     background-color: $yellow;
     padding: 1rem;
   }

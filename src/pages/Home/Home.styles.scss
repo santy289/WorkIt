@@ -14,15 +14,15 @@ $white: rgb(232, 232, 193);
   display: flex;
   font-size: 4rem;
   justify-content: center;
-  padding: 15rem 3rem 0rem;
+  margin: 2rem 2rem;
 }
 .containerCard{
   align-items: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  padding: 4rem;
+  height: auto;
+  margin: 4rem;
   width: auto;
 }
 @media (min-width:1025px){
@@ -36,8 +36,7 @@ $white: rgb(232, 232, 193);
   .containerTitle{
     font-size: 5rem;
     justify-content: flex-end;
-    padding-top: 2rem;
-    position: absolute;
+    position: relative;
     right: 5rem;
     width: 100%;
   }
