@@ -6,8 +6,9 @@ $white: rgb(232, 232, 193);
 
 
 .button{
-  background-color: $orange;
-  border-color: black;
+  color: $gray;
+  background-color: $yellow;
+  border-color: $gray;
   border-radius: 1rem;
   border-style: solid;
   cursor: pointer;

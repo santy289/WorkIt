@@ -17,12 +17,12 @@ function Purchaser() {
   return (
     <>
       <Header />
-      <div className="purcasher">
+      <div className="purchaser">
         <div className="purchaser__filter">
           <Filter />
         </div>
         <div className="purchaser__body">
-          <div className="purcasher_list">
+          <div className="purchaser__list">
             {
               services.map((service) => (
                 // eslint-disable-next-line no-underscore-dangle
