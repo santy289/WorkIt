@@ -1,10 +1,11 @@
-$white: rgb(242, 242, 242);
-$soft-grey: rgb(191, 191, 191);
-$dark-grey: rgb(130, 130, 130);
-$black: rgb(0, 0, 0);
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
 
 .seller{
-  background-image: url('../../assets/backgroundStyle2.jpeg');
+  background-image: url('../../assets/background.jpeg');
   background-repeat: no-repeat;
   background-size:cover;
   height: 100vh;
@@ -31,11 +32,10 @@ $black: rgb(0, 0, 0);
 
 .seller__create {
   align-items: center;
-  background-color: $black;
+  background-color: $gray;
   border-radius: 3rem;
   bottom: 5%;
-  box-shadow: 0.2rem 0.2rem 0.5rem;
-  color: $soft-grey;
+  color: $yellow;
   display: flex;
   font-weight: 700;
   font-size: 5rem;

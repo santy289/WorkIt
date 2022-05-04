@@ -1,26 +1,37 @@
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
 .userProfile{
   display: block;
   width: auto;
 
   .containerUser{
-    background-color:black;
-    width: 100%;
-    border-radius:  0 0 2rem 2rem;
+    background-color: $blue;
+    border-radius: 1rem;
+    color: $yellow;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 90%;
+
     &_imageContainer{
-      padding-top: 4rem;
       display: flex;
       justify-content: center;
+      margin: 3rem auto;
       width: 100%;
-      &--userImage{
+
+      &--userimage{
         border-radius: 10%;
-        background-color: white;
-        height: 30%;
-        width: 30%;
+        width: 50%;
       }
     }
+
     &_buttonsProfile{
       display: flex;
       justify-content: space-around;
+      margin: 2rem 1rem;
     }
   }
   .contentProfile{
@@ -28,43 +39,69 @@
     display: flex;
     justify-content: center;
     width: 100%;
+
     &_userProfileTable{
       height: 50vh;
       width: 90%;
       font-size: 1.7rem;
-      background-color:rgba(0, 0, 0, 0.13);
       border-radius: 1.5rem;
     }
   }
   .userProfileButton{
-    background-color: rgba(22, 22, 219, 0);
-    border: none;
-    color: white;
-    display: block;
-    height: auto;
-    margin: 0.5rem;
-    padding: 5rem 0.5rem 0.5rem 2rem;
-    width: auto;
+    background-color: $yellow;
+    border: 0.2rem $gray solid;
+    border-radius: 0.5rem;
+    color: $gray;
+    cursor: pointer;
     font-size: 1.5rem;
+    padding: 1rem;
+    width: 30%;
   }
 }
 
+.updateimage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__text {
+    color: $yellow;
+    font-size: 1.5rem;
+  }
+
+  &__button {
+    background-color: $yellow;
+    border: 0.2rem $gray solid;
+    border-radius: 0.5rem;
+    color: $gray;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    width: 50%;
+  }
+}
+
+
 @media (min-width:1025px){
-  .userProfile{
-    background-image: url('../../assets/backgroundStyle2.jpeg');
-    background-size: cover;
+  .userProfile {
     display: flex;
 
     .containerUser{
-      padding: 0rem;
+      margin: 1rem;
       width: 25%;
-      border-radius:0;
+
       &_imageContainer--userImage{
         height: 60%;
         width: 60%;
       }
+
       &_buttonsProfile{
-        display: block;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin: 3rem auto;
       }
     }
     .contentProfile{
@@ -72,6 +109,7 @@
       height: 100vh;
       padding: 0rem;
       width: 75%;
+
       &_userProfileTable{
         height: 60vh;
         font-size: 1.7rem;
@@ -79,18 +117,19 @@
       }
     }
     .userProfileButton{
-      background-color: rgba(22, 22, 219, 0);
-      color: white;
+      color: $gray;
       font-size: 1.5rem;
+      width: 80%;
     }
   }
 }
+
 .choose::-webkit-file-upload-button {
   margin-left: 20%;
   margin-top: 2px;
   margin-bottom: 2px;
-  background-color: white;
-  color: white;
+  background-color: $yellow;
+  color: $gray;
   display: inline-block;
   background: #1CB6E0;
   border: none;
@@ -101,7 +140,4 @@
   cursor: pointer;
   font-size: 10pt;
 }
-.updateimage{
-  margin-top: 2%;
-  background-color: gray;
-}
+

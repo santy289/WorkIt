@@ -4,6 +4,7 @@ import { getAllServicesThunk } from '../../store/actions';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
 import Filter from '../../components/Filter/Filter';
+import Footer from '../../components/Footer/Footer';
 import './Purchaser.styles.scss';
 
 function Purchaser() {
@@ -17,12 +18,13 @@ function Purchaser() {
   return (
     <>
       <Header />
-      <div className="purcasher">
+      <div className="purchaser">
         <div className="purchaser__filter">
+          <p className="purchaser__title">¿Qué necesitas hoy?</p>
           <Filter />
         </div>
         <div className="purchaser__body">
-          <div className="purcasher_list">
+          <div className="purchaser__list">
             {
               services.map((service) => (
                 // eslint-disable-next-line no-underscore-dangle
@@ -32,6 +34,7 @@ function Purchaser() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

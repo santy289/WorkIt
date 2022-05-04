@@ -1,10 +1,15 @@
-$white: rgb(242, 242, 242);
-$soft-grey: rgb(191, 191, 191);
-$dark-grey: rgb(130, 130, 130);
-$black: rgb(0, 0, 0);
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
 
 .servicecrud__card{
+  background-color: $blue;
+  border-radius: 1rem;
+  color: $yellow;
   margin: 2rem auto;
+  padding: 2rem;
   position: relative;
   width: 80%;
 }
@@ -16,8 +21,7 @@ $black: rgb(0, 0, 0);
   justify-content: center;
 
   input{
-    background-color: $white;
-    border-color: $black;
+    border-color: $gray;
     border-radius: 0.5rem;
     border-style: solid;
     border-width: 0.2rem;
@@ -25,8 +29,7 @@ $black: rgb(0, 0, 0);
   }
 
   select{
-    background-color: $white;
-    border-color: $black;
+    border-color: $gray;
     border-radius: 0.5rem;
     border-style: solid;
     border-width: 0.2rem;
@@ -34,8 +37,7 @@ $black: rgb(0, 0, 0);
   }
 
   textarea{
-    background-color: $white;
-    border-color: $black;
+    border-color: $gray;
     border-radius: 0.5rem;
     border-style: solid;
     border-width: 0.2rem;
@@ -43,22 +45,23 @@ $black: rgb(0, 0, 0);
   }
 }
 
-@media(min-width: 1025px){
-  .servicecrud__card {
-    background-color: $dark-grey;
-    height: auto;
-    padding: 3rem 2rem;
-    position: relative;
-    top: 2rem;
-  }
-
+@media(min-width: 576px){
   .servicecrud__card{
-    border-radius: 1rem;
-    margin: auto;
-    width: 40%;
+    width: 60%;
+
   }
+}
+
+@media(min-width: 768px){
+  .servicecrud__card{
+    width: 40%;
+
+  }
+}
+
+@media(min-width: 1025px){
   .servicecrud__error{
-    color: red;
+    color: $orange;
     font-size: 1rem;
     font-weight: lighter;
   }
