@@ -18,7 +18,6 @@ function Seller() {
     dispatch(findByQuery(id));
     dispatch(getInfoBuyerThunk(id));
   }, []);
-  console.log(reduxBuyer, 'reduxBuyer');
   return (
     <>
       <Header />

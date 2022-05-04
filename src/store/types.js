@@ -9,3 +9,4 @@ export const GET_ALL = 'GET_ALL';
 export const CREATE_ACTIVE_SERVICE = 'CREATE_ACTIVE_SERVICE';
 export const GET_INFO_BUYER = 'GET_INFO_BUYER';
 export const GET_ALL_SERVICES = 'GET_ALL_SERVICES';
+export const SERVICE_BY_TITLE = 'SERVICE_BY_TITLE';
