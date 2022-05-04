@@ -37,7 +37,7 @@ function UserProfile() {
         <div className="containerUser">
           <div className="containerUser_imageContainer">
             <img
-              className="containerUser_imageContainer--userImage"
+              className="containerUser_imageContainer--userimage"
               src={user.imageprofile}
               alt="profile"
             />

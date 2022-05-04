@@ -45,26 +45,6 @@ function EditService() {
   return (
     <div>
       <Header />
-      <div className="containerUser">
-            <img
-              className="containerUser_imageContainer--userImage"
-              src={service.image}
-              alt="profile"
-            />
-          </div>
-          <div className="updateimage">
-            <input
-              className="choose"
-              type="file"
-              name="file"
-              id="file"
-              accept="image/*"
-              onChange={handleChange}
-            />
-            <button type="button" onClick={handleUploaImage}>
-              Actualizar Imagen
-            </button>
-          </div>
       <Formik
         initialValues={{
           id,
@@ -106,13 +86,33 @@ function EditService() {
         }}
       >
         {({ errors }) => (
-          <div className="servicecrud__card">
-            <Form className="servicecrud__form">
+          <div className="editservice__card">
+            <div className="containerUser">
+              <img
+                className="containerUser_imageContainer--userImage"
+                src={service.image}
+                alt="profile"
+              />
+              <div className="updateimage">
+                <input
+                  className="choose"
+                  type="file"
+                  name="file"
+                  id="file"
+                  accept="image/*"
+                  onChange={handleChange}
+                />
+                <button className="updateimage__button" type="button" onClick={handleUploaImage}>
+                  Actualizar Imagen
+                </button>
+              </div>
+            </div>
+            <Form className="editservice__form">
               <label className="" htmlFor="title">Nombre del servicio</label>
               <ErrorMessage
                 name="title"
                 component={() => (
-                  <div className="servicecrud__error">
+                  <div className="editservice__error">
                     {errors.title}
                   </div>
                 )}
@@ -127,7 +127,7 @@ function EditService() {
               <ErrorMessage
                 name="tags"
                 component={() => (
-                  <div className="servicecrud__error">
+                  <div className="editservice__error">
                     {errors.tags}
                   </div>
                 )}
@@ -142,7 +142,7 @@ function EditService() {
               <ErrorMessage
                 name="cost"
                 component={() => (
-                  <div className="servicecrud__error">
+                  <div className="editservice__error">
                     {errors.cost}
                   </div>
                 )}
@@ -157,7 +157,7 @@ function EditService() {
               <ErrorMessage
                 name="description"
                 component={() => (
-                  <div className="servicecrud__error">
+                  <div className="editservice__error">
                     {errors.description}
                   </div>
                 )}
@@ -168,7 +168,7 @@ function EditService() {
                 name="description"
               />
               <div className="signup__button">
-                <Button text="REGÍSTRATE" type="submit" />
+                <Button text="MODIFICAR" type="submit" />
               </div>
             </Form>
           </div>
