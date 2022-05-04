@@ -79,22 +79,22 @@ export async function createService(service) {
   }
 }
 
-export async function updateService(service) {
-  try {
-    const response = await fetch(`${API_URL}/api/service/${service.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify(service),
-    });
-    const responseData = await response.json();
-    return responseData;
-  } catch (error) {
-    throw new Error(error);
-  }
-}
+// export async function updateServices(service) {
+//   try {
+//     const response = await fetch(`${API_URL}/api/service/${service.id}`, {
+//       method: 'PATCH',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         Authorization: `Bearer ${localStorage.getItem('token')}`,
+//       },
+//       body: JSON.stringify(service),
+//     });
+//     const responseData = await response.json();
+//     return responseData;
+//   } catch (error) {
+//     throw new Error(error);
+//   }
+// }
 
 export async function deleteService(id) {
   try {
@@ -136,6 +136,20 @@ export async function createUser(data) {
     throw new Error(error);
   }
 }
+const config = {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+};
+
+export async function updateService(id, formData) {
+  try {
+    const response = axios.patchForm(`${API_URL}/api/service/${id}`, formData, config);
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 
 export async function updateUser(id, formData) {
   try {
@@ -170,6 +184,24 @@ export const createPurchasedServices = async (info) => {
   try {
     const response = await fetch(`${API_URL}/api/purchased`, {
       method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify(info),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const editPurchasedServices = async (info) => {
+  console.log(info);
+  try {
+    const response = await fetch(`${API_URL}/chat/${info.id}`, {
+      method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -18,6 +18,7 @@ const initialState = {
     sellerId: '',
     buyerId: '',
     serviceId: '',
+    _id: '',
   },
   ofertservice: [{
     title: '',
@@ -47,6 +48,7 @@ const initialState = {
     username: '',
     title: '',
     imageprofile: '',
+    _id: '',
   }],
   services: [{
     title: '',

@@ -31,14 +31,15 @@ function Login() {
       onSubmit={(values) => {
         const login = async () => {
           const response = await loginService(values);
-          const { token, userId, username } = response;
+          const { token, userId, userName } = response;
+          console.log(response);
           if (typeof token !== 'string') {
             alert('Usuario o contraseña incorrectos');
           } else {
             navigate('/purchases');
             localStorage.setItem('token', token);
             localStorage.setItem('id', userId);
-            localStorage.setItem('username', username);
+            localStorage.setItem('userName', userName);
           }
         };
         login();

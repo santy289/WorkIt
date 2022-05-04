@@ -63,3 +63,15 @@ $black: rgb(0, 0, 0);
     font-weight: lighter;
   }
 }
+.containerUser{
+  padding: 0rem;
+  width: 25%;
+  border-radius:0;
+  &_imageContainer--userImage{
+    height: 60%;
+    width: 60%;
+  }
+  &_buttonsProfile{
+    display: block;
+  }
+}
