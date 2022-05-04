@@ -1,12 +1,13 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import React from 'react';
 import Button from '../Button/Button';
 import './CardClientRequest.styles.scss';
 
 function CardClientRequest(props) {
   const {
-    name, last, imageprofile, username, title,
+    purchasedId, name, last, imageprofile, username, title,
   } = props.eachBuyer;
   return (
     <div className="clientRequest">
@@ -25,7 +26,9 @@ function CardClientRequest(props) {
         {title}
       </div>
       <div className="clientRequest__buttonsBar">
-        <Button text="Chat" />
+        <Link to={`/chat/${purchasedId}`}>
+          <Button text="Chat" />
+        </Link>
       </div>
     </div>
   );
