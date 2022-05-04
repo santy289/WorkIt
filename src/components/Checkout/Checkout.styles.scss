@@ -1,21 +1,28 @@
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
 .containercheck{
-    background-color: rgba(66, 80, 86, 0.4);
-    background-blend-mode: darken;
-    display: flex;
-    border-radius: 11px;
-    flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-color: $blue;
+  border: 0.2rem solid $gray;
+  border-radius: 1rem;
+  color: $yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
   width: 70%;
-  margin-left: 14%;
-  padding: 12px;
 }
 .items{
-    margin: 13px;
-    font-weight: 1200;
+  margin: 1rem;
+  font-weight: 700;
 }
 .itemsdata{
-    font-weight: 400;
+  font-weight: 400;
 }
 
 

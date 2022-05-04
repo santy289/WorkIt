@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './cardDetail.scss';
+import './CardDetail.styles.scss';
 import { Link } from 'react-router-dom';
 
 function CardService(props) {

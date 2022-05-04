@@ -5,6 +5,7 @@ import { getAllServicesThunk } from '../../store/actions';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
 import Filter from '../../components/Filter/Filter';
+import Footer from '../../components/Footer/Footer';
 import './Purchaser.styles.scss';
 
 function Purchaser() {
@@ -18,13 +19,18 @@ function Purchaser() {
   return (
     <>
       <Header />
-      <div className="purcasher">
+      <div className="purchaser">
         <div className="purchaser__filter">
+          <p className="purchaser__title">¿Qué necesitas hoy?</p>
           <Filter />
         </div>
         <div className="purchaser__body">
+<<<<<<< HEAD
           <h1>Servicios Disponibles</h1>
           <div className="purcasher_list">
+=======
+          <div className="purchaser__list">
+>>>>>>> 94bb4cf98d90ff39e4223b2410056cbf6403c949
             {
               (services.map((service) => (
                 <CardService key={service._id} eachService={service} />
@@ -33,6 +39,7 @@ function Purchaser() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

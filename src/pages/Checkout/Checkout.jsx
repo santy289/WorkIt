@@ -1,6 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import CheckoutComp from '../../components/Checkout/Checkout';
+import Footer from '../../components/Footer/Footer';
 import { createActiveServices } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import './checkout.scss';
@@ -28,6 +29,7 @@ function Checkout() {
         <div className="checkout-container">
           <CheckoutComp />
         </div>
+        <Footer />
       </div>
     );
   }

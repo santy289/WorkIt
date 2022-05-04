@@ -72,7 +72,7 @@ function ServiceCrud() {
               type="text"
               id="title"
               name="title"
-              placeholder="Indique el nombre del servicio"
+              placeholder="Indica el nombre del servicio"
             />
             <label className="" htmlFor="tags">Tags</label>
             <ErrorMessage
@@ -87,9 +87,9 @@ function ServiceCrud() {
               type="text"
               id="tags"
               name="tags"
-              placeholder="Escriba los tags separados por comas"
+              placeholder="Escribe los tags separados por comas"
             />
-            <label className="" htmlFor="cost">Costo (USD)</label>
+            <label className="" htmlFor="cost">Costo (COP)</label>
             <ErrorMessage
               name="cost"
               component={() => (
@@ -102,7 +102,7 @@ function ServiceCrud() {
               type="number"
               id="cost"
               name="cost"
-              placeholder="Escriba el costo del servicio"
+              placeholder="Escribe el costo del servicio"
             />
             <label className="" htmlFor="description">Descripción</label>
             <ErrorMessage
@@ -114,12 +114,13 @@ function ServiceCrud() {
               )}
             />
             <Field
+              type="text"
               placeholder="Descripción de tu servicio..."
               id="description"
               name="description"
             />
             <div className="signup__button">
-              <Button text="REGÍSTRATE" type="submit" />
+              <Button text="CREAR SERVICIO" type="submit" />
             </div>
           </Form>
         </div>

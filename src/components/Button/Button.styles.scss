@@ -1,22 +1,24 @@
-$white: rgb(242, 242, 242);
-$soft-grey: rgb(191, 191, 191);
-$dark-grey: rgb(130, 130, 130);
-$black: rgb(0, 0, 0);
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
 
 .button{
-  background-image: linear-gradient(to bottom right, $white, $soft-grey);
-  border-color: black;
+  color: $gray;
+  background-color: $yellow;
+  border-color: $gray;
+  border-radius: 1rem;
   border-style: solid;
   cursor: pointer;
   padding: 1rem 1rem;
 
   &:hover{
-    background-image: linear-gradient(to bottom right, $white, $dark-grey);
     transform: scale(1.03);
   }
 
   &:active{
-    background-image: linear-gradient(to bottom right, $white, $dark-grey);
     transform: scale(0.98);
   }
 }

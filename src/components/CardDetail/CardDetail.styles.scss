@@ -1,11 +1,12 @@
-$white: rgb(242, 242, 242);
-$soft-grey: rgb(191, 191, 191);
-$dark-grey: rgb(130, 130, 130);
-$black: rgb(0, 0, 0);
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
 
 .card-detail {
   background-color: $white;
-  border-color: $black;
+  border-color: $blue;
   border-width: 0.2rem;
   border-style: solid;
   width: 100%;
@@ -37,13 +38,13 @@ $black: rgb(0, 0, 0);
   }
 
   &__title {
-    color: $black;
+    color: $blue;
     font-size: 1.5rem;
     font-weight: 800;
     text-align: center;
   }
   &__text{
-    color: $dark-grey;
+    color: $blue;
     font-size: 1.5rem;
     cursor: pointer;
     font-weight: 400;
@@ -60,7 +61,7 @@ $black: rgb(0, 0, 0);
   }
 
   &__footer {
-    background-color: $soft-grey;
+    background-color: $blue;
     padding: 1rem;
   }
 

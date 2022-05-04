@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import { getUserById, updateUser } from '../../services/index';
 import './UserProfile.styles.scss';
 
 function UserProfile() {
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('id');
-    navigate('/');
-  };
   const id = localStorage.getItem('id');
   const [image, setImage] = useState(null);
   const handleChange = (evt) => {
@@ -43,12 +37,13 @@ function UserProfile() {
         <div className="containerUser">
           <div className="containerUser_imageContainer">
             <img
-              className="containerUser_imageContainer--userImage"
+              className="containerUser_imageContainer--userimage"
               src={user.imageprofile}
               alt="profile"
             />
           </div>
           <div className="updateimage">
+            <p className="updateimage__text">Selecciona tu foto de perfil:</p>
             <input
               className="choose"
               type="file"
@@ -57,14 +52,14 @@ function UserProfile() {
               accept="image/*"
               onChange={handleChange}
             />
-            <button type="button" onClick={handleUploaImage}>
+            <button className="updateimage__button" type="button" onClick={handleUploaImage}>
               Actualizar Imagen
             </button>
           </div>
           <div className="containerUser_buttonsProfile">
+            <button type="button" className="userProfileButton">Datos personales</button>
             <button type="button" className="userProfileButton">Historial de ventas</button>
             <button type="button" className="userProfileButton">Historial de compras</button>
-            <button type="button" className="userProfileButton" onClick={handleLogout}>Cerrar sesión</button>
           </div>
         </div>
         <div className="contentProfile">
@@ -100,6 +95,7 @@ function UserProfile() {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
