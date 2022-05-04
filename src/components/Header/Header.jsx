@@ -4,7 +4,7 @@ import Sidebar from '../SideBar/Sidebar';
 import Modal from '../Modal/Modal';
 import Login from '../Login/Login';
 import useModal from '../../hooks/useModal';
-import smallLogo from '../../assets/smalllogo.png';
+import LogoShort from '../LogoShort/LogoShort';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE, ROUTE_SIGNUP,
 } from '../../routes/routes';
@@ -29,7 +29,7 @@ function Header() {
         <Sidebar />
         <header className="Header_Container">
           <ul className="Header_nav">
-            <img className="Header_img" src={smallLogo} alt="" />
+            <LogoShort />
             <NavLink to={ROUTE_HOME} className="Header_nav--item">Inicio</NavLink>
             <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
             <a onClick={toggleLogin} href="/" className="Header_nav--item">Iniciar sesión</a>
@@ -44,7 +44,7 @@ function Header() {
     <header className="Header_Container">
       <Sidebar />
       <ul className="Header_nav">
-        <img className="Header_img" src={smallLogo} alt="" />
+        <LogoShort />
         <NavLink to={ROUTE_HOME} className="Header_nav--item">Inicio</NavLink>
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Administrar servicios</NavLink>
