@@ -86,7 +86,7 @@
   }
 }
 .choose::-webkit-file-upload-button {
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 2px;
   margin-bottom: 2px;
   background-color: white;
@@ -103,5 +103,7 @@
 }
 .updateimage{
   margin-top: 2%;
+  border-style: hidden;
+  border-radius: 14px;
   background-color: gray;
 }
