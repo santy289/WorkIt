@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findByQuery, getInfoBuyerThunk } from '../../store/actions';
 import Header from '../../components/Header/Header';
-import CardDetail from '../../components/CardDetail';
+import CardDetail from '../../components/CardDetail/CardDetail';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
+import Footer from '../../components/Footer/Footer';
 import './Seller.styles.scss';
 
 function Seller() {
@@ -47,8 +48,8 @@ function Seller() {
             </div>
           </section>
         </div>
-
       </div>
+      <Footer />
     </>
   );
 }

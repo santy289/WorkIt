@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
+import Footer from '../../components/Footer/Footer';
 import { getServiceById, postPayment } from '../../services';
 import './ServiceDetail.styles.scss';
 import mercadopago from '../../assets/mercadopago.png';
@@ -58,7 +59,7 @@ function ServiceDetail() {
             {url !== '/'
               ? (
                 localStorage.setItem('id_service', id),
-                (<a href={url}><img src={mercadopago} alt="mercadopago" width="200" height="70" /></a>)
+                (<a href={url}><img src={mercadopago} alt="mercadopago" width="150" height="52" /></a>)
               )
               : (<Button text="Confirmar compra" handleClick={getURL} />)}
           </ShoppingCart>
@@ -69,15 +70,8 @@ function ServiceDetail() {
             {service.description}
           </p>
         </div>
-        <div className="servicedetail__pyr">
-          <h2 className="servicedetail__subtitle">Preguntas y Respuestas</h2>
-          <p className="servicedetail__text">Preguntas y Respuestas</p>
-        </div>
-        <div className="servicedetail__comments">
-          <h2 className="servicedetail__subtitle">Comentarios</h2>
-          <p className="servicedetail__text">Comentarios</p>
-        </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -23,6 +23,7 @@ import {
   createPurchasedServices,
   getInfoBuyer,
   allService,
+  searchByServiceTitle,
 } from '../services';
 
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
@@ -36,6 +37,7 @@ export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
 export const createActiveService = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
 export const getInfoBuyerAction = (query) => ({ type: GET_INFO_BUYER, payload: query });
 export const getAllServices = (services) => ({ type: GET_ALL_SERVICES, payload: services });
+export const ServiceBySearchTitle = (data) => ({ type: GET_ALL_SERVICES, payload: data });
 
 export const allusers = () => async (dispatch) => {
   try {
@@ -123,6 +125,15 @@ export const getAllServicesThunk = () => async (dispatch) => {
   try {
     const service = await allService();
     dispatch(getAllServices(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const SearchTitleThunk = (query) => async (dispatch) => {
+  try {
+    const service = await searchByServiceTitle(query);
+    dispatch(ServiceBySearchTitle(service));
   } catch (error) {
     throw new Error(error);
   }

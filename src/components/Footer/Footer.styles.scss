@@ -1,0 +1,50 @@
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
+.footer {
+  background-color: $blue;
+  border-top: $gray solid 0.3rem;
+  height: auto;
+  width: 100%;
+
+  &__content {
+    align-items: center;
+    display: flex;
+    color: $yellow;
+    font-size: 1.7rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
+  &__creators {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: end;
+  }
+
+  &__item {
+    &--name {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    a {
+      color: $yellow;
+      text-decoration: none;
+    }
+  }
+}

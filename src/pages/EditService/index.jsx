@@ -11,21 +11,52 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import Footer from '../../components/Footer/Footer';
 import './editService.scss';
 import { updateService, getServiceById } from '../../services';
 import { useEffect, useState } from 'react';
 
 function EditService() {
+
   const { id } = useParams();
   const [image, setImage] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [cost, setCost] = useState(null);
+  const [tags, setTags] = useState(null);
+
   const handleChange = (evt) => {
     setImage(evt.target.files[0]);
   };
-
+  const handleChangeDescription = (evt) => {
+    setDescription(evt.target.value);
+  };
+  const handleChangeTitle = (evt) => {
+    setTitle(evt.target.value);
+  };
+  const handleChangeCost = (evt) => {
+    setCost(evt.target.value);
+  };
+  const handleChangeTags = (evt) => {
+    setTags(evt.target.value);
+  };
+  
   const handleUploaImage = async () => {
     const formData = new FormData();
-
+    
     formData.append('file', image);
+    if(title){
+      formData.append('title', title);
+    }
+    if(description){
+      formData.append('description', description);
+    }
+    if(cost){
+      formData.append('cost', cost);
+    }
+    if(tags){
+      formData.append('tags', tags);
+    }
     try {
       await updateService(id, formData);
       window.location.reload();
@@ -38,21 +69,25 @@ function EditService() {
     const data = await getServiceById(id);
     setService(data);
   };
+ 
   useEffect(() => {
     showService();
   }, []);
-  const navigate = useNavigate();
   return (
     <div>
       <Header />
+      <div className="containerEdit">
+      <h1 className="titleEdit">Actualizar Servicio</h1>
       <div className="containerUser">
             <img
-              className="containerUser_imageContainer--userImage"
+              className="imageContainer"
               src={service.image}
               alt="profile"
             />
           </div>
+          <h2> Imagen</h2>
           <div className="updateimage">
+          
             <input
               className="choose"
               type="file"
@@ -61,119 +96,28 @@ function EditService() {
               accept="image/*"
               onChange={handleChange}
             />
-            <button type="button" onClick={handleUploaImage}>
-              Actualizar Imagen
-            </button>
+            
           </div>
-      <Formik
-        initialValues={{
-          id,
-          userId: localStorage.getItem('id'),
-          title: '',
-          tags: '',
-          cost: 0,
-          description: '',
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.title) {
-            errors.title = 'Campo requerido';
-          }
-          if (!values.tags) {
-            errors.tags = 'Se requiere almenos un tag';
-          }
-          if (values.cost <= 0) {
-            errors.cost = 'Costo debe ser mayor a 0';
-          }
-          if (!values.description) {
-            errors.description = 'Campo requerido';
-          }
-          if (values.description.length > 500) {
-            errors.description = 'Este campo no puede tener mas de 500 caracteres';
-          }
-          return errors;
-        }}
-        onSubmit={(values) => {
-          const editService = async () => {
-            const response = await updateService(values);
-            if (!response) {
-              alert('Error al crear el servicio');
-            } else {
-              navigate('/sales');
-            }
-          };
-          editService();
-        }}
-      >
-        {({ errors }) => (
-          <div className="servicecrud__card">
-            <Form className="servicecrud__form">
-              <label className="" htmlFor="title">Nombre del servicio</label>
-              <ErrorMessage
-                name="title"
-                component={() => (
-                  <div className="servicecrud__error">
-                    {errors.title}
-                  </div>
-                )}
-              />
-              <Field
-                type="text"
-                id="title"
-                name="title"
-                placeholder="Indique el nombre del servicio"
-              />
-              <label className="" htmlFor="tags">Tags</label>
-              <ErrorMessage
-                name="tags"
-                component={() => (
-                  <div className="servicecrud__error">
-                    {errors.tags}
-                  </div>
-                )}
-              />
-              <Field
-                type="text"
-                id="tags"
-                name="tags"
-                placeholder="Escriba los tags separados por comas"
-              />
-              <label className="" htmlFor="cost">Costo (USD)</label>
-              <ErrorMessage
-                name="cost"
-                component={() => (
-                  <div className="servicecrud__error">
-                    {errors.cost}
-                  </div>
-                )}
-              />
-              <Field
-                type="number"
-                id="cost"
-                name="cost"
-                placeholder="Escriba el costo del servicio"
-              />
-              <label className="" htmlFor="description">Descripción</label>
-              <ErrorMessage
-                name="description"
-                component={() => (
-                  <div className="servicecrud__error">
-                    {errors.description}
-                  </div>
-                )}
-              />
-              <Field
-                placeholder="Descripción de tu servicio..."
-                id="description"
-                name="description"
-              />
-              <div className="signup__button">
-                <Button text="REGÍSTRATE" type="submit" />
-              </div>
-            </Form>
+          <div className="form__group field">
+            <input type="input" className="form__field" placeholder="Name" name="name" id='name' defaultValue={service.title} onChange={handleChangeTitle} />
+            <label for="name" className="form__label">Titulo</label>
           </div>
-        )}
-      </Formik>
+          <div className="form__group field">
+            <input type="input" className="form__field" placeholder="Name" name="name" id='name' defaultValue={service.description} onChange={handleChangeDescription} />
+            <label for="name" className="form__label">Descripcion</label>
+          </div>
+          <div className="form__group field">
+            <input type="input" className="form__field" placeholder="Name" name="name" id='name' defaultValue={service.cost} onChange={handleChangeCost} />
+            <label for="name" className="form__label">Costo</label>
+          </div>
+          <div className="form__group field">
+            <input type="input" className="form__field" placeholder="Name" name="name" id='name' defaultValue={service.tags} onChange={handleChangeTags} />
+            <label for="name" className="form__label">Tags</label>
+          </div>
+          <Button text="Actualizar" type="button" handleClick={handleUploaImage} />
+              
+    </div>
+    <Footer />
     </div>
   );
 }

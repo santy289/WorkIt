@@ -224,3 +224,21 @@ export const getInfoBuyer = async (id) => {
     return err;
   }
 };
+
+export const searchByServiceTitle = async (query) => {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+  };
+  try {
+    console.log(payload);
+    const response = await fetch(`${API_URL}/api/service/search=title`, payload);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};

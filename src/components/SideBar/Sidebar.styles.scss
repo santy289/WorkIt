@@ -1,54 +1,61 @@
-.bm-burger-button {
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
 
-    position: absolute;
-    width: 36px;
-    height: 30px;
-    left: 4%;
-    top: 1.3%;
-  }
-  .bm-burger-bars {
-    background: #ffffff;
-  }
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-  .bm-cross {
-    background: #ffffff;
-  }
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-    width: 80vh;
-  }
-  .bm-menu {
-    background: #000000;
-    padding: 0rem 7.5rem 0;
-    font-size: 6.15rem;
-  }
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-    margin-top: 1rem;
-  }
-  .bm-item {
-    display: inline-block;
-    margin-top: 50px;
-  }
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
-  .Header_imgs{
-    max-width:100%;
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 4%;
+  top: 2%;
+}
+.bm-burger-bars {
+  background: $yellow;
+}
+.bm-burger-bars-hover {
+  background: $blue;
+}
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: $yellow;
+}
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0rem;
+  width: 80vh;
+}
+.bm-menu {
+  background: $blue;
+  border-right: 0.2rem $gray solid;
+  padding: 4rem 4rem;
+  font-size: 6.15rem;
+}
+.bm-morph-shape {
+  fill: #373a47;
+}
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 1rem;
+}
+.bm-item {
+  display: inline-block;
+  margin-top: 50px;
+}
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0rem;
+}
+.Header_imgs{
+  max-width:100%;
 }
 @media(min-width: 1025px){
-    .bm-burger-button {
-        display:none;
-    }
+  .bm-burger-button {
+    display:none;
+  }
 }

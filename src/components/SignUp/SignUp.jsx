@@ -89,7 +89,7 @@ function SignUp() {
             type="text"
             id="name"
             name="name"
-            placeholder="Escriba su nombre"
+            placeholder="Escirbe tu nombre"
           />
           <label className="signup__text" htmlFor="last">Apellido</label>
           <ErrorMessage
@@ -104,7 +104,7 @@ function SignUp() {
             type="text"
             id="last"
             name="last"
-            placeholder="Escriba su apellido"
+            placeholder="Escribe tu apellido"
           />
           <label className="signup__text" htmlFor="username">Usuario</label>
           <ErrorMessage
@@ -119,7 +119,7 @@ function SignUp() {
             type="text"
             id="username"
             name="username"
-            placeholder="Escriba su usuario"
+            placeholder="Crea un nuevo usuario"
           />
           <label className="signup__text" htmlFor="email">Correo electrónico</label>
           <ErrorMessage
@@ -149,7 +149,7 @@ function SignUp() {
             type="country"
             id="country"
             name="country"
-            placeholder="Escriba su país"
+            placeholder="Escribe tu país"
           />
           <label className="signup__text" htmlFor="city">Ciudad</label>
           <ErrorMessage
@@ -164,7 +164,7 @@ function SignUp() {
             type="city"
             id="city"
             name="city"
-            placeholder="Escriba su ciudad"
+            placeholder="Escribe tu ciudad"
           />
           <label className="signup__text" htmlFor="address">Dirección</label>
           <ErrorMessage
@@ -179,7 +179,7 @@ function SignUp() {
             type="address"
             id="address"
             name="address"
-            placeholder="Escriba su dirección"
+            placeholder="Escribe tu dirección"
           />
           <label className="signup__text" htmlFor="password">Contraseña</label>
           <ErrorMessage
@@ -209,7 +209,7 @@ function SignUp() {
             type="password"
             id="confirmPassword"
             name="confirmPassword"
-            placeholder="Repita su contraseña"
+            placeholder="Repite tu contraseña"
           />
           <div className="signup__button">
             <Button text="REGÍSTRATE" type="submit" />
