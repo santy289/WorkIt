@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { getUserById, updateUser } from '../../services/index';
@@ -57,6 +58,9 @@ function UserProfile() {
             </button>
           </div>
           <div className="containerUser_buttonsProfile">
+            <Link to={`/edit-user/${id}`} className="userProfileButton">
+              Editar Servicio
+            </Link>
             <button type="button" className="userProfileButton">Datos personales</button>
             <button type="button" className="userProfileButton">Historial de ventas</button>
             <button type="button" className="userProfileButton">Historial de compras</button>
