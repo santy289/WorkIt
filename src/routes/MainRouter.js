@@ -21,7 +21,6 @@ import EditService from '../pages/EditService';
 import EditUser from '../pages/EditUser';
 import Chat from '../pages/Chat';
 
-
 function Mainrouter() {
   return (
     <BrowserRouter>
@@ -37,6 +36,7 @@ function Mainrouter() {
         <Route path={ROUTE_ACTIVATE} element={<Activate />} />
         <Route path={ROUTE_SERVICEDETAIL} element={<ServiceDetail />} />
         <Route path={ROUTE_CHECKOUT} element={<Checkout />} />
+        <Route path={ROUTE_EDITSERVICE} element={<EditService />} />
         <Route path={ROUTE_EDITUSER} element={<EditUser />} />
         <Route path={ROUTE_CHAT} element={<Chat />} />
         <Route
