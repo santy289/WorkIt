@@ -5,8 +5,8 @@ function Logo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="960"
-      height="420"
+      width="720"
+      height="280"
       version="1.1"
       viewBox="0 0 84.635 37.365"
     >

@@ -252,3 +252,24 @@ export const searchByServiceTitle = async (query) => {
     return err;
   }
 };
+
+export const searchBoughtServices = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/searchbought/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchServiceByUserId = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/service/search=seller/${id}`);
+    console.log(response, 'response');
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
