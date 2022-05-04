@@ -8,6 +8,7 @@ import {
   CREATE_ACTIVE_SERVICE,
   GET_INFO_BUYER,
   GET_ALL_SERVICES,
+  SERVICE_BY_TITLE,
 } from './types';
 
 const initialState = {
@@ -49,6 +50,16 @@ const initialState = {
     imageprofile: '',
   }],
   services: [{
+    title: '',
+    tags: [],
+    username: '',
+    userId: '',
+    cost: '',
+    description: '',
+    image: '',
+    _id: '',
+  }],
+  servicebytitle: [{
     title: '',
     tags: [],
     username: '',
@@ -108,6 +119,12 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         services: action.payload,
+      };
+
+    case SERVICE_BY_TITLE:
+      return {
+        ...state,
+        servicebytitle: action.payload,
       };
 
     default:

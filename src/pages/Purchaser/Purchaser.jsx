@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllServicesThunk } from '../../store/actions';
@@ -10,7 +11,7 @@ import './Purchaser.styles.scss';
 function Purchaser() {
   const dispatch = useDispatch();
   const services = useSelector((state) => state.services);
-  console.log(services, 'services');
+
   useEffect(() => {
     dispatch(getAllServicesThunk());
   }, []);
@@ -24,12 +25,12 @@ function Purchaser() {
           <Filter />
         </div>
         <div className="purchaser__body">
-          <div className="purchaser__list">
+          <h1>Servicios Disponibles</h1>
+          <div className="purcasher_list">
             {
-              services.map((service) => (
-                // eslint-disable-next-line no-underscore-dangle
+              (services.map((service) => (
                 <CardService key={service._id} eachService={service} />
-              ))
+              )))
             }
           </div>
         </div>
