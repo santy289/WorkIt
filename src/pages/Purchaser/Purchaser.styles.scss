@@ -1,5 +1,19 @@
 .purchaser {
 
+  &__filter {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 3rem;
+    text-align: center;
+  }
+
   &__body {
     display: flex;
     justify-content: center;

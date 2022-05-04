@@ -27,6 +27,7 @@ $white: rgb(232, 232, 193);
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  top: 0rem;
   width: 80vh;
 }
 .bm-menu {
@@ -48,6 +49,7 @@ $white: rgb(232, 232, 193);
 }
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+  top: 0rem;
 }
 .Header_imgs{
   max-width:100%;

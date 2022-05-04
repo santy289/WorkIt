@@ -20,6 +20,7 @@ function Purchaser() {
       <Header />
       <div className="purchaser">
         <div className="purchaser__filter">
+          <p className="purchaser__title">¿Qué necesitas hoy?</p>
           <Filter />
         </div>
         <div className="purchaser__body">
