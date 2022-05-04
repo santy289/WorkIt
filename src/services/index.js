@@ -225,6 +225,17 @@ export const getInfoBuyer = async (id) => {
   }
 };
 
+export const getChat = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/${id}`);
+    const data = await response.json();
+    const { chat } = data;
+    return chat;
+  } catch (err) {
+    return err;
+  }
+};
+
 export const searchByServiceTitle = async (query) => {
   const payload = {
     method: 'POST',

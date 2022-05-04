@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import socket from '../../utils/socket';
 import Header from '../../components/Header/Header';
-import { editPurchasedServices, getInfoBuyer } from '../../services';
+import { editPurchasedServices, getChat } from '../../services';
 import './chat.scss';
 
 const userName = localStorage.getItem('userName');
@@ -12,6 +12,10 @@ function Chat() {
   const [body, setBody] = useState('');
   const [chat, setChat] = useState([]);
 
+  async function firstChatInfo() {
+    const response = await getChat(id);
+    setChat(response);
+  }
   function onHandleChange(e) {
     const { value } = e.target;
     setBody(value);
@@ -30,12 +34,8 @@ function Chat() {
     }
   }
   useEffect(() => {
+    firstChatInfo();
     socket.on('Message:create', async (data) => {
-      if (!data) {
-        const result = await getInfoBuyer(id);
-        console.log(result);
-        setChat(result.chat);
-      }
       setChat(data);
     });
     return () => socket.off('Message:create');

@@ -1,4 +1,5 @@
 .chat-container{
+  box-sizing: border-box;
   display: flex;
   margin: auto;
   margin-top: 100px;
@@ -48,7 +49,7 @@
   padding-left:20px;
   width: 100%;
   height: 50px;
-  background-color: #f5f5f5;
+  border-radius: 50px;
 }
 .chat-containet__chatarea{
   display: flex;
