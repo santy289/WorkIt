@@ -26,7 +26,7 @@ function Purchaser() {
         </div>
         <div className="purchaser__body">
           <h1>Servicios Disponibles</h1>
-          <div className="purcasher_list">
+          <div className="purcasher__list">
             {
               (services.map((service) => (
                 <CardService key={service._id} eachService={service} />
