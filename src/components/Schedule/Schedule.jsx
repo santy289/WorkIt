@@ -8,7 +8,7 @@ function Schedule() {
   const purchase = useSelector((state) => state.boughtservice);
 
   const { purchasedId } = purchase;
-  consolel.log(purchasedId);
+  console.log(purchasedId);
 
   const [schedule, setSchedule] = useState({
     scheduledDate: '',
