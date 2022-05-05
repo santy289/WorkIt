@@ -12,7 +12,6 @@ function Chat() {
   const { id } = useParams();
   const [body, setBody] = useState('');
   const [chat, setChat] = useState([]);
-  console.log('Chat', chat);
   const messagesEndRef = useRef(null);
 
   async function firstChatInfo() {

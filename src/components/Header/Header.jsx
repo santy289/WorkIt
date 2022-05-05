@@ -1,5 +1,7 @@
 import './Header.styles.scss';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import socket from '../../utils/socket';
 import Sidebar from '../SideBar/Sidebar';
 import Modal from '../Modal/Modal';
 import Login from '../Login/Login';
@@ -11,15 +13,19 @@ import {
 
 function Header() {
   const navigate = useNavigate();
-
+  const [notification, setNotification] = useState(null);
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     navigate('/');
   };
-
   const { toggle: toggleLogin, show: showLogin } = useModal();
-
+  useEffect(() => {
+    socket.on('Notification:getAll', async (id) => {
+      setNotification(id);
+    });
+    return () => socket.off('Notification:getAll');
+  }, []);
   if (localStorage.getItem('token') === null) {
     return (
       <>
@@ -49,6 +55,13 @@ function Header() {
         <NavLink to={ROUTE_PURCHASER} className="Header_nav--item">Explorar</NavLink>
         <NavLink to={ROUTE_SELLER} className="Header_nav--item">Administrar servicios</NavLink>
         <NavLink to={ROUTE_USERPROFILE} className="Header_nav--item">Perfil</NavLink>
+        {
+          notification ? (
+            <Link to={`/chat/${notification}`} className="Header_nav--item">
+              <img className="Header-nav__image" src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564405-chat2_81503.png" alt="Chat" />
+            </Link>
+          ) : null
+        }
         <span
           tabIndex={0}
           role="button"

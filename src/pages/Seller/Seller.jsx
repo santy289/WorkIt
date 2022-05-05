@@ -22,7 +22,6 @@ function Seller() {
     dispatch(getInfoBuyerThunk(id));
     dispatch(findBoughtServicesThunk(id));
   }, []);
-  console.log(reduxServices, 'reduxServices');
   return (
     <div>
       <Header />
