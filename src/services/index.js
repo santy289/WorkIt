@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-const API_URL = 'https://workit-api.herokuapp.com';
+const API_URL = 'http://localhost:8080';
+
+const config = {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+};
 
 export const allUsers = async () => {
   const response = await fetch(`${API_URL}/users`);
@@ -61,18 +67,10 @@ export async function getServiceByUser(user) {
   }
 }
 
-export async function createService(service) {
+export async function createService(formData) {
   try {
-    const response = await fetch(`${API_URL}/api/service`, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify(service),
-    });
-    const responseData = await response.json();
-    return responseData;
+    const response = axios.postForm(`${API_URL}/api/service`, formData, config);
+    return response;
   } catch (error) {
     throw new Error(error);
   }
@@ -135,11 +133,6 @@ export async function createUser(data) {
     throw new Error(error);
   }
 }
-const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
-  },
-};
 
 export async function updateService(id, formData) {
   try {
