@@ -1,0 +1,41 @@
+$gray: rgb(23, 31, 31);
+$blue: rgb(33, 74, 84);
+$orange: rgb(212, 140, 102);
+$yellow: rgb(217, 196, 125);
+$white: rgb(232, 232, 193);
+
+
+.button:enabled{
+  color: $gray;
+  background-color: $yellow;
+  border-color: $gray;
+  border-radius: 1rem;
+  border-style: solid;
+  cursor: pointer;
+  padding: 1rem 1rem;
+
+  &:hover{
+    transform: scale(1.03);
+  }
+
+  &:active{
+    transform: scale(0.98);
+  }
+}
+
+button:disabled{
+  color: $gray;
+  background-color: gray ;
+  border-color: black;
+  border-radius: 1rem;
+  border-style: solid;
+  cursor:not-allowed;
+  padding: 1rem 1rem;
+  &:hover{
+    transform: scale(1.03);
+  }
+
+  &:active{
+    transform: scale(0.98);
+  }
+}

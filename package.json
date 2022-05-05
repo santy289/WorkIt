@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@uiball/loaders": "^1.2.6",
     "@fullcalendar/daygrid": "^5.11.0",
     "@fullcalendar/interaction": "^5.11.0",
     "@fullcalendar/react": "^5.11.1",
     "@fullcalendar/timegrid": "^5.11.0",
     "axios": "^0.27.2",
+    "bx-stable-infinite-scroll": "^1.1.2",
     "chai": "^4.3.6",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",

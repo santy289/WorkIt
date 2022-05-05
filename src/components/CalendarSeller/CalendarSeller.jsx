@@ -31,7 +31,7 @@ function CalendarSeller() {
 
   const handleClick = (info) => {
     const eventObj = info.event;
-    alert(`Servicio: ${eventObj.title}\nOferente: ${eventObj.extendedProps.client}`);
+    alert(`Servicio: ${eventObj.title}\nCliente: ${eventObj.extendedProps.client}`);
   };
 
   return (
