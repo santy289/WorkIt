@@ -166,7 +166,6 @@ export const createPurchasedServices = async (info) => {
 };
 
 export const editPurchasedServices = async (info) => {
-  console.log(info);
   try {
     const response = await fetch(`${API_URL}/chat/${info.id}`, {
       method: 'PATCH',
