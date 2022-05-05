@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
+import { SuperBalls } from '@uiball/loaders';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getServicesByUserThunk, getInfoBuyerThunk, findBoughtServicesThunk } from '../../store/actions';
@@ -23,38 +24,39 @@ function Seller() {
   }, []);
   console.log(reduxServices, 'reduxServices');
   return (
-    <>
+    <div>
       <Header />
-      <div className="seller">
-        <div className="seller_Title">MIS SERVICIOS</div>
-        <Link to="/create-service">
-          <span className="seller__create">
-            <p type="button">+</p>
-          </span>
-        </Link>
-        <div className="bodySeller">
-          <section className="servicesList">
-            <h1>Servicios Publicados</h1>
-            <div className="servicesList_cardViewer">
-              {reduxServices.map((service) => (
-                <CardDetail key={service._id} eachService={service} />
-              ))}
-            </div>
-          </section>
-          <section className="activeClientsList">
-            <h1>Clientes interesados en los servicios</h1>
-            <div className="activeClientsList_cardViewer">
-              {
+      { reduxServices.length > 1 || reduxBuyer.length > 1 || reduxBoughtServices.length > 1 ? (
+        <div className="seller">
+          <div className="seller_Title">MIS SERVICIOS</div>
+          <Link to="/create-service">
+            <span className="seller__create">
+              <p type="button">+</p>
+            </span>
+          </Link>
+          <div className="bodySeller">
+            <section className="servicesList">
+              <h1>Servicios Publicados</h1>
+              <div className="servicesList_cardViewer">
+                {reduxServices.map((service) => (
+                  <CardDetail key={service._id} eachService={service} />
+                ))}
+              </div>
+            </section>
+            <section className="activeClientsList">
+              <h1>Clientes interesados en los servicios</h1>
+              <div className="activeClientsList_cardViewer">
+                {
                 reduxBuyer.map((buyer) => (
                   <CardClientRequest key={buyer.purchasedId} eachBuyer={buyer} />
                 ))
               }
-            </div>
-          </section>
-          <section className="boughtServicesList">
-            <h1>Servicios Comprados</h1>
-            <div className="boughtServicesList_cardViewer">
-              {
+              </div>
+            </section>
+            <section className="boughtServicesList">
+              <h1>Servicios Comprados</h1>
+              <div className="boughtServicesList_cardViewer">
+                {
                 reduxBoughtServices ? (reduxBoughtServices.map((boughtService) => (
                   <CardBoughtService
                     key={boughtService.purchasedId}
@@ -62,12 +64,17 @@ function Seller() {
                   />
                 ))) : <h3>Sin servicios adquiridos</h3>
               }
-            </div>
-          </section>
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="loading">
+          <SuperBalls />
+        </div>
+      )}
       <Footer />
-    </>
+    </div>
   );
 }
 

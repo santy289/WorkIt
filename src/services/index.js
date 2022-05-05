@@ -78,23 +78,6 @@ export async function createService(service) {
   }
 }
 
-// export async function updateServices(service) {
-//   try {
-//     const response = await fetch(`${API_URL}/api/service/${service.id}`, {
-//       method: 'PATCH',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `Bearer ${localStorage.getItem('token')}`,
-//       },
-//       body: JSON.stringify(service),
-//     });
-//     const responseData = await response.json();
-//     return responseData;
-//   } catch (error) {
-//     throw new Error(error);
-//   }
-// }
-
 export async function deleteService(id) {
   try {
     const response = await fetch(`${API_URL}/api/service/${id}`, {

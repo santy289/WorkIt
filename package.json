@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@uiball/loaders": "^1.2.6",
     "axios": "^0.27.2",
+    "bx-stable-infinite-scroll": "^1.1.2",
     "chai": "^4.3.6",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",
