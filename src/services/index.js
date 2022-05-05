@@ -101,17 +101,10 @@ export async function getUserById(id) {
   }
 }
 
-export async function createUser(data) {
+export async function createUser(formData) {
   try {
-    const response = await fetch(`${API_URL}/api/user`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const user = await response.json();
-    return user;
+    const response = axios.postForm(`${API_URL}/api/user`, formData);
+    return response;
   } catch (error) {
     throw new Error(error);
   }
