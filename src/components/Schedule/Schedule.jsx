@@ -4,7 +4,7 @@ import { updatePurchasedById } from '../../services';
 import './Schedule.styles.scss';
 
 function Schedule() {
-  const serviceId = localStorage.getItem('id_service');
+  const purchaseId = localStorage.getItem(purchase_id)
 
   const [schedule, setSchedule] = useState({
     scheduledDate: '',
@@ -18,7 +18,7 @@ function Schedule() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await updatePurchasedById(serviceId, schedule);
+    const response = await updatePurchasedById(purchaseId, schedule);
     console.log(response);
     return response;
   };
