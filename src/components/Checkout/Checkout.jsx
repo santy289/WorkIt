@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { ROUTE_HOME } from '../../routes/routes';
 import Button from '../Button/Button';
 import Schedule from '../Schedule/Schedule';
 
@@ -23,10 +25,12 @@ function Checkout() {
       </div>
       <div className="checkout__schedule">
         <h1 className="summary">AGENDA TU SERVICIO</h1>
-        <Schedule paymentId={paymentId} />
+        <Schedule />
       </div>
       <div className="checkoutbox__button">
-        <Button text="VOLVER A INICIO" />
+        <Link to={ROUTE_HOME}>
+          <Button text="VOLVER A INICIO" />
+        </Link>
       </div>
     </section>
   );

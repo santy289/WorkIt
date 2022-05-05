@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import { updatePurchasedById } from '../../services';
 import './Schedule.styles.scss';
 
-function Schedule({ paymentId }) {
+function Schedule() {
+  const serviceId = localStorage.getItem('id_service');
+
   const [schedule, setSchedule] = useState({
     scheduledDate: '',
   });
@@ -17,7 +18,7 @@ function Schedule({ paymentId }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await updatePurchasedById(paymentId, schedule);
+    const response = await updatePurchasedById(serviceId, schedule);
     console.log(response);
     return response;
   };
@@ -36,13 +37,5 @@ function Schedule({ paymentId }) {
     </section>
   );
 }
-
-Schedule.propTypes = {
-  paymentId: PropTypes.string,
-};
-
-Schedule.defaultProps = {
-  paymentId: null,
-};
 
 export default Schedule;
