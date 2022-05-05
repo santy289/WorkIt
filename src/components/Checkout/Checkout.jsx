@@ -23,8 +23,7 @@ function Checkout() {
       </div>
       <div className="checkout__schedule">
         <h1 className="summary">AGENDA TU SERVICIO</h1>
-        <Schedule />
-        <Button text="AGENDAR SERVICIO" />
+        <Schedule paymentId={paymentId} />
       </div>
       <div className="checkoutbox__button">
         <Button text="VOLVER A INICIO" />
