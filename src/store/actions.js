@@ -111,7 +111,7 @@ export const remove = (id) => async (dispatch) => {
 export const createActiveServices = (data) => async (dispatch) => {
   try {
     const service = await createPurchasedServices(data);
-    console.log(service);
+    console.log(service, 'service');
     dispatch(createActiveService(service));
   } catch (error) {
     throw new Error(error);

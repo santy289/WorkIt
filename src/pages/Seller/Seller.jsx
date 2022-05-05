@@ -9,6 +9,7 @@ import CardDetail from '../../components/CardDetail/CardDetail';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
 import Footer from '../../components/Footer/Footer';
 import CardBoughtService from '../../components/CardBoughtService';
+import CalendarSeller from '../../components/CalendarSeller/CalendarSeller';
 import './Seller.styles.scss';
 
 function Seller() {
@@ -47,24 +48,29 @@ function Seller() {
               <h1>Clientes interesados en los servicios</h1>
               <div className="activeClientsList_cardViewer">
                 {
-                reduxBuyer.map((buyer) => (
-                  <CardClientRequest key={buyer.purchasedId} eachBuyer={buyer} />
-                ))
-              }
+                  reduxBuyer.map((buyer) => (
+                    <CardClientRequest key={buyer.purchasedId} eachBuyer={buyer} />
+                  ))
+                }
               </div>
             </section>
             <section className="boughtServicesList">
               <h1>Servicios Comprados</h1>
               <div className="boughtServicesList_cardViewer">
                 {
-                reduxBoughtServices ? (reduxBoughtServices.map((boughtService) => (
-                  <CardBoughtService
-                    key={boughtService.purchasedId}
-                    eachBoughtService={boughtService}
-                  />
-                ))) : <h3>Sin servicios adquiridos</h3>
-              }
+                  reduxBoughtServices ? (reduxBoughtServices.map((boughtService) => (
+                    <CardBoughtService
+                      key={boughtService.purchasedId}
+                      eachBoughtService={boughtService}
+                    />
+                  ))) : <h3>Sin servicios adquiridos</h3>
+                }
               </div>
+            </section>
+            <section className="home__calendar">
+              {
+                localStorage.getItem('id') ? <CalendarSeller /> : null
+              }
             </section>
           </div>
         </div>
