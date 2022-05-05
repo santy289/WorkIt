@@ -21,7 +21,7 @@ const creators = [
     name: 'Norbey Vásquez',
     linkedin: 'https://www.linkedin.com/in/nvasquezt/',
     github: 'https://github.com/nvasquezt',
-    email: 'lic.vasquezt@gmail.com',
+    email: 'mailto: lic.vasquezt@gmail.com',
   },
 ];
 

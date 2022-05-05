@@ -1,5 +1,6 @@
 import Header from '../../components/Header/Header';
 import SignUp from '../../components/SignUp/SignUp';
+import Footer from '../../components/Footer/Footer';
 import './SignUpPage.styles.scss';
 
 function SignUpPage() {
@@ -9,6 +10,7 @@ function SignUpPage() {
       <div className="signuppage">
         <SignUp />
       </div>
+      <Footer />
     </>
   );
 }

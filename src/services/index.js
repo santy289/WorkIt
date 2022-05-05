@@ -266,3 +266,18 @@ export const searchServiceByUserId = async (id) => {
     return err;
   }
 };
+
+export const updatePurchasedById = async (id, body) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+    return response.json();
+  } catch (err) {
+    return err;
+  }
+};
