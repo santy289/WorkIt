@@ -10,6 +10,8 @@ import {
   CREATE_ACTIVE_SERVICE,
   GET_INFO_BUYER,
   GET_ALL_SERVICES,
+  BOUGHT_SERVICES,
+  GET_SERVICE_BY_USER,
 } from './types';
 
 import {
@@ -23,6 +25,9 @@ import {
   createPurchasedServices,
   getInfoBuyer,
   allService,
+  searchByServiceTitle,
+  searchBoughtServices,
+  searchServiceByUserId,
 } from '../services';
 
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
@@ -36,6 +41,9 @@ export const removeService = (id) => ({ type: REMOVE_SERVICE, payload: id });
 export const createActiveService = (data) => ({ type: CREATE_ACTIVE_SERVICE, payload: data });
 export const getInfoBuyerAction = (query) => ({ type: GET_INFO_BUYER, payload: query });
 export const getAllServices = (services) => ({ type: GET_ALL_SERVICES, payload: services });
+export const ServiceBySearchTitle = (data) => ({ type: GET_ALL_SERVICES, payload: data });
+export const getBoughtServices = (data) => ({ type: BOUGHT_SERVICES, payload: data });
+export const ServicesByUserAction = (data) => ({ type: GET_SERVICE_BY_USER, payload: data });
 
 export const allusers = () => async (dispatch) => {
   try {
@@ -103,6 +111,7 @@ export const remove = (id) => async (dispatch) => {
 export const createActiveServices = (data) => async (dispatch) => {
   try {
     const service = await createPurchasedServices(data);
+    console.log(service);
     dispatch(createActiveService(service));
   } catch (error) {
     throw new Error(error);
@@ -122,6 +131,33 @@ export const getAllServicesThunk = () => async (dispatch) => {
   try {
     const service = await allService();
     dispatch(getAllServices(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const SearchTitleThunk = (query) => async (dispatch) => {
+  try {
+    const service = await searchByServiceTitle(query);
+    dispatch(ServiceBySearchTitle(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const findBoughtServicesThunk = (id) => async (dispatch) => {
+  try {
+    const service = await searchBoughtServices(id);
+    dispatch(getBoughtServices(service));
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const getServicesByUserThunk = (id) => async (dispatch) => {
+  try {
+    const service = await searchServiceByUserId(id);
+    dispatch(ServicesByUserAction(service));
   } catch (error) {
     throw new Error(error);
   }

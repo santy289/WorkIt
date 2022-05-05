@@ -140,6 +140,7 @@ const config = {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
 };
+
 export async function updateService(id, formData) {
   try {
     const response = axios.patchForm(`${API_URL}/api/service/${id}`, formData, config);
@@ -151,7 +152,7 @@ export async function updateService(id, formData) {
 
 export async function updateUser(id, formData) {
   try {
-    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData);
+    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData, config);
     return response;
   } catch (error) {
     throw new Error(error);
@@ -195,9 +196,77 @@ export const createPurchasedServices = async (info) => {
   }
 };
 
+export const editPurchasedServices = async (info) => {
+  console.log(info);
+  try {
+    const response = await fetch(`${API_URL}/chat/${info.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify(info),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
 export const getInfoBuyer = async (id) => {
   try {
     const response = await fetch(`${API_URL}/api/purchased/search/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const getChat = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/${id}`);
+    const data = await response.json();
+    const { chat } = data;
+    return chat;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchByServiceTitle = async (query) => {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+  };
+  try {
+    console.log(payload);
+    const response = await fetch(`${API_URL}/api/service/search=title`, payload);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchBoughtServices = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/searchbought/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchServiceByUserId = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/service/search=seller/${id}`);
+    console.log(response, 'response');
     const data = await response.json();
     return data;
   } catch (err) {
@@ -218,4 +287,4 @@ export const updatePurchasedById = async (id, body) => {
   } catch (err) {
     return err;
   }
-};
+}

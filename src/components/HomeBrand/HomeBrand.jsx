@@ -1,10 +1,10 @@
 import './HomeBrand.styles.scss';
-import logo from '../../assets/Logo.png';
+import Logo from '../Logo/Logo';
 
 function HomeBrand() {
   return (
     <section className="brand">
-      <img className="logo" src={logo} alt="logo" />
+      <Logo className="logo" />
     </section>
   );
 }

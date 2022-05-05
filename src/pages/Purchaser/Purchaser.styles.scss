@@ -17,16 +17,19 @@
   &__body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 2rem auto;
     width: 90%;
   }
-
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    justify-content: flex-start;
-  }
+}
+.purcasher--list__container{
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
 }
 
 

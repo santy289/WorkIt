@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
   ROUTE_HOME, ROUTE_PURCHASER, ROUTE_SELLER, ROUTE_USERPROFILE, ROUTE_LOGIN, ROUTE_SIGNUP,
   ROUTE_CREATESERVICE, ROUTE_ACTIVATE, ROUTE_SERVICEDETAIL, ROUTE_CHECKOUT, ROUTE_EDITSERVICE,
+  ROUTE_EDITUSER, ROUTE_CHAT,
+
 } from './routes';
 import Home from '../pages/Home/Home';
 import Page404 from '../pages/Page404/Page404';
@@ -16,6 +18,8 @@ import CreateService from '../pages/CreateService/CreateService';
 import ServiceDetail from '../pages/ServiceDetail/ServiceDetail';
 import Checkout from '../pages/Checkout/Checkout';
 import EditService from '../pages/EditService';
+import EditUser from '../pages/EditUser';
+import Chat from '../pages/Chat';
 
 function Mainrouter() {
   return (
@@ -33,6 +37,8 @@ function Mainrouter() {
         <Route path={ROUTE_SERVICEDETAIL} element={<ServiceDetail />} />
         <Route path={ROUTE_CHECKOUT} element={<Checkout />} />
         <Route path={ROUTE_EDITSERVICE} element={<EditService />} />
+        <Route path={ROUTE_EDITUSER} element={<EditUser />} />
+        <Route path={ROUTE_CHAT} element={<Chat />} />
         <Route
           path="/privacy-policy"
           component={() => {

@@ -12,3 +12,5 @@ export const ROUTE_ACTIVATE = '/activate/:hash';
 export const ROUTE_SERVICEDETAIL = '/detail/:id';
 export const ROUTE_CHECKOUT = '/checkout';
 export const ROUTE_EDITSERVICE = '/edit-service/:id';
+export const ROUTE_EDITUSER = '/edit-user/:id';
+export const ROUTE_CHAT = '/chat/:id';
