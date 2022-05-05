@@ -52,6 +52,7 @@ const initialState = {
     title: '',
     imageprofile: '',
     _id: '',
+    scheduledDate: '',
   }],
   services: [{
     title: '',
@@ -81,6 +82,7 @@ const initialState = {
     imageprofile: '',
     date: '',
     purchasedId: '',
+    scheduledDate: '',
   }],
 };
 

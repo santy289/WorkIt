@@ -1,10 +1,12 @@
-import creators from '../../assets/data/creators';
+import { creators } from '../../assets/data/creators';
 import mirlogo from '../../assets/mirlogo.png';
 import './Footer.styles.scss';
 
 function Footer() {
-  const usuario = (name, linkedin, github, email) => (
-    <ul className="footer__list">
+  const usuario = ({
+    id, name, linkedin, github, email,
+  }) => (
+    <ul key={id} className="footer__list">
       <li className="footer__item--name">{name}</li>
       <li className="footer__item"><a href={linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
       <li className="footer__item"><a href={github} target="_blank" rel="noreferrer">GitHub</a></li>
@@ -25,7 +27,7 @@ function Footer() {
           <p>Desarrollado por:</p>
           {
             creators.map((creator) => (
-              usuario(creator.name, creator.linkedin, creator.github, creator.email)))
+              usuario(creator)))
           }
         </div>
       </div>

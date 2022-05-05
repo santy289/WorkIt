@@ -8,6 +8,7 @@ import CardDetail from '../../components/CardDetail/CardDetail';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
 import Footer from '../../components/Footer/Footer';
 import CardBoughtService from '../../components/CardBoughtService';
+import CalendarSeller from '../../components/CalendarSeller/CalendarSeller';
 import './Seller.styles.scss';
 
 function Seller() {
@@ -67,6 +68,11 @@ function Seller() {
         </div>
       </div>
       <Footer />
+      <section className="home__calendar">
+        {
+          localStorage.getItem('id') ? <CalendarSeller /> : null
+        }
+      </section>
     </>
   );
 }
