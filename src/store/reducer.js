@@ -9,6 +9,8 @@ import {
   GET_INFO_BUYER,
   GET_ALL_SERVICES,
   SERVICE_BY_TITLE,
+  BOUGHT_SERVICES,
+  GET_SERVICE_BY_USER,
 } from './types';
 
 const initialState = {
@@ -71,6 +73,15 @@ const initialState = {
     image: '',
     _id: '',
   }],
+  boughtservice: [{
+    title: '',
+    name: '',
+    last: '',
+    username: '',
+    imageprofile: '',
+    date: '',
+    purchasedId: '',
+  }],
 };
 
 // eslint-disable-next-line default-param-last
@@ -127,6 +138,17 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         servicebytitle: action.payload,
+      };
+
+    case BOUGHT_SERVICES:
+      return {
+        ...state,
+        boughtservice: action.payload,
+      };
+    case GET_SERVICE_BY_USER:
+      return {
+        ...state,
+        ofertservice: action.payload,
       };
 
     default:

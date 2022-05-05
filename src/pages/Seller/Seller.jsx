@@ -2,11 +2,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { findByQuery, getInfoBuyerThunk } from '../../store/actions';
+import { getServicesByUserThunk, getInfoBuyerThunk, findBoughtServicesThunk } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import CardDetail from '../../components/CardDetail/CardDetail';
 import CardClientRequest from '../../components/CardClientRequest/CardClientRequest';
 import Footer from '../../components/Footer/Footer';
+import CardBoughtService from '../../components/CardBoughtService';
 import './Seller.styles.scss';
 
 function Seller() {
@@ -14,10 +15,13 @@ function Seller() {
   const id = localStorage.getItem('id');
   const reduxServices = useSelector((state) => state.ofertservice);
   const reduxBuyer = useSelector((state) => state.infoBuyer);
+  const reduxBoughtServices = useSelector((state) => state.boughtservice);
   useEffect(() => {
-    dispatch(findByQuery(id));
+    dispatch(getServicesByUserThunk(id));
     dispatch(getInfoBuyerThunk(id));
+    dispatch(findBoughtServicesThunk(id));
   }, []);
+  console.log(reduxServices, 'reduxServices');
   return (
     <>
       <Header />
@@ -44,6 +48,19 @@ function Seller() {
                 reduxBuyer.map((buyer) => (
                   <CardClientRequest key={buyer.purchasedId} eachBuyer={buyer} />
                 ))
+              }
+            </div>
+          </section>
+          <section className="boughtServicesList">
+            <h1>Servicios Comprados</h1>
+            <div className="boughtServicesList_cardViewer">
+              {
+                reduxBoughtServices ? (reduxBoughtServices.map((boughtService) => (
+                  <CardBoughtService
+                    key={boughtService.purchasedId}
+                    eachBoughtService={boughtService}
+                  />
+                ))) : <h3>Sin servicios adquiridos</h3>
               }
             </div>
           </section>

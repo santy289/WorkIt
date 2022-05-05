@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-/* const API_URL = 'https://workit-api.herokuapp.com'; */
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://workit-api.herokuapp.com';
 
 export const allUsers = async () => {
   const response = await fetch(`${API_URL}/users`);
@@ -153,7 +152,7 @@ export async function updateService(id, formData) {
 
 export async function updateUser(id, formData) {
   try {
-    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData);
+    const response = axios.patchForm(`${API_URL}/api/user/${id}`, formData, config);
     return response;
   } catch (error) {
     throw new Error(error);
@@ -247,6 +246,27 @@ export const searchByServiceTitle = async (query) => {
   try {
     console.log(payload);
     const response = await fetch(`${API_URL}/api/service/search=title`, payload);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchBoughtServices = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/purchased/searchbought/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const searchServiceByUserId = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/service/search=seller/${id}`);
+    console.log(response, 'response');
     const data = await response.json();
     return data;
   } catch (err) {

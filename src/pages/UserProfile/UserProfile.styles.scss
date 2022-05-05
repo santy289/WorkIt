@@ -57,6 +57,17 @@ $white: rgb(232, 232, 193);
     padding: 1rem;
     width: 30%;
   }
+
+  .userProfileButtonl{
+    background-color: $yellow;
+    border: 0.2rem $gray solid;
+    border-radius: 0.5rem;
+    color: $gray;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 25%;
+  }
 }
 
 .updateimage {
