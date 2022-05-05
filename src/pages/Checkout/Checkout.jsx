@@ -22,7 +22,7 @@ function Checkout() {
   if (status === 'approved') {
     dispatch(createActiveServices(data));
     localStorage.removeItem('id_seller');
-    localStorage.romeveItem('id_service');
+    localStorage.removeItem('id_service');
     return (
       <div>
         <Header />
