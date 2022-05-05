@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Button from '../Button/Button';
 import { updatePurchasedById } from '../../services';
 import './Schedule.styles.scss';
 
 function Schedule() {
-  const serviceId = localStorage.getItem('id_service');
+  const purchase = useSelector((state) => state.boughtservice);
+
+  const { purchasedId } = purchase;
+  console.log(purchasedId);
 
   const [schedule, setSchedule] = useState({
     scheduledDate: '',
@@ -18,7 +22,7 @@ function Schedule() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await updatePurchasedById(serviceId, schedule);
+    const response = await updatePurchasedById(purchasedId, schedule);
     console.log(response);
     return response;
   };
