@@ -287,4 +287,4 @@ export const updatePurchasedById = async (id, body) => {
   } catch (err) {
     return err;
   }
-}
+};
