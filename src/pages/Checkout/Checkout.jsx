@@ -21,7 +21,6 @@ function Checkout() {
   console.log(data);
   if (status === 'approved') {
     dispatch(createActiveServices(data));
-    localStorage.setItem('purchase_id', data._id)
     localStorage.removeItem('id_seller');
     localStorage.romeveItem('id_service');
     return (
