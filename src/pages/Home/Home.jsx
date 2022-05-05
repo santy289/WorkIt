@@ -10,15 +10,21 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className="Home">
-        <HomeBrand />
-        <h1 className="containerTitle">Servicios destacados</h1>
-        <div className="containerCard">
-          {servicesList.map((service) => <CategoriesCard key={service.id} service={service} />)}
-        </div>
-        <Calendar />
-        <Footer />
+      <div className="home">
+        <section className="home__brand">
+          <HomeBrand />
+        </section>
+        <section className="home__calendar">
+          {
+            localStorage.getItem('id') ? <Calendar /> : null
+          }
+        </section>
       </div>
+      <h1 className="containerTitle">Servicios destacados</h1>
+      <div className="containerCard">
+        {servicesList.map((service) => <CategoriesCard key={service.id} service={service} />)}
+      </div>
+      <Footer />
     </div>
   );
 }

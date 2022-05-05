@@ -3,22 +3,23 @@ import { useSelector, useDispatch } from 'react-redux';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { findBoughtServicesThunk } from '../../store/actions';
+import { getInfoBuyerThunk } from '../../store/actions';
 
-function Calendar() {
+function CalendarSeller() {
   const idPurch = localStorage.getItem('id');
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(findBoughtServicesThunk(idPurch));
+    dispatch(getInfoBuyerThunk(idPurch));
   }, []);
 
-  const reduxBoughtServices = useSelector((state) => state.boughtservice);
+  const reduxSellerServices = useSelector((state) => state.infoBuyer);
+  console.log(reduxSellerServices);
 
   const eventsTest = [];
 
-  reduxBoughtServices.map((service) => {
+  reduxSellerServices.map((service) => {
     const info = {
       client: service.username,
       title: service.title,
@@ -28,11 +29,9 @@ function Calendar() {
     return info;
   });
 
-  // const { title, username, scheduledDate } = reduxBoughtServices;
-
   const handleClick = (info) => {
     const eventObj = info.event;
-    alert(`Servicio: ${eventObj.title}\nOferente: ${eventObj.extendedProps.client}`);
+    alert(`Servicio: ${eventObj.title}\nCliente: ${eventObj.extendedProps.client}`);
   };
 
   return (
@@ -45,7 +44,7 @@ function Calendar() {
       }}
       initialView="dayGridMonth"
       events={eventsTest}
-      eventColor="rgb(212, 140, 102)"
+      eventColor="rgba(255, 0, 0, 0.5)"
       eventDisplay="block"
       eventClick={handleClick}
       timeFormat="H(:mm)"
@@ -53,4 +52,4 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+export default CalendarSeller;
