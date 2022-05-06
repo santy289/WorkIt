@@ -23,16 +23,7 @@ const initialState = {
     serviceId: '',
     _id: '',
   },
-  ofertservice: [{
-    title: '',
-    tags: [],
-    username: '',
-    userId: '',
-    cost: '',
-    description: '',
-    image: '',
-    _id: '',
-  }],
+  ofertservice: [],
   userprofile: {
     username: '',
     name: '',
@@ -43,17 +34,7 @@ const initialState = {
     address: '',
     imageprofile: '',
   },
-  infoBuyer: [{
-    purchasedId: '',
-    buyerId: '',
-    name: '',
-    last: '',
-    username: '',
-    title: '',
-    imageprofile: '',
-    _id: '',
-    scheduledDate: '',
-  }],
+  infoBuyer: [],
   services: [],
   servicebytitle: [{
     title: '',
@@ -65,16 +46,7 @@ const initialState = {
     image: '',
     _id: '',
   }],
-  boughtservice: [{
-    title: '',
-    name: '',
-    last: '',
-    username: '',
-    imageprofile: '',
-    date: '',
-    purchasedId: '',
-    scheduledDate: '',
-  }],
+  boughtservice: [],
 };
 
 // eslint-disable-next-line default-param-last
