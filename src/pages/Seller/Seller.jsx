@@ -43,6 +43,11 @@ function Seller() {
                 ))}
               </div>
             </section>
+            <section className="home__calendar">
+              {
+                localStorage.getItem('id') ? <CalendarSeller /> : null
+              }
+            </section>
             <section className="activeClientsList">
               <h1>Clientes interesados en los servicios</h1>
               <div className="activeClientsList_cardViewer">
@@ -65,11 +70,6 @@ function Seller() {
                   ))) : <h3>Sin servicios adquiridos</h3>
                 }
               </div>
-            </section>
-            <section className="home__calendar">
-              {
-                localStorage.getItem('id') ? <CalendarSeller /> : null
-              }
             </section>
           </div>
         </div>
