@@ -12,7 +12,7 @@ import Purchaser from '../pages/Purchaser/Purchaser';
 import Seller from '../pages/Seller/Seller';
 import UserProfile from '../pages/UserProfile/UserProfile';
 import LoginPage from '../pages/LoginPage/LoginPage';
-import SignUpPage from '../pages/SignUpPage/SignUpPage';
+import CreateUser from '../pages/SingUpPage1/SingUpPage';
 import Activate from '../pages/Activate/Activate';
 import CreateService from '../pages/CreateService/CreateService';
 import ServiceDetail from '../pages/ServiceDetail/ServiceDetail';
@@ -31,7 +31,7 @@ function Mainrouter() {
         <Route path={ROUTE_SELLER} element={<Seller />} />
         <Route path={ROUTE_USERPROFILE} element={<UserProfile />} />
         <Route path={ROUTE_LOGIN} element={<LoginPage />} />
-        <Route path={ROUTE_SIGNUP} element={<SignUpPage />} />
+        <Route path={ROUTE_SIGNUP} element={<CreateUser />} />
         <Route path={ROUTE_CREATESERVICE} element={<CreateService />} />
         <Route path={ROUTE_ACTIVATE} element={<Activate />} />
         <Route path={ROUTE_SERVICEDETAIL} element={<ServiceDetail />} />
