@@ -71,6 +71,8 @@ $white: rgb(232, 232, 193);
     &__figure {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
+      justify-self: center;
+      width: 60%;
     }
 
     &__desc {
