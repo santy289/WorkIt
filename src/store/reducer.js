@@ -54,16 +54,7 @@ const initialState = {
     _id: '',
     scheduledDate: '',
   }],
-  services: [{
-    title: '',
-    tags: [],
-    username: '',
-    userId: '',
-    cost: '',
-    description: '',
-    image: '',
-    _id: '',
-  }],
+  services: [],
   servicebytitle: [{
     title: '',
     tags: [],

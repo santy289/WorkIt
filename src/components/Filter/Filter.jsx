@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { SearchTitleThunk, getAllServicesThunk } from '../../store/actions';
@@ -24,7 +25,14 @@ function Filter() {
         Buscar
       </p>
       <div className="form__group field">
-        <input type="input" className="form__field" placeholder="Buscar" name="name" id="name" onChange={handleChange} />
+        <input
+          type="text"
+          className="form__field"
+          placeholder="Buscar"
+          name="name"
+          id="name"
+          onChange={handleChange}
+        />
         <button type="submit" className="form__submit" onClick={handleSubmit}>Buscar</button>
         <button type="button" onClick={handleClear}>Reset</button>
       </div>
