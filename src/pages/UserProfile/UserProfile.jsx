@@ -59,13 +59,7 @@ function UserProfile() {
           </div>
           <div className="containerUser_buttonsProfile">
             <Link to={`/edit-user/${id}`} className="userProfileButton">
-              Informacion personal
-            </Link>
-            <Link to="/" className="userProfileButton">
-              Historial de ventas
-            </Link>
-            <Link to="/" className="userProfileButton">
-              HIstorial de compras
+              Editar información
             </Link>
           </div>
         </div>
