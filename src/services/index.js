@@ -212,16 +212,8 @@ export const getChat = async (id) => {
 };
 
 export const searchByServiceTitle = async (query) => {
-  const payload = {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ query }),
-  };
   try {
-    console.log(payload);
-    const response = await fetch(`${API_URL}/api/service/search=title`, payload);
+    const response = await fetch(`${API_URL}/api/service/search=title/${query}`);
     const data = await response.json();
     return data;
   } catch (err) {

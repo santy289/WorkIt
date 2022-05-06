@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SuperBalls } from '@uiball/loaders';
+import { Link } from 'react-router-dom';
 import { getAllServicesThunk } from '../../store/actions';
 import CardService from '../../components/CardService/CardService';
 import Header from '../../components/Header/Header';
@@ -16,11 +17,10 @@ function Purchaser() {
   useEffect(() => {
     dispatch(getAllServicesThunk());
   }, []);
-
   return (
     <>
       <Header />
-      { services.length > 1 ? (
+      { services ? (
         <div className="purchaser">
           <div className="purchaser__filter">
             <p className="purchaser__title">¿Qué necesitas hoy?</p>
@@ -40,6 +40,10 @@ function Purchaser() {
       ) : (
         <div className="loading">
           <SuperBalls />
+          <div className="loading__text">
+            <p>servicio no encontrado</p>
+            <Link to="/">Ir al Home</Link>
+          </div>
         </div>
       )}
       <Footer />
