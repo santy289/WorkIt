@@ -25,7 +25,7 @@ function CreateService() {
   const [title, setTitle] = useState(null);
   const [cost, setCost] = useState(null);
   const [tags, setTags] = useState(null);
-
+  const userId = localStorage.getItem('id');
   const handleChange = (evt) => {
     setImage(evt.target.files[0]);
     setStateImage(true);
@@ -51,6 +51,7 @@ function CreateService() {
     const formData = new FormData();
     formData.append('file', image);
     if(title && description && cost && tags){
+      formData.append('userId', userId);
       formData.append('title', title);
       formData.append('description', description);
       formData.append('cost', cost);
