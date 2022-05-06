@@ -42,6 +42,15 @@ $white: rgb(232, 232, 193);
   &__desc {
     grid-row: 3 / 4;
   }
+
+  &__mercado {
+    align-items: center;
+    background-color: $yellow;
+    border: solid 0.3rem $gray;
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 0.5rem;
+  }
 }
 
 @media (min-width: 850px) {
