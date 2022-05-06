@@ -26,7 +26,7 @@ function Seller() {
   return (
     <div>
       <Header />
-      { reduxServices.length > 1 || reduxBuyer.length > 1 || reduxBoughtServices.length > 1 ? (
+      { reduxServices || reduxBuyer || reduxBoughtServices ? (
         <div className="seller">
           <div className="seller_Title">MIS SERVICIOS</div>
           <Link to="/create-service">
