@@ -58,7 +58,7 @@ function Header() {
         {
           notification ? (
             <Link to={`/chat/${notification}`} className="Header_nav--item">
-              <img className="Header-nav__image" src="https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564405-chat2_81503.png" alt="Chat" />
+              <img className="Header-nav__image" src="https://res.cloudinary.com/dbsumvu1d/image/upload/v1651860995/g3422_udpqxf.png" alt="Chat" />
             </Link>
           ) : null
         }
