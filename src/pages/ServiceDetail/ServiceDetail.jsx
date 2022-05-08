@@ -59,7 +59,7 @@ function ServiceDetail() {
             {url !== '/'
               ? (
                 localStorage.setItem('id_service', id),
-                (<a href={url}><img src={mercadopago} alt="mercadopago" width="150" height="52" /></a>)
+                (<div className="servicedetail__mercado"><a href={url}><img src={mercadopago} alt="mercadopago" width="150" height="52" /></a></div>)
               )
               : (<Button text="Confirmar compra" handleClick={getURL} />)}
           </ShoppingCart>

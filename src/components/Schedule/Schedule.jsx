@@ -17,6 +17,8 @@ function Schedule() {
     scheduledDate: '',
   });
 
+  const [toggleText, setToggleText] = useState(false);
+
   const handleChange = (e) => {
     setSchedule({
       scheduledDate: e.target.value,
@@ -27,6 +29,7 @@ function Schedule() {
     e.preventDefault();
     const response = await updatePurchasedById(_id, schedule);
     dispatch(findBoughtServicesThunk(id));
+    setToggleText(!toggleText);
     return response;
   };
 
@@ -40,6 +43,12 @@ function Schedule() {
           </label>
           <Button type="submit" text="AGENDAR SERVICIO" handleClick={handleSubmit} />
         </form>
+        <br />
+        {
+          toggleText
+            ? <p>¡Tu servicio ha sido agendado!</p>
+            : null
+        }
       </div>
     </section>
   );
