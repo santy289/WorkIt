@@ -46,7 +46,7 @@ function Seller() {
             </section>
             <section>
               <h1>Servicios Agendados</h1>
-              <div className="home__calendar">
+              <div className="seller__calendar">
                 {
                 localStorage.getItem('id') ? <CalendarSeller /> : null
               }

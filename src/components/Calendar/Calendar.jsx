@@ -28,8 +28,6 @@ function Calendar() {
     return info;
   });
 
-  // const { title, username, scheduledDate } = reduxBoughtServices;
-
   const handleClick = (info) => {
     const eventObj = info.event;
     alert(`Servicio: ${eventObj.title}\nOferente: ${eventObj.extendedProps.client}`);
@@ -45,7 +43,7 @@ function Calendar() {
       }}
       initialView="dayGridMonth"
       events={eventsTest}
-      eventColor="rgb(212, 140, 102)"
+      eventColor="rgb(22, 140, 202)"
       eventDisplay="block"
       eventClick={handleClick}
       timeFormat="H(:mm)"
