@@ -44,7 +44,7 @@ function CalendarSeller() {
       }}
       initialView="dayGridMonth"
       events={eventsTest}
-      eventColor="rgba(255, 0, 0, 0.5)"
+      eventColor="rgb(22, 140, 202)"
       eventDisplay="block"
       eventClick={handleClick}
       timeFormat="H(:mm)"

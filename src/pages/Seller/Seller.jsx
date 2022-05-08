@@ -28,13 +28,6 @@ function Seller() {
       <Header />
       { reduxServices || reduxBuyer || reduxBoughtServices ? (
         <div className="seller">
-          <Link to="/create-service">
-            <div className="seller__create">
-              <p className="seller__create--card">
-                Crear Servicio
-              </p>
-            </div>
-          </Link>
           <div className="bodySeller">
             <section className="servicesList">
               <h1>Servicios Publicados</h1>
@@ -43,6 +36,13 @@ function Seller() {
                   <CardDetail key={service._id} eachService={service} />
                 ))}
               </div>
+              <Link to="/create-service">
+                <div className="seller__create">
+                  <p className="seller__create--card">
+                    Crear Servicio
+                  </p>
+                </div>
+              </Link>
             </section>
             <section>
               <h1>Servicios Agendados</h1>
