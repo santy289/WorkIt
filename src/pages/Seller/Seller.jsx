@@ -28,11 +28,12 @@ function Seller() {
       <Header />
       { reduxServices || reduxBuyer || reduxBoughtServices ? (
         <div className="seller">
-          <div className="seller_Title">MIS SERVICIOS</div>
           <Link to="/create-service">
-            <span className="seller__create">
-              <p type="button">+</p>
-            </span>
+            <div className="seller__create">
+              <p className="seller__create--card">
+                Crear Servicio
+              </p>
+            </div>
           </Link>
           <div className="bodySeller">
             <section className="servicesList">
@@ -43,10 +44,13 @@ function Seller() {
                 ))}
               </div>
             </section>
-            <section className="home__calendar">
-              {
+            <section>
+              <h1>Servicios Agendados</h1>
+              <div className="home__calendar">
+                {
                 localStorage.getItem('id') ? <CalendarSeller /> : null
               }
+              </div>
             </section>
             <section className="activeClientsList">
               <h1>Clientes interesados en los servicios</h1>

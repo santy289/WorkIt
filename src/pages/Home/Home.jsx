@@ -14,11 +14,15 @@ function Home() {
         <section className="home__brand">
           <HomeBrand />
         </section>
-        <section className="home__calendar">
-          {
-            localStorage.getItem('id') ? <Calendar /> : null
-          }
-        </section>
+        {
+          localStorage.getItem('id') ? (
+            <section className="home__calendar">
+              <Calendar />
+            </section>
+          )
+            : (null)
+        }
+
       </div>
       <h1 className="containerTitle">Servicios destacados</h1>
       <div className="containerCard">

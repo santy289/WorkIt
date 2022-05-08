@@ -37,7 +37,14 @@ $text-color: mix(#000, $primary-color, 64%);
 	flex-wrap: wrap;
 	flex-direction: column;
 }
-
+.form__submit--button{
+  background-color: rgb(4, 60, 138);
+  color: rgb(255, 255, 255);
+  margin-right:20px;
+  border-radius: 5px;
+  width:40%;
+  height:25px;
+}
 .labelcheck {
 	display: flex;
 	cursor: pointer;

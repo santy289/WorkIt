@@ -10,7 +10,7 @@ function CardService(props) {
   } = props.eachService;
   return (
     <div className="cardservice">
-      <Link to={`/detail/${_id}`} className="cardservice__link">
+      <Link to={localStorage.getItem('id') ? (`/detail/${_id}`) : '/purchases'} className="cardservice__link">
         <div className="cardservice__content">
           <div className="cardservice__figure">
             <img className="cardservice__image" src={image} alt={title} />

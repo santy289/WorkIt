@@ -69,7 +69,7 @@ function Header() {
           className="Header_nav--item"
           onKeyDown={handleLogout}
         >
-          Cerrar sesión
+          <a href="https://work-it.vercel.app/" className="header-nav__link">Cerrar sesión</a>
         </span>
       </ul>
     </header>

@@ -28,19 +28,19 @@ $white: rgb(232, 232, 193);
 }
 
 .seller__create {
-  align-items: center;
-  background-color: $gray;
-  border-radius: 3rem;
-  bottom: 5%;
-  color: $yellow;
   display: flex;
-  font-weight: 700;
-  font-size: 5rem;
-  height: 6rem;
-  justify-content: center;
-  position: fixed;
-  right: 5%;
-  width: 6rem;
+  width: 100%;
+  flex-direction: column;
+  margin: 20px;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  &--card{
+    width: 20%;
+    border-radius: 5px;
+    background-color:rgb(4, 60, 138);
+    text-decoration: none;
+  }
 }
 
 .servicesList{

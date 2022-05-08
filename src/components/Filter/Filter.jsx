@@ -33,8 +33,8 @@ function Filter() {
           id="name"
           onChange={handleChange}
         />
-        <button type="submit" className="form__submit" onClick={handleSubmit}>Buscar</button>
-        <button type="button" onClick={handleClear}>Reset</button>
+        <button type="submit" className="form__submit--button" onClick={handleSubmit}>Buscar</button>
+        <button type="button" className="form__submit--button" onClick={handleClear}>Reset</button>
       </div>
     </div>
   );

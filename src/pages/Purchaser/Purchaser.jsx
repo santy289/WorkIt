@@ -22,12 +22,14 @@ function Purchaser() {
       <Header />
       { services ? (
         <div className="purchaser">
-          <div className="purchaser__filter">
+          <div className="purchaser-title__container">
             <p className="purchaser__title">¿Qué necesitas hoy?</p>
+          </div>
+          <div className="purchaser-filter__container">
             <Filter />
           </div>
+
           <div className="purchaser__body">
-            <h1>Servicios Disponibles</h1>
             <div className="purcasher--list__container">
               {
               (services.map((service) => (

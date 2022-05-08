@@ -1,13 +1,14 @@
-$gray: rgb(23, 31, 31);
+$gray: rgb(220, 219, 219);
 $blue: rgb(33, 74, 84);
 $orange: rgb(212, 140, 102);
-$yellow: rgb(217, 196, 125);
-$white: rgb(232, 232, 193);
+$yellow: rgb(1, 38, 91);
+$white: rgb(1, 65, 154);
 
 .cardservice {
   background-color: $white;
   border: 0.2rem solid $gray;
   width: 100%;
+  border-radius: 0.7rem;
 
   &:hover {
     box-shadow: 0.5rem 0.5rem 1.5rem $blue;
@@ -53,7 +54,7 @@ $white: rgb(232, 232, 193);
   }
 
   &__user {
-    color: $blue;
+    color: $gray;
     font-size: 1.2rem;
     font-weight: 600;
     text-align: end;
