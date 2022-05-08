@@ -20,9 +20,11 @@ function EditUser() {
   const [country, setCountry] = useState(null);
   const [city, setCity] = useState(null);
   const [address, setAddress] = useState(null);
+  const [stateImage, setStateImage] = useState(false);
 
   const handleChange = (evt) => {
     setImageprofile(evt.target.files[0]);
+    setStateImage(true);
   };
   const handleChangeName = (evt) => {
     setName(evt.target.value);
@@ -89,7 +91,7 @@ function EditUser() {
       <div className="containerUser">
             <img
               className="imageContainer"
-              src={user.imageprofile}
+              src={stateImage ? URL.createObjectURL(imageprofile):user.imageprofile}
               alt="profile"
             />
           </div>

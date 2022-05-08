@@ -8,8 +8,10 @@ import './UserProfile.styles.scss';
 function UserProfile() {
   const id = localStorage.getItem('id');
   const [image, setImage] = useState(null);
+  const [stateImage, setStateImage] = useState(false);
   const handleChange = (evt) => {
     setImage(evt.target.files[0]);
+    setStateImage(true);
   };
 
   const handleUploaImage = async () => {
@@ -39,7 +41,7 @@ function UserProfile() {
           <div className="containerUser_imageContainer">
             <img
               className="containerUser_imageContainer--userimage"
-              src={user.imageprofile}
+              src={stateImage ? URL.createObjectURL(image) : user.imageprofile}
               alt="profile"
             />
           </div>

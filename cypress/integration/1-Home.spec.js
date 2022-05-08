@@ -6,9 +6,3 @@ describe('Landing page test', ()=>{
         cy.get('Header').should('be.visible');
         });
 });
-describe('Landing page test', ()=>{
-    it('succesfuly login',()=>{
-        cy.visit('/');
-        
-        });
-});
