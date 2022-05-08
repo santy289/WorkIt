@@ -7,8 +7,12 @@ $white: rgb(232, 232, 193);
 .home {
 
   &__calendar {
-    background-color: $yellow;
+    background-color: rgba(0, 0, 0, 0.15);
     margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+      width: 80%;
+      margin-left: 10%;
   }
 }
 
@@ -49,11 +53,9 @@ $white: rgb(232, 232, 193);
     }
 
     &__calendar {
-      align-self: center;
-      height: auto;
+      margin-top: 10%;
       grid-column: 2 / 3;
-      justify-self: center;
-      width: 80%;
+      margin-left: 10%;
     }
   }
 
