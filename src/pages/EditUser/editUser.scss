@@ -5,6 +5,7 @@ $black: rgb(0, 0, 0);
 $primary: rgb(217, 196, 125);
 $secondary: rgb(217, 196, 125);
 $gray: #9b9b9b;
+$blue: rgb(4, 60, 138);
 
 body{
   background-repeat: no-repeat;
@@ -15,7 +16,7 @@ body{
 }
 .titleEdit{
   background-color: rgba(213, 12, 12, 0);
-  color: rgb(217, 196, 125);
+  color: #000000;
   display: flex;
   font-size: 4rem;
   justify-content: center;
@@ -26,25 +27,27 @@ Button{
   margin-top: 20px;
 }
 .imageContainer{
-  width: 300px;
-  height: 300px;
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
 }
 .containerEdit{
-  background-color: rgb(33, 74, 84);
+  background-color: rgba(172, 168, 168, 0.413);
     background-blend-mode: darken;
     border-style: hidden;
     border-radius: 11px;
   margin-top: 13px;
-  margin-left: 3%;
+  margin-left: 15%;
   margin-right: 30%;
   margin-bottom: 12px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 2px 2px 6px $blue;
 
 
   padding: 3rem;
-  width: 90%;
+  width: 70%;
 
 
   &_buttonsProfile{
@@ -97,13 +100,13 @@ Button{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $primary;
+    color: $blue;
     font-weight:700;
   }
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image: linear-gradient(to right, $blue,$dark-grey);
   border-image-slice: 1;
 }
 @media (max-width:1025px){
