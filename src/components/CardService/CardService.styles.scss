@@ -10,6 +10,7 @@ $white: rgb(1, 65, 154);
   width: 100%;
   border-radius: 0.7rem;
 
+
   &:hover {
     box-shadow: 0.5rem 0.5rem 1.5rem $blue;
 
@@ -82,17 +83,20 @@ $white: rgb(1, 65, 154);
 @media (min-width: 576px){
   .cardservice {
     width: 48%;
+    height: fit-content;
   }
 }
 
 @media (min-width: 992px){
   .cardservice {
     width: 32%;
+    height: fit-content;
   }
 }
 
 @media (min-width: 1200px){
   .cardservice {
     width: 23%;
+    height: fit-content;
   }
 }

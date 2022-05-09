@@ -75,21 +75,3 @@ $white: rgb(4, 60, 138);
     text-align: end;
   }
 }
-
-@media (min-width: 576px){
-  .cardservice {
-    width: 48%;
-  }
-}
-
-@media (min-width: 992px){
-  .cardservice {
-    width: 32%;
-  }
-}
-
-@media (min-width: 1200px){
-  .cardservice {
-    width: 23%;
-  }
-}

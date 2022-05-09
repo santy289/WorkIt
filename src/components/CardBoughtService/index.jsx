@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
 import './CardBoughtService.styles.scss';
 
 function CardBoughtService(props) {
@@ -20,7 +19,6 @@ function CardBoughtService(props) {
       <div className="cardBought__infobuyer">
         <h3>Servicio Comprado:</h3>
         {title}
-        <h3>Datos del vendedor</h3>
         <h3>Usuario:</h3>
         {username}
         <h3>Nombre:</h3>
@@ -33,9 +31,8 @@ function CardBoughtService(props) {
       </div>
       <div className="cardBought__buttonsBar">
         <Link to={`/chat/${purchasedId}`}>
-          <Button text="Chat" />
+          <button type="button" className="clientRequest__buttonsBar--button">Chat</button>
         </Link>
-        <Button text="Agenda" />
       </div>
     </div>
   );

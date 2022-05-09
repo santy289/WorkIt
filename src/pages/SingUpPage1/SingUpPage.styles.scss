@@ -22,9 +22,6 @@ body{
   padding-top: 0.1em;
   margin-bottom: 0.3em;
 }
-Button{
-  margin-top: 20px;
-}
 .imageContainer{
   width: 500px;
   height: 250px;
@@ -41,12 +38,12 @@ Button{
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-  
+
+
   padding: 3rem;
   width: 90%;
- 
-  
+
+
   &_buttonsProfile{
     display: block;
   }
@@ -98,9 +95,9 @@ Button{
     transition: 0.2s;
     font-size: 1rem;
     color: $primary;
-    font-weight:700;    
+    font-weight:700;
   }
-  padding-bottom: 6px;  
+  padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
   border-image: linear-gradient(to right, $primary,$secondary);
@@ -119,12 +116,12 @@ Button{
     display: flex;
     align-items: center;
     flex-direction: column;
-    
-    
+
+
     padding: 3rem;
     width: 80%;
-   
-    
+
+
     &_buttonsProfile{
       display: block;
     }
