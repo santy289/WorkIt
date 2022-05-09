@@ -18,9 +18,9 @@ function Checkout() {
         <h2 className="items">Estado de la compra:</h2>
         <h2 className="itemsdata">{status}</h2>
         <h2 className="items">Metodo de pago:</h2>
-        <h2 className="itemsdata">{paymentId}</h2>
-        <h2 className="items">Id de transaccion:</h2>
         <h2 className="itemsdata">{paymentType}</h2>
+        <h2 className="items">Id de transaccion:</h2>
+        <h2 className="itemsdata">{paymentId}</h2>
         <br />
       </div>
       <div className="checkout__schedule">

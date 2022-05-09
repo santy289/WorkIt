@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import React from 'react';
-import Button from '../Button/Button';
 import './CardClientRequest.styles.scss';
 
 function CardClientRequest(props) {
@@ -27,7 +26,7 @@ function CardClientRequest(props) {
       </div>
       <div className="clientRequest__buttonsBar">
         <Link to={`/chat/${purchasedId}`}>
-          <Button text="Chat" />
+          <button type="button" className="clientRequest__buttonsBar--button">Chat</button>
         </Link>
       </div>
     </div>

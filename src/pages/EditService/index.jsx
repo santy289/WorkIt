@@ -24,9 +24,11 @@ function EditService() {
   const [title, setTitle] = useState(null);
   const [cost, setCost] = useState(null);
   const [tags, setTags] = useState(null);
+  const [stateImage, setStateImage] = useState(false);
 
   const handleChange = (evt) => {
     setImage(evt.target.files[0]);
+    setStateImage(true);
   };
   const handleChangeDescription = (evt) => {
     setDescription(evt.target.value);
@@ -81,7 +83,7 @@ function EditService() {
       <div className="containerUser">
             <img
               className="imageContainer"
-              src={service.image}
+              src={stateImage ? URL.createObjectURL(image):service.image}
               alt="profile"
             />
           </div>

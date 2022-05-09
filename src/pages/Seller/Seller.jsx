@@ -53,7 +53,7 @@ function Seller() {
               </div>
             </section>
             <section className="activeClientsList">
-              <h1>Clientes interesados en los servicios</h1>
+              <h1>Servicios vendidos</h1>
               <div className="activeClientsList_cardViewer">
                 {
                   reduxBuyer.map((buyer) => (
