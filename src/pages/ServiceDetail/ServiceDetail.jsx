@@ -42,15 +42,25 @@ function ServiceDetail() {
     <>
       <Header />
       <div className="servicedetail">
-        <div className="servicedetail__seller">
-          <h2 className="servicedetail__subtitle">Vendedor:</h2>
-          <p className="servicedetail__text">
-            {service.username}
-          </p>
-        </div>
-        <div className="servicedetail__figure">
-          <img className="servicedetail__image" src={service.image} alt="service" />
-        </div>
+        <section className="servicedetail__container">
+          <div className="servicedetail__container--card">
+            <div className="servicedetail__figure">
+              <img className="servicedetail__image" src={service.image} alt="service" />
+            </div>
+            <div className="servicedetail__seller">
+              <h2 className="servicedetail__subtitle">Vendedor:</h2>
+              <p className="servicedetail__text">
+                {service.username}
+              </p>
+            </div>
+            <div className="servicedetail__desc">
+              <h2 className="servicedetail__subtitle">Descripción</h2>
+              <p className="servicedetail__text">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        </section>
         <div className="servicedetail__cart">
           <ShoppingCart
             title={service.title}
@@ -63,12 +73,6 @@ function ServiceDetail() {
               )
               : (<Button text="Confirmar compra" handleClick={getURL} />)}
           </ShoppingCart>
-        </div>
-        <div className="servicedetail__desc">
-          <h2 className="servicedetail__subtitle">Descripción</h2>
-          <p className="servicedetail__text">
-            {service.description}
-          </p>
         </div>
       </div>
       <Footer />
