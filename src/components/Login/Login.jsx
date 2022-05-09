@@ -47,7 +47,7 @@ function Login() {
     >
       {({ errors }) => (
         <Form className="login">
-          <h2 className="login__title">INICIA SESIÓN</h2>
+          <h2 className="login__title">INICIAR SESIÓN</h2>
           <label className="login__text" htmlFor="username">Usuario</label>
           <ErrorMessage
             name="username"
@@ -69,7 +69,7 @@ function Login() {
           />
           <Field type="password" id="password" name="password" />
           <div className="login__button">
-            <Button type="submit" text="INICIAR SESIÓN" />
+            <Button type="submit" text="INGRESAR" />
           </div>
         </Form>
       )}

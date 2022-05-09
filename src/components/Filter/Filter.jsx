@@ -6,17 +6,25 @@ import './Filter.styles.scss';
 
 function Filter() {
   const dispatch = useDispatch();
+  const [enable, setEnable] = useState(false);
   const [search, setSearch] = useState('');
 
   const handleChange = (evt) => {
     setSearch(evt.target.value);
+    setEnable(true);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(SearchTitleThunk(search));
+    if (!search) {
+      dispatch(getAllServicesThunk());
+      setEnable(false);
+    } else {
+      dispatch(SearchTitleThunk(search));
+    }
   };
   const handleClear = () => {
     dispatch(getAllServicesThunk());
+    document.getElementById('name').value = '';
   };
 
   return (
@@ -33,8 +41,8 @@ function Filter() {
           id="name"
           onChange={handleChange}
         />
-        <button type="submit" className="form__submit--button" onClick={handleSubmit}>Buscar</button>
-        <button type="button" className="form__submit--button" onClick={handleClear}>Reset</button>
+        <button type="submit" className={enable ? 'form__submit--button' : 'disabled'} onClick={handleSubmit}>Buscar</button>
+        <button type="button" className={enable ? 'form__submit--button' : 'disabled'} onClick={handleClear}>Reset</button>
       </div>
     </div>
   );

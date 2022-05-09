@@ -31,6 +31,9 @@
 $primary-color: black;
 $text-color: mix(#000, $primary-color, 64%);
 
+.disabled {
+  visibility: hidden;
+}
 
 .formcheck {
 	display: flex;

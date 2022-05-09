@@ -1,8 +1,8 @@
-$gray: rgb(23, 31, 31);
-$blue: rgb(33, 74, 84);
+$gray: rgb(14, 6, 111);
+$blue: rgb(46, 33, 84);
 $orange: rgb(212, 140, 102);
 $yellow: rgb(217, 196, 125);
-$white: rgb(232, 232, 193);
+$white: rgb(255, 255, 255);
 
 .modal{
   background-color: rgba(0, 0, 0, 0.7);
@@ -15,7 +15,7 @@ $white: rgb(232, 232, 193);
     display: flex;
     background-color: $white;
     border: $gray 0.4rem solid;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     height: auto;
     justify-content: center;
     margin: auto;
@@ -29,10 +29,10 @@ $white: rgb(232, 232, 193);
     cursor: pointer;
     background-color: transparent;
     border-width: 0rem;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     position: absolute;
-    top: 2%;
+    top: 0;
     right: 5%;
   }
 }

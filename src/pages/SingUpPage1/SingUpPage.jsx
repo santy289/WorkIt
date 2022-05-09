@@ -55,11 +55,11 @@ function CreateUser() {
   };
   const handleChangePassword = (evt) => {
     setPassword(evt.target.value);
-    
+
   };
   const handleChangeConfpassword = (evt) => {
     setConfpassword(evt.target.value);
-    
+
   };
 
   const handleUploaImage = async () => {
@@ -89,7 +89,7 @@ function CreateUser() {
       <div className="containerEdit">
       <h1 className="titleEdit">Registrate</h1>
       <div className="containerUser">
-      
+
         <img
               className="imageContainer"
               src={stateImage ? URL.createObjectURL(imageprofile):'https://res.cloudinary.com/dbsumvu1d/image/upload/v1650855803/Imagen-destacada-post-VN-1_ssfest.png'}
@@ -98,7 +98,7 @@ function CreateUser() {
           </div>
           <h2>Imagen</h2>
           <div className="updateimage">
-          
+
             <input
               className="choose"
               type="file"
@@ -107,7 +107,7 @@ function CreateUser() {
               accept="image/*"
               onChange={handleChange}
             />
-            
+
           </div>
           <div className="form__group field">
             <input type="input" className="form__field" placeholder="Name" name="name" id='name' onChange={handleChangeName} />
@@ -157,16 +157,16 @@ function CreateUser() {
           <h2>{!address? "Campo requerido":""}</h2>
           <div className="form__group field">
             <input type="password" className="form__field" placeholder="Name" name="name" id='name' onChange={handleChangePassword} />
-            <label for="name" className="form__label">Contrasena</label>
+            <label for="name" className="form__label">Contraseña</label>
           </div>
           <h2>{!password? "Campo requerido":""}</h2>
           <div className="form__group field">
             <input type="password" className="form__field" placeholder="Name" name="name" id='name' onChange={handleChangeConfpassword} />
-            <label for="name" className="form__label">Confirmar Contrasena</label>
+            <label for="name" className="form__label">Confirmar Contraseña</label>
           </div>
-          <h2>{password!=confpassword||!password||!confpassword? "Contrasena no coincide":""}</h2>
+          <h2>{password!=confpassword||!password||!confpassword? "Contraseña no coincide":""}</h2>
           <ButtonCreate text="Registrar" type="button" handleClick={handleUploaImage} able={ name&&last&&username&&email&&city&&address&&password==confpassword&&password&&confpassword&&regex.test(email)? true: false } />
-              
+
     </div>
     <Footer />
     </div>
