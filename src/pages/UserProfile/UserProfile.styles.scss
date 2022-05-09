@@ -1,7 +1,7 @@
 $gray: rgb(23, 31, 31);
-$blue: rgb(33, 74, 84);
+$blue: rgb(4, 60, 138);
 $orange: rgb(212, 140, 102);
-$yellow: rgb(217, 196, 125);
+$yellow: rgb(255, 255, 255);
 $white: rgb(232, 232, 193);
 
 .userProfile{
@@ -46,6 +46,7 @@ $white: rgb(232, 232, 193);
       width: 90%;
       font-size: 1.7rem;
       border-radius: 1.5rem;
+      box-shadow: 2px 2px 6px $blue;
     }
   }
   .userProfileButton{
@@ -58,8 +59,13 @@ $white: rgb(232, 232, 193);
     padding: 1rem;
     text-align: center;
     width: 30%;
+    text-decoration: none;
   }
 
+}
+
+.hiddenButtons{
+  display: none;
 }
 
 .updateimage {
@@ -88,11 +94,12 @@ $white: rgb(232, 232, 193);
 
 @media (min-width:1025px){
   .userProfile {
+    width: 100%;
     display: flex;
 
     .containerUser{
       margin: 1rem;
-      width: 25%;
+      width: 30%;
 
       &_imageContainer--userImage{
         height: 60%;
@@ -109,20 +116,27 @@ $white: rgb(232, 232, 193);
     }
     .contentProfile{
       align-items: center;
+      display: flex;
       height: 100vh;
       padding: 0rem;
-      width: 75%;
+      width: 65%;
 
       &_userProfileTable{
-        height: 60vh;
+        width: 70%;
+        height: 50vh;
         font-size: 1.7rem;
-        background-color: rgba(255, 255, 255, 0.384);
+        background-color: rgba(172, 168, 168, 0.413);
+
+        & td{
+          font-size: 1.5rem;
+          padding-left: 7rem;
+        }
       }
     }
     .userProfileButton{
       color: $gray;
       font-size: 1.5rem;
-      width: 80%;
+      width: 20rem;
     }
   }
 }
@@ -134,7 +148,8 @@ $white: rgb(232, 232, 193);
   background-color: $yellow;
   color: $gray;
   display: inline-block;
-  background: #1CB6E0;
+  background: rgb(4, 60, 138);
+  color:rgb(232, 232, 193);
   border: none;
   padding: 7px 15px;
   font-weight: 700;

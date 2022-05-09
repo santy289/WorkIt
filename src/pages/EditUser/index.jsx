@@ -44,10 +44,10 @@ function EditUser() {
   const handleChangeAddress = (evt) => {
     setAddress(evt.target.value);
   };
-  
+
   const handleUploaImage = async () => {
     const formData = new FormData();
-    
+
     formData.append('file', imageprofile);
     if(name){
       formData.append('name', name);
@@ -79,7 +79,7 @@ function EditUser() {
     const data = await getUserById(id);
     setUser(data);
   };
- 
+
   useEffect(() => {
     showUser();
   }, []);
@@ -95,9 +95,10 @@ function EditUser() {
               alt="profile"
             />
           </div>
+          <br />
           <h2> Foto de perfil</h2>
           <div className="updateimage">
-          
+
             <input
               className="choose"
               type="file"
@@ -106,7 +107,7 @@ function EditUser() {
               accept="image/*"
               onChange={handleChange}
             />
-            
+
           </div>
           <div className="form__group field">
             <input type="input" className="form__field" placeholder="Name" name="name" id='name' defaultValue={user.name} onChange={handleChangeName} />
@@ -133,7 +134,7 @@ function EditUser() {
             <label for="name" className="form__label">Direccion</label>
           </div>
           <Button text="Actualizar" type="button" handleClick={handleUploaImage} />
-              
+
     </div>
     <Footer />
     </div>

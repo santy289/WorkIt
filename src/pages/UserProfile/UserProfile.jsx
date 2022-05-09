@@ -7,6 +7,7 @@ import './UserProfile.styles.scss';
 
 function UserProfile() {
   const id = localStorage.getItem('id');
+  const [buttonCondition, setButtonCondition] = useState(false);
   const [image, setImage] = useState(null);
   const [stateImage, setStateImage] = useState(false);
   const handleChange = (evt) => {
@@ -30,6 +31,9 @@ function UserProfile() {
     const data = await getUserById(id);
     setUser(data);
   };
+  const handlecondition = () => {
+    setButtonCondition(true);
+  };
   useEffect(() => {
     showUser();
   }, []);
@@ -45,7 +49,7 @@ function UserProfile() {
               alt="profile"
             />
           </div>
-          <div className="updateimage">
+          <div className={buttonCondition ? 'updateimage' : 'hiddenButtons'}>
             <p className="updateimage__text">Selecciona tu foto de perfil:</p>
             <input
               className="choose"
@@ -60,6 +64,7 @@ function UserProfile() {
             </button>
           </div>
           <div className="containerUser_buttonsProfile">
+            <button className={buttonCondition ? 'hiddenButtons' : 'userProfileButton'} type="button" onClick={handlecondition}>editar imagen</button>
             <Link to={`/edit-user/${id}`} className="userProfileButton">
               Editar información
             </Link>
